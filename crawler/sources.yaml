@@ -11,6 +11,18 @@
 #   link_pattern: (optional) regulärer Ausdruck für die Adressen der Links, denen gefolgt wird –
 #              nützlich bei Übersichtsseiten, deren Links keine Stichwörter enthalten
 
+# Umkreis-Modus: Der Crawler holt aus OpenStreetMap alle weiterführenden Schulen, Hochschulen
+# und Feuerwachen mit eigener Website in diesem Umkreis und liest deren Seiten
+# (Startseite + Unterseiten wie „Tag der offenen Tür“, „Termine“, „Aktuelles“).
+# Weitere Orte einfach als neuen Eintrag ergänzen.
+regions:
+  - name: Meerbusch-Büderich (mit Düsseldorf, Neuss, Krefeld)
+    lat: 51.2556
+    lng: 6.6933
+    radius_km: 16
+    max_sites: 160      # höchstens so viele Websites pro Lauf (die nächsten zuerst)
+    follow: 4           # Unterseiten pro Website
+
 sources:
   # ---- Städtische Terminlisten für weiterführende Schulen ---------------------------------
   - url: https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html

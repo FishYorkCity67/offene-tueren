@@ -477,21 +477,28 @@ _DATE_RANGE_WORD = re.compile(
     rf"\b(\d{{1,2}})\.?\s*(?:und|bis|-|–|—|/|\+|&)\s*(\d{{1,2}})\.\s*({_MONTH_ALT})\.?\s*(\d{{4}})?", re.I)
 
 
+REQUIRE_YEAR = False   # im Umkreis-Modus True: Daten ohne Jahreszahl (oft alte News) ignorieren
+
+
 def find_dates(text: str) -> list[tuple[int, dt.date]]:
     out: list[tuple[int, dt.date]] = []
     for m in _DATE_RANGE_WORD.finditer(text):       # "27. und 28. Januar 2027"
+        if REQUIRE_YEAR and not m.group(4):
+            continue
         mon = MONTHS[m.group(3).lower().rstrip(".")]
         y = int(m.group(4)) if m.group(4) else None
         d1, d2 = _mk_date(int(m.group(1)), mon, y), _mk_date(int(m.group(2)), mon, y)
         if d1 and d2 and d1 < d2:
             out += [(m.start(), d1), (m.start() + 1, d2)]
     for m in _DATE_WORD.finditer(text):
+        if REQUIRE_YEAR and not m.group(3):
+            continue
         d = _mk_date(int(m.group(1)), MONTHS[m.group(2).lower().rstrip(".")], int(m.group(3)) if m.group(3) else None)
         if d:
             out.append((m.start(), d))
     for m in _DATE_NUM.finditer(text):
         dd, mm = int(m.group(1)), int(m.group(2))
-        if not (1 <= mm <= 12):
+        if not (1 <= mm <= 12) or (REQUIRE_YEAR and not m.group(3)):
             continue
         d = _mk_date(dd, mm, int(m.group(3)) if m.group(3) else None)
         if d:
@@ -1239,21 +1246,24 @@ def pdf_text(content: bytes) -> str:
 
 def interesting_links(soup: BeautifulSoup, base_url: str, limit: int, same_host: bool,
                       pattern: re.Pattern[str] | None = None) -> list[str]:
-    host = urlparse(base_url).netloc
-    out: list[str] = []
+    host = urlparse(base_url).netloc.removeprefix("www.")
+    hits: list[tuple[int, str]] = []
+    seen: set[str] = set()
     for a in soup.find_all("a", href=True):
         href = urldefrag(urljoin(base_url, a["href"]))[0]
-        if not href.startswith("http"):
+        if not href.startswith("http") or href in seen or href == base_url:
             continue
-        if same_host and urlparse(href).netloc != host:
+        if same_host and urlparse(href).netloc.removeprefix("www.") != host:
+            continue
+        if re.search(r"\.(jpe?g|png|gif|zip|docx?|xlsx?|mp4|mp3)(\?|$)", href, re.I):
             continue
         label = clean_ws(a.get_text(" ")) + " " + href.replace("-", " ").replace("_", " ")
-        hit = pattern.search(href) if pattern else _KW_RE.search(label)
-        if hit and href not in out and href != base_url:
-            out.append(href)
-        if len(out) >= limit:
-            break
-    return out
+        kw = bool(_KW_RE.search(label))
+        if kw or (pattern and (pattern.search(href) or pattern.search(label))):
+            seen.add(href)
+            hits.append((0 if kw else 1, href))       # Links mit Stichwort zuerst
+    hits.sort(key=lambda h: h[0])
+    return [h for _, h in hits[:limit]]
 
 
 @dataclass
@@ -1319,6 +1329,91 @@ class Crawl:
         for link in links:
             out += self.process(link, hint, 0, same_host, depth + 1)
         return out
+
+
+# --------------------------------------------------------------------------------------
+# Umkreis-Modus: alle Schulen/Hochschulen/Feuerwachen mit Website aus OpenStreetMap holen
+# --------------------------------------------------------------------------------------
+
+OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+_SKIP_PLACE = re.compile(
+    r"grundschule|primarschule|\bgs\b|kita|kindergarten|kindertages|familienzentrum|musikschule|fahrschule|"
+    r"tanzschule|sprachschule|nachhilfe|schwimmschule|hundeschule|reitschule|kunstschule|ballettschule|"
+    r"yoga|kampfsport|flugschule|segelschule|surfschule|golf|offene ganztag|ogs\b", re.I)
+# Unterseiten einer Schul-Website, auf denen Termine stehen könnten
+REGION_LINKS = re.compile(
+    r"offene|tuer|tür|infotag|informationstag|infoabend|termin|veranstaltung|aktuell|news|neuigkeit|"
+    r"anmeld|schnupper|kalender|jahresplan|ankuendigung|ankündigung|einladung", re.I)
+
+
+def region_places(session: requests.Session, region: dict[str, Any]) -> list[dict[str, Any]]:
+    lat, lng = float(region["lat"]), float(region["lng"])
+    radius = int(float(region.get("radius_km", 15)) * 1000)
+    around = f"(around:{radius},{lat},{lng})"
+    query = f"""[out:json][timeout:120];
+(
+  nwr["amenity"="school"]["website"]{around};
+  nwr["amenity"="school"]["contact:website"]{around};
+  nwr["amenity"~"^(university|college)$"]["website"]{around};
+  nwr["amenity"~"^(university|college)$"]["contact:website"]{around};
+  nwr["amenity"="fire_station"]["website"]{around};
+);
+out center tags;"""
+    try:
+        r = session.post(OVERPASS_URL, data={"data": query}, timeout=180)
+        r.raise_for_status()
+        elements = r.json().get("elements", [])
+    except (requests.RequestException, ValueError) as e:
+        log(f"Overpass-Abfrage fehlgeschlagen ({e}) – Umkreis {region.get('name')} übersprungen")
+        return []
+    places: dict[str, dict[str, Any]] = {}
+    for el in elements:
+        t = el.get("tags", {})
+        name = clean_ws(t.get("name"))
+        site = clean_ws(t.get("website") or t.get("contact:website"))
+        if not name or not site:
+            continue
+        amenity = t.get("amenity", "")
+        if _SKIP_PLACE.search(name) or t.get("school") in ("primary", "kindergarten") or t.get("isced:level") in ("0", "1", "0;1"):
+            continue
+        if not site.startswith("http"):
+            site = "https://" + site.lstrip("/")
+        plat = el.get("lat", el.get("center", {}).get("lat"))
+        plng = el.get("lon", el.get("center", {}).get("lon"))
+        if plat is None or plng is None:
+            continue
+        if amenity == "fire_station":
+            cat = "sonstiges"
+        elif amenity in ("university", "college") and re.search(r"hochschule|universit|akademie", name, re.I):
+            cat = "hochschule"
+        else:
+            cat = "schule"
+        street = " ".join(x for x in (t.get("addr:street", ""), t.get("addr:housenumber", "")) if x)
+        town = t.get("addr:city", "")
+        addr = ", ".join(x for x in (street, " ".join(y for y in (t.get("addr:postcode", ""), town) if y)) if x)
+        p = urlparse(site)
+        key = p.netloc.removeprefix("www.").lower() + p.path.rstrip("/").lower()
+        dist = haversine_km((lat, lng), (plat, plng))
+        if key not in places or dist < places[key]["dist"]:
+            places[key] = {"name": name, "url": site, "lat": plat, "lng": plng, "address": addr,
+                           "city": town, "category": cat, "dist": dist}
+    out = sorted(places.values(), key=lambda x: x["dist"])
+    return out[: int(region.get("max_sites", 150))]
+
+
+def adopt_place(e: Event, place: dict[str, Any]) -> None:
+    """Termine von der Website einer Einrichtung gehören meist zu genau dieser Einrichtung."""
+    other_org = e.org and _INSTITUTION.search(e.org) and _similar(e.org, place["name"]) < 0.5 \
+        and norm(e.org) not in norm(place["name"])
+    if other_org and e.address:
+        return                                   # Termin einer anderen Einrichtung mit eigener Adresse
+    if not other_org:
+        e.org = place["name"]
+        e.category = place["category"]
+    if e.lat is None or not other_org:
+        e.lat, e.lng = place["lat"], place["lng"]
+        e.address = place["address"] or e.address
+        e.city = place["city"] or e.city
 
 
 # --------------------------------------------------------------------------------------
@@ -1420,6 +1515,7 @@ def main() -> int:
     ap.add_argument("--search-queries", type=int, default=int(os.environ.get("SEARCH_QUERIES", 8)))
     ap.add_argument("--max-geocode", type=int, default=int(os.environ.get("MAX_GEOCODE", 250)))
     ap.add_argument("--dry-run", action="store_true", help="nichts speichern, nur ausgeben")
+    ap.add_argument("--regions-only", action="store_true", help="nur den Umkreis-Modus laufen lassen (zum Testen)")
     ap.add_argument("--out", type=Path, help="Ergebnis in diese Datei statt data/events.json (zum Testen)")
     args = ap.parse_args()
 
@@ -1444,10 +1540,24 @@ def main() -> int:
         for u in args.only:
             found += crawl.process(u, None, follow=15, same_host=True)
     else:
-        for src in cfg.get("sources", []):
+        for src in ([] if args.regions_only else cfg.get("sources", [])):
             pat = re.compile(src["link_pattern"], re.I) if src.get("link_pattern") else None
             found += crawl.process(src["url"], src.get("category"), follow=int(src.get("follow", 0)),
                                    same_host=bool(src.get("same_host", True)), link_pattern=pat)
+        global REQUIRE_YEAR
+        for region in cfg.get("regions", []):
+            places = region_places(fetcher.s, region)
+            follow = int(region.get("follow", 4))
+            log(f"\nUmkreis {region.get('name')}: {len(places)} Einrichtungen mit Website")
+            crawl.max_pages += min(len(places) * (follow + 1), int(os.environ.get("MAX_REGION_PAGES", 900)))
+            REQUIRE_YEAR = True
+            for pl in places:
+                evs = crawl.process(pl["url"], pl["category"], follow=follow, same_host=True,
+                                    link_pattern=REGION_LINKS)
+                for e in evs:
+                    adopt_place(e, pl)
+                found += evs
+            REQUIRE_YEAR = False
         if claude and not args.no_search:
             for q in todays_queries(args.search_queries):
                 log(f"Suche: {q}")
