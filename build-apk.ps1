@@ -25,7 +25,7 @@ try {
         $flutterArgs += @("--build-name", $parts[0])
         if ($parts.Count -gt 1) { $flutterArgs += @("--build-number", $parts[1]) }
     }
-    & flutter @args
+    & flutter @flutterArgs
     if ($LASTEXITCODE -ne 0) { throw "Build fehlgeschlagen" }
     Copy-Item "build\app\outputs\flutter-apk\app-arm64-v8a-release.apk" "C:\Users\erika\OffeneTueren-arm64.apk" -Force
     Write-Host "Fertig: C:\Users\erika\OffeneTueren-arm64.apk"
