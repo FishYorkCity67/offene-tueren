@@ -1,0 +1,74 @@
+# Feste Quellen für den Crawler.
+#
+# Hier nur öffentliche Seiten eintragen, deren Nutzungsbedingungen das automatische Lesen erlauben.
+# robots.txt prüft der Crawler selbst – was dort verboten ist, wird nie abgerufen.
+#
+#   url:       Seite, iCal-Datei (.ics) oder PDF
+#   category:  hochschule | schule | ausbildung | sonstiges  (optional – sonst errät der Crawler sie)
+#   follow:    wie viele Links mit passenden Stichwörtern („Tag der offenen Tür“, „Infotag“ …)
+#              von dieser Seite aus zusätzlich gelesen werden (0 = keine)
+#   same_host: Links nur auf derselben Website folgen (Standard: ja)
+#   link_pattern: (optional) regulärer Ausdruck für die Adressen der Links, denen gefolgt wird –
+#              nützlich bei Übersichtsseiten, deren Links keine Stichwörter enthalten
+
+sources:
+  # ---- Städtische Terminlisten für weiterführende Schulen ---------------------------------
+  - url: https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html
+    category: schule
+  - url: https://www.stadt-muenster.de/sae/amt-fuer-schule-und-weiterbildung
+    category: schule
+    follow: 6
+  - url: https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php
+    category: schule
+  - url: https://www.stadt-koeln.de/mediaasset/content/pdf40/weiterf%C3%BChrende_schulen_sekundarstufe_i_2027-2028.pdf
+    category: schule
+  - url: https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf
+    category: schule
+  - url: https://www.stadt-koeln.de/leben-in-koeln/freizeit-natur-sport/veranstaltungskalender/tag-der-offenen-tuer-humboldt-gymnasium-musikzweig-regionalschule-sued
+    category: schule
+
+  # ---- Behörden, Feuerwehr, Museen ---------------------------------------------------------
+  - url: https://stadt.muenchen.de/infos/termine-veranstaltungen-events-feuerwehr-muenchen.html
+    category: sonstiges
+  - url: https://www.stuttgart.de/veranstaltungskalender/veranstaltungen/tag-der-offenen-tuer-im-fernmeldemuseum-530180
+    category: sonstiges
+  - url: https://www.berlin.de/events/3135988-2229501-german-federal-government-open-day.html
+    category: sonstiges
+
+  # ---- Hochschulen -------------------------------------------------------------------------
+  - url: https://www.uni-giessen.de/de/ueber-uns/veranstaltungen/sonstige/hit
+    category: hochschule
+  - url: https://studieren.de/studium-veranstaltungen.t-0.s-12.html
+    category: hochschule
+    follow: 25
+  - url: https://tu-dresden.de/studium/vor-dem-studium/termine
+    category: hochschule
+    follow: 5
+
+  # ---- Ausbildung & Messen -----------------------------------------------------------------
+  - url: https://www.aubi-plus.de/messe/azubi-studientage-koblenz-2027-9162/
+    category: ausbildung
+    follow: 25
+    link_pattern: "/messe/[a-z0-9-]+-20\\d\\d-\\d+/?$"
+  - url: https://www.aubi-plus.de/messe/vocatium-fuerth-2027-fachmesse-fuer-ausbildungstudium-9155/
+    category: ausbildung
+  - url: https://www.aubi-plus.de/messe/vocatium-erlangen-2027-fachmesse-fuer-ausbildungstudium-9154/
+    category: ausbildung
+
+# Diese Websites werden nie abgerufen (Nutzungsbedingungen verbieten automatisches Auslesen
+# oder es sind soziale Netzwerke / Ticketportale mit Login).
+blocked_domains:
+  - facebook.com
+  - instagram.com
+  - x.com
+  - twitter.com
+  - tiktok.com
+  - linkedin.com
+  - xing.com
+  - youtube.com
+  - eventbrite.de
+  - eventbrite.com
+  - meetup.com
+  - google.com
+  - google.de
+  - eventim.de

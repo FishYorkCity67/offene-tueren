@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Öffnung als Rahmen, Türflügel gefüllt (für „Designsymbole“ ab Android 13) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M46.5,29 H61.5 A6.5,6.5 0 0 1 68,35.5 V77 H40 V35.5 A6.5,6.5 0 0 1 46.5,29 Z M55.5,36 V73 H64.5 V36 A3.5,3.5 0 0 0 61,32.5 H55.5 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,76.2 H76 A1.8,1.8 0 0 1 76,79.8 H32 A1.8,1.8 0 0 1 32,76.2 Z" />
+</vector>

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+app/build/
+app/.dart_tool/
+app/.idea/
+app/android/.gradle/
+app/android/local.properties
+app/android/key.properties
+*.jks
+*.keystore
+*.apk

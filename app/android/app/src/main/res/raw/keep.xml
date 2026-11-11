@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Das Mitteilungs-Symbol wird nur per Name aus Dart benutzt – nicht wegoptimieren. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_stat_door" />

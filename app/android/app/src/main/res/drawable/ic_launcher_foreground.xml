@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Offene Tür: warmes Licht in der Öffnung, der Türflügel in Jade, Boden in Tinte. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Türöffnung (Licht) -->
+    <path
+        android:fillColor="#F2C25E"
+        android:pathData="M46.5,29 H61.5 A6.5,6.5 0 0 1 68,35.5 V77 H40 V35.5 A6.5,6.5 0 0 1 46.5,29 Z" />
+    <!-- Lichtschein auf dem Boden -->
+    <path
+        android:fillColor="#F7DCA0"
+        android:pathData="M52,77 H68 L76,80 H58 Z" />
+    <!-- Türflügel, nach innen geöffnet -->
+    <path
+        android:fillColor="#1D7357"
+        android:pathData="M40,30.2 L53,35 V73.8 L40,77 Z" />
+    <!-- Türknauf -->
+    <path
+        android:fillColor="#FBFAF7"
+        android:pathData="M50,54 m-1.7,0 a1.7,1.7 0 1 0 3.4,0 a1.7,1.7 0 1 0 -3.4,0" />
+    <!-- Boden -->
+    <path
+        android:fillColor="#1C1A17"
+        android:pathData="M32,76.2 H76 A1.8,1.8 0 0 1 76,79.8 H32 A1.8,1.8 0 0 1 32,76.2 Z" />
+</vector>

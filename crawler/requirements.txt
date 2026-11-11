@@ -1,0 +1,7 @@
+requests>=2.32
+beautifulsoup4>=4.12
+pyyaml>=6.0
+python-dateutil>=2.9
+icalendar>=6.0
+pypdf>=5.0
+anthropic>=1.0
