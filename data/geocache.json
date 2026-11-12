@@ -12,10 +12,20 @@
 "20. Februar 2027, 10 bis 12.30 Uhr, Heidelberg": null,
 "27. Februar 2027, 10 bis 14 Uhr, Heidelberg": null,
 "3. März 2027, 17 bis 19 Uhr, Heidelberg": null,
+"40880 Ratingen": [
+51.2980781,
+6.8196067,
+"Ratingen"
+],
 "41352 Korschenbroich": [
 51.1856981,
 6.5493159,
 "Korschenbroich"
+],
+"41462 Neuss": [
+51.2169889,
+6.6629948,
+"Neuss"
 ],
 "47807 Krefeld": [
 51.3011482,
@@ -87,6 +97,7 @@
 13.3459443,
 "Berlin"
 ],
+"Campus Krefeld-Süd/West / Mönchengladbach": null,
 "Dreilinden-Gymnasium, Berlin": [
 52.4202569,
 13.1878739,
@@ -108,6 +119,11 @@
 52.4542193,
 13.3127449,
 "Berlin"
+],
+"Frankenring 20, 47798 Krefeld": [
+51.3252342,
+6.5543038,
+"Krefeld"
 ],
 "Freie Schule Anne-Sophie Berlin, Berlin": [
 52.4374162,
@@ -164,6 +180,7 @@
 13.3343541,
 "Berlin"
 ],
+"Hochschule Niederrhein. Dein Weg.": null,
 "Hölderlin-Gymnasium, Heidelberg": [
 49.4090621,
 8.7008017

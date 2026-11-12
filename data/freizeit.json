@@ -2,7 +2,7 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-12T01:42:15+01:00",
+ "generated": "2026-11-12T01:50:27+01:00",
  "count": 18,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
@@ -83,7 +83,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -111,7 +111,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -139,7 +139,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -167,7 +167,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +195,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -365,7 +365,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -394,7 +394,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -422,7 +422,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -450,7 +450,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +478,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -507,7 +507,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "lastSeen": "2026-11-12T01:50:27+01:00",
    "verified": false,
    "free": null,
    "price": "",
