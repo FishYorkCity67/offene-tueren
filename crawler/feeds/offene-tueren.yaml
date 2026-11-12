@@ -1,0 +1,200 @@
+# ==========================================================================================
+#  Kategorie "Tag der offenen Tür"  ->  data/events.json
+# ==========================================================================================
+# So ist jede Feed-Datei aufgebaut (Vorlage für neue Kategorien):
+#   title / output      Name und Ausgabedatei
+#   keywords            Wörter, an denen der Crawler eine passende Seite/Zeile erkennt
+#   categories          Unterkategorien (id: Beschreibung für die KI). Die ids kennt auch die App.
+#   rules               ohne KI: erste Regel, deren Wort im Text vorkommt, bestimmt die Kategorie
+#   osm + regions       Umkreis-Modus: Einrichtungen mit Website aus OpenStreetMap lesen
+#   sources             feste Seiten (Seite, iCal-Datei .ics oder PDF)
+#   search_topics       Websuche (nur mit Claude-Schlüssel); {city} {month} {year} werden ersetzt
+#   blocked_domains     diese Websites werden nie abgerufen
+#   manual              von Hand geprüfte Einträge
+#
+# Hier nur öffentliche Seiten eintragen, deren Nutzungsbedingungen das automatische Lesen erlauben.
+# robots.txt prüft der Crawler selbst – was dort verboten ist, wird nie abgerufen.
+#   sources.url        Seite, iCal-Datei (.ics) oder PDF
+#   sources.category   feste Kategorie (optional – sonst nach den Regeln)
+#   sources.follow     wie viele passende Links von dieser Seite zusätzlich gelesen werden
+#   sources.link_pattern  regulärer Ausdruck für Links, die keine Stichwörter enthalten
+
+title: Tag der offenen Tür
+output: events.json
+max_span_days: 5
+
+keywords:
+  - tag der offenen tür
+  - tag der offenen tuer
+  - tag der offenen türen
+  - tage der offenen tür
+  - tag der offenen tore
+  - tag der offenen schule
+  - tag der offenen hörsäle
+  - hochschulinformationstag
+  - hochschulinfotag
+  - hochschultag
+  - studieninformationstag
+  - studieninfotag
+  - studientag für schüler
+  - schnupperstudium
+  - schnuppertag
+  - schnupperuni
+  - unilive
+  - uni live
+  - campustag
+  - open campus
+  - open day
+  - infotag
+  - informationstag
+  - ausbildungsmesse
+  - ausbildungstag
+  - azubitag
+  - berufsinformationstag
+  - berufsinfotag
+  - fachmesse für ausbildung
+  - messe für ausbildung
+  - ausbildungs- und studienmesse
+  - studienmesse
+  - berufsmesse
+  - berufsorientierungsmesse
+  - azubi- & studientage
+  - azubi- und studientage
+  - vocatium
+  - einstieg messe
+  - ausbildungsbörse
+  - ausbildungsplatzbörse
+  - nacht der ausbildung
+  - betriebsbesichtigung
+  - werksbesichtigung
+  - lange nacht der wissenschaft
+  - lange nacht der forschung
+  - lange nacht der museen
+
+categories:
+  hochschule: Unis, Hochschulen, Berufsakademien (Hochschulinformationstag, Schnupperstudium)
+  schule: alle Schulformen inkl. Berufsschulen und Berufskollegs
+  ausbildung: Firmen, Ausbildungsmessen, Betriebsbesichtigungen, Kammern
+  sonstiges: Behörden, Feuerwehr, Polizei, Rathaus, Museen, Forschung, Bundeswehr
+
+llm_instructions: |
+  - Bundeswehr-Termine nur, wenn sie ausdrücklich öffentlich/für Familien sind oder ab 14 erlaubt sind.
+
+rules:
+  - category: ausbildung      # Messen nennen oft auch "Studium" – trotzdem Ausbildung
+    words: [ausbildungsmesse, messe für ausbildung, fachmesse für ausbildung, berufsmesse, azubi, vocatium,
+            ausbildungsbörse, ausbildungsplatzbörse, jobmesse, karrieremesse, nacht der ausbildung]
+  - category: hochschule
+    words: [universität, universitaet, hochschule, fachhochschule, "uni ", "tu ", "kit ", rwth, akademie,
+            studium, studien, hochschulinformationstag, hochschulinfotag, schnupperstudium, campus,
+            berufsakademie, duale hochschule, lmu, "fh "]
+  - category: sonstiges
+    words: [feuerwehr, polizei, bundeswehr, kaserne, rathaus, museum, fraunhofer, max-planck, max planck,
+            helmholtz, leibniz, forschungszentrum, institut, dlr, landtag, bundestag, ministerium, sternwarte,
+            planetarium, theater, zoo, klärwerk, kläranlage, thw, drk, rettungswache, flughafen, bahnhof, gericht]
+  - category: schule
+    words: [gymnasium, gesamtschule, realschule, oberschule, gemeinschaftsschule, sekundarschule,
+            stadtteilschule, berufsschule, berufskolleg, berufsbildende schule, "bbs ", schulzentrum,
+            mittelschule, regelschule, werkrealschule, fachoberschule, schule]
+  - category: ausbildung
+    words: [ausbildung, betrieb, unternehmen, gmbh, " ag ", " ag,", " kg", "werk ", werksbesichtigung,
+            betriebsbesichtigung, handwerk, ihk, hwk, firma, berufsinformationstag, karrieretag]
+default_category: sonstiges
+
+# ---- Umkreis-Modus ---------------------------------------------------------------------
+osm:
+  - filter: '["amenity"="school"]'
+    category: schule
+  - filter: '["amenity"~"^(university|college)$"]'
+    category: schule
+    name_category: {hochschule: "hochschule|universit|akademie"}
+  - filter: '["amenity"="fire_station"]'
+    category: sonstiges
+
+regions:
+  - name: Meerbusch-Büderich (mit Düsseldorf, Neuss, Krefeld)
+    lat: 51.2556
+    lng: 6.6933
+    radius_km: 16
+    max_sites: 160      # höchstens so viele Websites pro Lauf (die nächsten zuerst)
+    follow: 4           # Unterseiten pro Website
+
+sources:
+  # ---- Städtische Terminlisten für weiterführende Schulen ---------------------------------
+  - url: https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html
+    category: schule
+  - url: https://www.stadt-muenster.de/sae/amt-fuer-schule-und-weiterbildung
+    category: schule
+    follow: 6
+  - url: https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php
+    category: schule
+  - url: https://www.stadt-koeln.de/mediaasset/content/pdf40/weiterf%C3%BChrende_schulen_sekundarstufe_i_2027-2028.pdf
+    category: schule
+  - url: https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf
+    category: schule
+  - url: https://www.stadt-koeln.de/leben-in-koeln/freizeit-natur-sport/veranstaltungskalender/tag-der-offenen-tuer-humboldt-gymnasium-musikzweig-regionalschule-sued
+    category: schule
+
+  # ---- Behörden, Feuerwehr, Museen ---------------------------------------------------------
+  - url: https://stadt.muenchen.de/infos/termine-veranstaltungen-events-feuerwehr-muenchen.html
+    category: sonstiges
+  - url: https://www.stuttgart.de/veranstaltungskalender/veranstaltungen/tag-der-offenen-tuer-im-fernmeldemuseum-530180
+    category: sonstiges
+  - url: https://www.berlin.de/events/3135988-2229501-german-federal-government-open-day.html
+    category: sonstiges
+
+  # ---- Hochschulen -------------------------------------------------------------------------
+  - url: https://www.uni-giessen.de/de/ueber-uns/veranstaltungen/sonstige/hit
+    category: hochschule
+  - url: https://studieren.de/studium-veranstaltungen.t-0.s-12.html
+    category: hochschule
+    follow: 25
+  - url: https://tu-dresden.de/studium/vor-dem-studium/termine
+    category: hochschule
+    follow: 5
+  - url: https://www.hs-niederrhein.de/
+    category: hochschule
+    follow: 5
+
+  # ---- Ausbildung & Messen -----------------------------------------------------------------
+  - url: https://www.aubi-plus.de/messe/azubi-studientage-koblenz-2027-9162/
+    category: ausbildung
+    follow: 25
+    link_pattern: "/messe/[a-z0-9-]+-20\\d\\d-\\d+/?$"
+  - url: https://www.aubi-plus.de/messe/vocatium-fuerth-2027-fachmesse-fuer-ausbildungstudium-9155/
+    category: ausbildung
+  - url: https://www.aubi-plus.de/messe/vocatium-erlangen-2027-fachmesse-fuer-ausbildungstudium-9154/
+    category: ausbildung
+  - url: https://www.aubi-plus.de/messe/stuzubi-studien-und-ausbildungsmesse-duesseldorf-8927/
+    category: ausbildung
+
+search_topics:
+  - "Tag der offenen Tür Gymnasium {city} {month}"
+  - "Tag der offenen Tür Schule {city} {year}"
+  - "Hochschulinformationstag Schnupperstudium {city} {year}"
+  - "Ausbildungsmesse {city} {year} Schüler"
+  - "Tag der offenen Tür Feuerwehr Polizei Rathaus {city} {year}"
+  - "Tag der offenen Tür Museum Forschungsinstitut {city} {year}"
+  - "Betriebsbesichtigung Tag der offenen Tür Unternehmen Ausbildung {city} {year}"
+
+# Nie abrufen: soziale Netzwerke, Ticketportale und Portale, deren Nutzungsbedingungen
+# das automatische Übernehmen verbieten (meinestadt.de, festivalsindeutschland.de).
+blocked_domains: &blocked
+  - facebook.com
+  - instagram.com
+  - x.com
+  - twitter.com
+  - tiktok.com
+  - linkedin.com
+  - xing.com
+  - youtube.com
+  - eventbrite.de
+  - eventbrite.com
+  - meetup.com
+  - google.com
+  - google.de
+  - eventim.de
+  - meinestadt.de
+  - festivalsindeutschland.de
+
+manual: []

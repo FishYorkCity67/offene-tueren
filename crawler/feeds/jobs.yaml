@@ -1,0 +1,42 @@
+# ==========================================================================================
+#  Kategorie "Ferienjobs"  ->  data/jobs.json      (Code: crawler/jobs.py)
+# ==========================================================================================
+# Quelle: Jobsuche der Bundesagentur für Arbeit (frei zugängliche Schnittstelle, die auch die
+# Website der Jobbörse benutzt). Jeder Job wird nach dem Jugendarbeitsschutzgesetz eingestuft:
+#   13 = "ab 13/14 möglich" (nur leichte Arbeit: Zeitungen/Prospekte, Nachhilfe, Babysitten,
+#        Garten, Hunde ausführen, Einkaufshilfe – max. 2 Std./Tag, 8–18 Uhr, nicht in der Schulzeit)
+#   15 = "ab 15" (Ferienjob, max. 4 Wochen im Jahr, max. 8 Std./Tag, 40 Std./Woche)
+#   16 = "ab 16"     18 = "ab 18" (Nachtarbeit, Führerschein, Alkohol, Sicherheit …)
+# Unsichere Fälle werden immer HÖHER eingestuft. Verdächtige Anzeigen werden verworfen.
+
+kind: jobs
+title: Ferienjobs
+output: jobs.json
+
+categories:
+  austragen: Zeitungen, Prospekte, Werbung austragen
+  nachhilfe: Nachhilfe
+  babysitten: Babysitten, Kinderbetreuung
+  garten: Gartenarbeit
+  tiere: Hunde ausführen, Tierbetreuung
+  einkauf: Einkaufshilfe, Senioren helfen
+  verkauf: Verkauf, Kasse, Regale einräumen
+  gastro: Gastronomie, Café, Eisdiele, Küche
+  lager: Lager, Logistik, Produktion
+  buero: Büro, Empfang, Telefon
+  sonstiges: Sonstige Aushilfen
+
+jobs:
+  # Wo wird gesucht? (Ort + Umkreis in km)
+  places:
+    - wo: Meerbusch
+      umkreis: 25
+      lat: 51.2556
+      lng: 6.6933
+  # Suchbegriffe – je Begriff höchstens `per_term` Treffer
+  terms: [Ferienjob, Schülerjob, Schüleraushilfe, Aushilfe Schüler, Ferienaushilfe, Zeitung austragen,
+          Prospekte verteilen, Prospektverteiler, Zusteller Werbung, Nachhilfe, Babysitter,
+          Hundesitter, Gartenhilfe, Aushilfe Wochenende, Minijob Schüler]
+  per_term: 50
+  max_details: 220           # so viele Anzeigen werden genauer gelesen (Anzeigentext)
+  forget_after_days: 4       # Anzeigen, die so lange nicht mehr gefunden wurden, fliegen raus

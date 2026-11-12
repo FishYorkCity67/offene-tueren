@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
-"""Offene Türen – sammelt Termine für Tage der offenen Tür in ganz Deutschland.
+"""Was geht? / Offene Türen – sammelt Termine und Angebote für Jugendliche in Deutschland.
 
-Ablauf (läuft täglich über GitHub Actions, siehe .github/workflows/update-events.yml):
-  1. Quellen laden: feste Liste (sources.yaml), handgeprüfte Termine (manual_events.yaml)
-     und – wenn ein Claude-API-Schlüssel da ist – Treffer einer Websuche.
+Jede Kategorie ("Feed") hat eine eigene Konfigurationsdatei in crawler/feeds/*.yaml:
+  offene-tueren.yaml -> data/events.json    (Tage der offenen Tür)
+  freizeit.yaml      -> data/freizeit.json  (Gratis-Events, Flohmärkte, Ferienprogramme, Saisonales)
+  jobs.yaml          -> data/jobs.json      (Ferien- und Schülerjobs, siehe jobs.py)
+Eine neue Kategorie = eine neue YAML-Datei (Vorlage: freizeit.yaml).
+
+Ablauf pro Termin-Feed (läuft täglich über GitHub Actions, siehe .github/workflows/update-events.yml):
+  1. Quellen laden: feste Liste und Umkreis-Modus (OpenStreetMap) aus der Feed-Datei,
+     handgeprüfte Einträge und – wenn ein Claude-API-Schlüssel da ist – Treffer einer Websuche.
   2. Jede Seite nur abrufen, wenn robots.txt es erlaubt (mit Pause pro Website).
-  3. Termine herausziehen: strukturierte Daten (schema.org/JSON-LD, iCal), sonst
+  3. Einträge herausziehen: strukturierte Daten (schema.org/JSON-LD, iCal), sonst
      Claude (falls Schlüssel vorhanden), sonst eine einfache Text-Erkennung.
   4. Aufräumen: Kategorie und Altersfreigabe bestimmen, Fachpublikum aussortieren,
      Adressen in Koordinaten umwandeln (OpenStreetMap Nominatim), doppelte Einträge
      zusammenführen, vergangene Termine löschen.
-  5. Ergebnis nach data/events.json schreiben – diese Datei lädt die App.
+  5. Ergebnis als JSON nach data/ schreiben – diese Dateien lädt die App.
 
-Aufruf lokal:  python crawler/crawl.py [--no-llm] [--no-search] [--only URL] [--max-pages N]
+Aufruf lokal:  python crawler/crawl.py [--feed NAME] [--no-llm] [--no-search] [--only URL]
 """
 from __future__ import annotations
 
@@ -41,10 +47,8 @@ from dateutil import parser as dateparser
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
-EVENTS_FILE = DATA_DIR / "events.json"
 GEOCACHE_FILE = DATA_DIR / "geocache.json"
-SOURCES_FILE = ROOT / "crawler" / "sources.yaml"
-MANUAL_FILE = ROOT / "crawler" / "manual_events.yaml"
+FEEDS_DIR = ROOT / "crawler" / "feeds"
 
 TZ = ZoneInfo("Europe/Berlin")
 NOW = dt.datetime.now(TZ)
@@ -62,23 +66,69 @@ HTTP_TIMEOUT = 25
 MIN_DELAY_PER_HOST = 2.0    # Sekunden zwischen zwei Abrufen derselben Website
 MAX_BYTES = 6_000_000
 
-# Wörter, an denen man eine Seite über einen Tag der offenen Tür erkennt.
-KEYWORDS = [
-    "tag der offenen tür", "tag der offenen tuer", "tag der offenen türen", "tage der offenen tür",
-    "tag der offenen tore", "tag der offenen schule", "tag der offenen hörsäle",
-    "hochschulinformationstag", "hochschulinfotag", "hochschultag", "studieninformationstag",
-    "studieninfotag", "studientag für schüler", "schnupperstudium", "schnuppertag", "schnupperuni",
-    "unilive", "uni live", "campustag", "open campus", "open day", "infotag", "informationstag",
-    "ausbildungsmesse", "ausbildungstag", "azubitag", "berufsinformationstag", "berufsinfotag",
-    "fachmesse für ausbildung", "messe für ausbildung", "ausbildungs- und studienmesse", "studienmesse",
-    "berufsmesse", "berufsorientierungsmesse", "azubi- & studientage", "azubi- und studientage",
-    "vocatium", "einstieg messe", "ausbildungsbörse", "ausbildungsplatzbörse", "nacht der ausbildung",
-    "betriebsbesichtigung", "werksbesichtigung", "lange nacht der wissenschaft",
-    "lange nacht der forschung", "lange nacht der museen",
-]
-_KW_RE = re.compile("|".join(re.escape(k) for k in KEYWORDS), re.I)
+# --------------------------------------------------------------------------------------
+# Feed-Konfiguration (eine YAML-Datei pro Kategorie, siehe crawler/feeds/)
+# --------------------------------------------------------------------------------------
 
-CATEGORIES = ("hochschule", "schule", "ausbildung", "sonstiges")
+@dataclass
+class Feed:
+    name: str
+    output: str
+    title: str
+    keywords: list[str]
+    categories: dict[str, str]                     # id -> Beschreibung für die KI
+    rules: list[tuple[str, list[str]]]             # (Kategorie, Wörter) – erste passende gewinnt
+    default_category: str
+    llm_instructions: str = ""
+    only_free: list[str] = field(default_factory=list)   # Kategorien, die nur gratis aufgenommen werden
+    max_span_days: int = 5                         # wie lang ein Termin höchstens dauern darf
+    sources: list[dict[str, Any]] = field(default_factory=list)
+    regions: list[dict[str, Any]] = field(default_factory=list)
+    osm: list[dict[str, Any]] = field(default_factory=list)
+    search_topics: list[str] = field(default_factory=list)
+    blocked_domains: list[str] = field(default_factory=list)
+    manual: list[dict[str, Any]] = field(default_factory=list)
+    kind: str = "events"
+    hint_first: bool = True        # Kategorie der Quelle schlägt die Wort-Regeln
+    title_from_line: bool = False  # Titel = ganze Zeile statt nur Stichwort (Freizeit)
+    jobs: dict[str, Any] = field(default_factory=dict)   # nur für kind: jobs
+
+    @staticmethod
+    def load(path: Path) -> "Feed":
+        d = yaml.safe_load(path.read_text("utf-8")) or {}
+        rules = [(r["category"], [w.lower() for w in r["words"]]) for r in d.get("rules", [])]
+        return Feed(
+            name=path.stem, output=d.get("output", f"{path.stem}.json"), title=d.get("title", path.stem),
+            keywords=[k.lower() for k in d.get("keywords", [])], categories=d.get("categories", {}),
+            rules=rules, default_category=d.get("default_category", next(iter(d.get("categories", {"sonstiges": ""})))),
+            llm_instructions=d.get("llm_instructions", ""), only_free=d.get("only_free", []),
+            max_span_days=int(d.get("max_span_days", 5)), sources=d.get("sources", []) or [],
+            regions=d.get("regions", []) or [], osm=d.get("osm", []) or [],
+            search_topics=d.get("search_topics", []) or [], blocked_domains=d.get("blocked_domains", []) or [],
+            manual=d.get("manual", []) or [], kind=d.get("kind", "events"),
+            hint_first=bool(d.get("hint_first", True)), title_from_line=bool(d.get("title_from_line", False)),
+            jobs=d.get("jobs", {}) or {},
+        )
+
+
+def all_feeds() -> list[Feed]:
+    return [Feed.load(p) for p in sorted(FEEDS_DIR.glob("*.yaml"))]
+
+
+FEED: Feed | None = None
+KEYWORDS: list[str] = []
+_KW_RE = re.compile(r"(?!x)x")
+CATEGORIES: tuple[str, ...] = ()
+
+
+def set_feed(feed: Feed) -> None:
+    """Macht einen Feed zum aktiven: Stichwörter, Kategorien und Regeln gelten ab jetzt für ihn."""
+    global FEED, KEYWORDS, _KW_RE, CATEGORIES, HINT_FIRST
+    FEED = feed
+    HINT_FIRST = feed.hint_first
+    KEYWORDS = sorted(set(feed.keywords), key=len, reverse=True)
+    _KW_RE = re.compile("|".join(re.escape(k) for k in KEYWORDS), re.I)
+    CATEGORIES = tuple(feed.categories)
 
 
 # --------------------------------------------------------------------------------------
@@ -142,6 +192,10 @@ class Event:
     first_seen: str = ""
     last_seen: str = ""
     manual: bool = False
+    free: bool | None = None     # True = gratis, False = kostet etwas, None = unbekannt
+    price: str = ""              # z. B. "3 €", "5–10 €"
+    opening_hours: str = ""      # Freitext, z. B. "täglich 11–21 Uhr"
+    daily: bool = False          # mehrtägig: Uhrzeiten gelten an JEDEM Tag (Weihnachtsmarkt)
 
     # -- Zeiten ------------------------------------------------------------------------
     def start_dt(self) -> dt.datetime:
@@ -182,6 +236,10 @@ class Event:
             "firstSeen": self.first_seen,
             "lastSeen": self.last_seen,
             "verified": self.manual,
+            "free": self.free,
+            "price": self.price,
+            "openingHours": self.opening_hours,
+            "daily": self.daily,
         }
 
     @staticmethod
@@ -200,6 +258,8 @@ class Event:
             needs_adult=bool(d.get("needsAdult")), description=d.get("description", ""),
             sources=list(d.get("sources", [])), first_seen=d.get("firstSeen", ""),
             last_seen=d.get("lastSeen", ""), manual=bool(d.get("verified")),
+            free=d.get("free"), price=d.get("price", "") or "", opening_hours=d.get("openingHours", "") or "",
+            daily=bool(d.get("daily")),
         )
         return e
 
@@ -358,40 +418,46 @@ class PoliteFetcher:
 # Einordnung: Kategorie und Altersfreigabe
 # --------------------------------------------------------------------------------------
 
-_HOCHSCHULE = ["universität", "universitaet", "hochschule", "fachhochschule", "uni ", "tu ", "kit ",
-               "rwth", "akademie", "studium", "studien", "hochschulinformationstag", "hochschulinfotag",
-               "schnupperstudium", "campus", "berufsakademie", "duale hochschule", "lmu", "fh "]
-_SONSTIGES = ["feuerwehr", "polizei", "bundeswehr", "kaserne", "rathaus", "museum", "fraunhofer",
-              "max-planck", "max planck", "helmholtz", "leibniz", "forschungszentrum", "institut", "dlr",
-              "landtag", "bundestag", "ministerium", "sternwarte", "planetarium", "theater", "zoo",
-              "klärwerk", "kläranlage", "thw", "drk", "rettungswache", "flughafen", "bahnhof", "gericht"]
-_SCHULE = ["gymnasium", "gesamtschule", "realschule", "oberschule", "gemeinschaftsschule", "sekundarschule",
-           "stadtteilschule", "berufsschule", "berufskolleg", "berufsbildende schule", "bbs ", "schulzentrum",
-           "mittelschule", "regelschule", "werkrealschule", "fachoberschule", "schule"]
-_AUSBILDUNG = ["ausbildung", "azubi", "ausbildungsmesse", "betrieb", "unternehmen", "gmbh", " ag ", " ag,",
-               " kg", "werk ", "werksbesichtigung", "betriebsbesichtigung", "handwerk", "ihk", "hwk",
-               "firma", "berufsinformationstag", "jobmesse", "karrieretag"]
-
-
-_MESSE = ["ausbildungsmesse", "messe für ausbildung", "fachmesse für ausbildung", "berufsmesse", "azubi",
-          "vocatium", "ausbildungsbörse", "ausbildungsplatzbörse", "jobmesse", "karrieremesse", "nacht der ausbildung"]
+HINT_FIRST = True   # True: Kategorie der Quelle gewinnt; False: erst die Wort-Regeln, dann die Quelle
 
 
 def classify(*texts: str, hint: str | None = None) -> str:
-    if hint in CATEGORIES:
+    """Kategorie nach den Regeln der Feed-Datei (erste passende Regel gewinnt)."""
+    if hint in CATEGORIES and HINT_FIRST:
         return hint
     t = " " + " ".join(x for x in texts if x).lower() + " "
-    if any(w in t for w in _MESSE):          # Messen nennen oft auch „Studium“ – trotzdem Ausbildung
-        return "ausbildung"
-    if any(w in t for w in _HOCHSCHULE):
-        return "hochschule"
-    if any(w in t for w in _SONSTIGES):
-        return "sonstiges"
-    if any(w in t for w in _SCHULE):
-        return "schule"
-    if any(w in t for w in _AUSBILDUNG):
-        return "ausbildung"
-    return "sonstiges"
+    for cat, words in (FEED.rules if FEED else []):
+        if any(w in t for w in words):
+            return cat
+    if hint in CATEGORIES:
+        return hint
+    return FEED.default_category if FEED else "sonstiges"
+
+
+# ---- Preis und Öffnungszeiten (vor allem für Freizeit) -----------------------------------
+_FREE = re.compile(r"eintritt\s*(?:ist\s*)?(?:frei|kostenlos|gratis)|freier\s+eintritt|kostenlos|kostenfrei|gratis|"
+                   r"umsonst|ohne\s+eintritt|teilnahme\s+(?:ist\s+)?(?:frei|kostenlos)", re.I)
+_PRICE = re.compile(r"(?:eintritt|preis|kosten|teilnahme(?:gebühr|beitrag)?|ticket)[^\n€]{0,30}?"
+                    r"(\d{1,3}(?:[,.]\d{2})?\s*(?:[-–]\s*\d{1,3}(?:[,.]\d{2})?\s*)?(?:€|euro))", re.I)
+_PRICE_ANY = re.compile(r"\b(\d{1,3}(?:[,.]\d{2})?)\s*(?:€|euro)\b", re.I)
+_HOURS = re.compile(
+    r"((?:täglich|tgl\.|montags?|dienstags?|mittwochs?|donnerstags?|freitags?|samstags?|sonntags?|mo|di|mi|do|fr|sa|so)"
+    r"[^\n]{0,40}?\d{1,2}(?:[:.]\d{2})?\s*(?:uhr)?\s*(?:-|–|bis)\s*\d{1,2}(?:[:.]\d{2})?\s*uhr)", re.I)
+
+
+def price_info(text: str) -> tuple[bool | None, str]:
+    t = text or ""
+    m = _PRICE.search(t)
+    if m:
+        return False, clean_ws(m.group(1)).replace("euro", "€").replace("Euro", "€")
+    if _FREE.search(t):
+        return True, ""
+    return None, ""
+
+
+def opening_hours(text: str) -> str:
+    m = _HOURS.search(text or "")
+    return short(m.group(1), 80) if m else ""
 
 
 _MIN_AGE_RES = [
@@ -508,6 +574,39 @@ def find_dates(text: str) -> list[tuple[int, dt.date]]:
     for pos, d in sorted(out):
         uniq[(pos, d)] = None
     return list(uniq)
+
+
+_RANGE_NUM = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{2,4})?\s*(?:-|–|—|bis)\s*(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})\b")
+_RANGE_WORD = re.compile(
+    rf"\b(\d{{1,2}})\.\s*({_MONTH_ALT})\.?\s*(\d{{4}})?\s*(?:-|–|—|bis(?:\s+zum)?)\s*(\d{{1,2}})\.\s*({_MONTH_ALT})\.?\s*(\d{{4}})", re.I)
+
+
+def find_range(text: str) -> tuple[dt.date, dt.date] | None:
+    """Ausdrücklicher Zeitraum über Monatsgrenzen: "20.11.–23.12.2026", "20. November bis 23. Dezember 2026"."""
+    for m in _RANGE_NUM.finditer(text):
+        y2 = int(m.group(6)) + (2000 if len(m.group(6)) == 2 else 0)
+        y1 = int(m.group(3)) + (2000 if m.group(3) and len(m.group(3)) == 2 else 0) if m.group(3) else None
+        try:
+            d2 = dt.date(y2, int(m.group(5)), int(m.group(4)))
+            d1 = dt.date(y1 or y2, int(m.group(2)), int(m.group(1)))
+            if d1 > d2 and not y1:
+                d1 = dt.date(y2 - 1, int(m.group(2)), int(m.group(1)))
+        except ValueError:
+            continue
+        if d1 < d2 and (d2 - d1).days <= 120:
+            return d1, d2
+    for m in _RANGE_WORD.finditer(text):
+        y2 = int(m.group(6))
+        try:
+            d2 = dt.date(y2, MONTHS[m.group(5).lower().rstrip(".")], int(m.group(4)))
+            d1 = dt.date(int(m.group(3)) if m.group(3) else y2, MONTHS[m.group(2).lower().rstrip(".")], int(m.group(1)))
+            if d1 > d2 and not m.group(3):
+                d1 = d1.replace(year=y2 - 1)
+        except ValueError:
+            continue
+        if d1 < d2 and (d2 - d1).days <= 120:
+            return d1, d2
+    return None
 
 
 def find_times(text: str) -> tuple[str, str]:
@@ -645,13 +744,38 @@ def events_from_jsonld(soup: BeautifulSoup, page_url: str, hint: str | None, req
                 min_age = max(min_age or 0, int(m.group(1)))
             if pro:
                 continue
+            if ed is not None and ed < TODAY:
+                continue
+            if ed is None and d < TODAY:
+                continue
+            cat = classify(name, org, desc, hint=hint)
+            # Preis: schema.org isAccessibleForFree / offers.price, sonst Text
+            free, price = price_info(name + " " + desc)
+            if node.get("isAccessibleForFree") in (True, "true", "True"):
+                free, price = True, ""
+            for off in _as_list(node.get("offers")):
+                if isinstance(off, dict) and off.get("price") not in (None, ""):
+                    try:
+                        p = float(str(off["price"]).replace(",", "."))
+                    except ValueError:
+                        continue
+                    free, price = (True, "") if p == 0 else (False, f"{p:g} €".replace(".", ","))
+            if FEED and cat in FEED.only_free and free is False:
+                continue
+            span_ok = ed is None or (ed - d).days <= (FEED.max_span_days if FEED else 5)
+            if not span_ok:
+                continue
+            multi_day = ed is not None and ed != d
             out.append(Event(
-                title=name or "Tag der offenen Tür", org=org,
-                category=classify(name, org, desc, hint=hint), date=d,
-                end_date=ed if ed and ed != d else None, start_time=st, end_time=et if ed == d or ed is None else "",
+                title=name or (FEED.title if FEED else ""), org=org,
+                category=cat, date=d,
+                end_date=ed if multi_day else None, start_time=st,
+                end_time=et if (not multi_day or (et and st)) else "",
                 address=address, city=city, lat=lat, lng=lng,
                 url=urljoin(page_url, _text_of(node.get("url")) or page_url),
                 min_age=min_age, needs_adult=adult, description=short(desc, 280), sources=[page_url],
+                free=free, price=price, opening_hours=opening_hours(desc),
+                daily=bool(multi_day and st and et and et > st),
             ))
     return out
 
@@ -794,11 +918,16 @@ def events_from_text(text: str, site: str, page_url: str, hint: str | None, titl
         m = _KW_RE.search(line)
         chunk = before_chunk(i) if date_first else after_chunk(i)
         chunk_text = "\n".join(chunk)
-        dates = [d for _, d in find_dates(chunk_text) if TODAY <= d <= horizon]
-        if not dates:
-            continue
-        d = dates[0]
-        multi = [x for x in dates[1:3] if 0 < (x - d).days <= 5]
+        rng = find_range(chunk_text)
+        span = FEED.max_span_days if FEED else 5
+        if rng and rng[1] >= TODAY and (rng[1] - rng[0]).days <= span:
+            d, multi = rng[0], [rng[1]]                 # z. B. Weihnachtsmarkt 20.11.–23.12.
+        else:
+            dates = [d for _, d in find_dates(chunk_text) if TODAY <= d <= horizon]
+            if not dates:
+                continue
+            d = dates[0]
+            multi = [x for x in dates[1:3] if 0 < (x - d).days <= min(span, 5)]
         st, et = find_times(chunk_text)
         org = ""
         if date_first:
@@ -843,11 +972,27 @@ def events_from_text(text: str, site: str, page_url: str, hint: str | None, titl
             addr = f"{org}, {city}" if org != site else city
         kw = m.group(0)
         label = kw[:1].upper() + kw[1:]
+        cat = classify(org, line, title, hint=hint)
+        if FEED and FEED.title_from_line:
+            if _VENDOR.search(line + " " + chunk_text):
+                continue                               # Infos für Aussteller/Händler, kein Termin für Besucher
+            clean_line = line.strip(" :–-")
+            if 6 <= len(clean_line) <= 70 and m.start() <= 25 and not find_dates(clean_line) \
+                    and clean_line[:1].isupper():
+                label = clean_line                     # z. B. "Weihnachtsmarkt auf dem Marktplatz"
+            elif org and org != site:
+                label = f"{label} – {org}"
+        free, price = price_info(ctx)
+        if FEED and cat in FEED.only_free and free is False:
+            continue                                   # "Gratis-Events" nur, wenn sie nichts kosten
+        end = multi[-1] if multi else None
         out.append(Event(
-            title=label, org=org, category=classify(org, line, title, hint=hint), date=d,
-            end_date=multi[-1] if multi else None, start_time=st, end_time=et,
+            title=label, org=org, category=cat, date=d,
+            end_date=end, start_time=st, end_time=et,
             address=addr, city=city, url=page_url, min_age=min_age, needs_adult=adult,
             description=short(" · ".join(chunk), 200), sources=[page_url],
+            free=free, price=price, opening_hours=opening_hours(ctx),
+            daily=bool(end and st and (end - d).days >= 1),
         ))
     # Auf Sammelseiten (viele Einträge) ist ein Termin ohne erkannte Einrichtung nicht zuzuordnen.
     if len(out) >= 3:
@@ -855,6 +1000,8 @@ def events_from_text(text: str, site: str, page_url: str, hint: str | None, titl
     return out
 
 
+_VENDOR = re.compile(r"aussteller|händler|standbewerbung|bewerbungsphase|standgebühr|standplatz|annahme|"
+                     r"anmeldeschluss für|verkäufer(?:innen)? gesucht|beschicker", re.I)
 _ONLINE = re.compile(r"\b(online|videochat|video-chat|webinar|livestream|virtuell|digital(?:er|e)?\s+(?:tag|infotag))\b", re.I)
 
 
@@ -867,35 +1014,53 @@ def event_from_headline(head: str, page_title: str, text: str, page_url: str, hi
     window = text[pos: pos + 1500] if pos >= 0 else text[:1500]
     horizon = TODAY + dt.timedelta(days=HORIZON_DAYS)
     # Daten, neben denen "online" steht (Begleitprogramm im Netz), zählen nicht
-    dates = [d for p, d in find_dates(window)
-             if TODAY <= d <= horizon and not _ONLINE.search(window[max(0, p - 70): p + 70])]
-    if not dates or _ONLINE.search(head):
+    if _ONLINE.search(head):
         return None
-    d = dates[0]
-    multi = [x for x in dates[1:3] if 0 < (x - d).days <= 5]
+    if FEED and FEED.title_from_line and _VENDOR.search(head + " " + window[:400]):
+        return None                                # Aufruf an Aussteller/Händler, kein Besuchertermin
+    span = FEED.max_span_days if FEED else 5
+    rng = find_range(window)
+    if rng and rng[1] >= TODAY and (rng[1] - rng[0]).days <= span:
+        d, multi = rng[0], [rng[1]]
+    else:
+        dates = [d for p, d in find_dates(window)
+                 if TODAY <= d <= horizon and not _ONLINE.search(window[max(0, p - 70): p + 70])]
+        if not dates:
+            return None
+        d = dates[0]
+        multi = [x for x in dates[1:3] if 0 < (x - d).days <= min(span, 5)]
     st, et = find_times(window)
     addr, city = find_address(window)
     min_age, pro, adult = age_info(window)
     if pro or not bundeswehr_ok(window, min_age):
         return None
     cat = classify(head, window[:300], hint=hint)
-    kind = {"ausbildung": "Ausbildungsmesse", "hochschule": "Hochschulinformationstag"}.get(cat, "Tag der offenen Tür")
+    free, price = price_info(window)
+    if FEED and cat in FEED.only_free and free is False:
+        return None
     m = _KW_RE.search(head)
-    if m and cat not in ("ausbildung", "hochschule"):
-        kind = m.group(0)[:1].upper() + m.group(0)[1:]
-    # Name der Einrichtung = Überschrift ohne das Stichwort ("Tag der offenen Tür im X" -> "X");
-    # bleibt kaum etwas übrig, ist es eine allgemeine Überschrift -> Name der Website
-    org = head
-    if m and cat != "ausbildung":
-        rest = clean_ws(head[: m.start()] + " " + head[m.end():])
-        rest = re.sub(r"^(?:e|n|en)?\s*(?:im|am|an der|in der|der|des|bei der|beim|an|in)\s+", "", rest, flags=re.I)
-        rest = re.sub(r"\b20\d\d\b", "", rest).strip(" -–:,|")
-        org = rest if len(rest) >= 6 else site
+    if FEED and FEED.title_from_line:
+        # Freizeit: Überschrift ist der Name der Veranstaltung, Veranstalter = Website
+        kind, org = head, site
+    else:
+        kind = {"ausbildung": "Ausbildungsmesse", "hochschule": "Hochschulinformationstag"}.get(cat, "Tag der offenen Tür")
+        if m and cat not in ("ausbildung", "hochschule"):
+            kind = m.group(0)[:1].upper() + m.group(0)[1:]
+        # Name der Einrichtung = Überschrift ohne das Stichwort ("Tag der offenen Tür im X" -> "X");
+        # bleibt kaum etwas übrig, ist es eine allgemeine Überschrift -> Name der Website
+        org = head
+        if m and cat != "ausbildung":
+            rest = clean_ws(head[: m.start()] + " " + head[m.end():])
+            rest = re.sub(r"^(?:e|n|en)?\s*(?:im|am|an der|in der|der|des|bei der|beim|an|in)\s+", "", rest, flags=re.I)
+            rest = re.sub(r"\b20\d\d\b", "", rest).strip(" -–:,|")
+            org = rest if len(rest) >= 6 else site
+    end = multi[-1] if multi else None
     return Event(
-        title=kind, org=org, category=cat, date=d, end_date=multi[-1] if multi else None,
+        title=kind, org=org, category=cat, date=d, end_date=end,
         start_time=st, end_time=et, address=addr, city=city, url=page_url,
         min_age=min_age, needs_adult=adult, description=short(window[len(head):].replace("\n", " "), 220),
-        sources=[page_url],
+        sources=[page_url], free=free, price=price, opening_hours=opening_hours(window),
+        daily=bool(end and st and (end - d).days >= 1),
     )
 
 
@@ -905,29 +1070,35 @@ def event_from_headline(head: str, page_title: str, text: str, page_url: str, hi
 
 LLM_MODEL = os.environ.get("LLM_MODEL", "claude-opus-5-5")
 
-LLM_SYSTEM = f"""Du liest deutsche Webseiten und ziehst Termine für "Tage der offenen Tür" und ähnliche
-öffentliche Info-Veranstaltungen heraus (Hochschulinformationstag, Schnupperstudium, Tag der offenen Tür
-an Schulen, Ausbildungsmessen, Betriebsbesichtigungen, offene Tage bei Feuerwehr, Polizei, Rathaus,
-Museen, Forschungsinstituten, Bundeswehr).
-Heute ist der {TODAY.isoformat()}. Gib nur Termine zurück, die heute oder später stattfinden und in
-Deutschland liegen. Erfinde nichts: Was nicht auf der Seite steht, bleibt leer ("" bzw. 0).
+def llm_system() -> str:
+    """System-Prompt aus der aktiven Feed-Datei (Kategorien + eigene Regeln) zusammenbauen."""
+    assert FEED is not None
+    cats = "\n".join(f'  - "{k}": {v}' for k, v in FEED.categories.items())
+    return f"""Du liest deutsche Webseiten und ziehst Einträge für "{FEED.title}" heraus.
+Die App ist für Jugendliche ab 14 Jahren.
+Heute ist der {TODAY.isoformat()}. Gib nur Einträge zurück, die heute oder später stattfinden (bzw. noch
+laufen) und in Deutschland liegen. Erfinde nichts: Was nicht auf der Seite steht, bleibt leer ("" bzw. 0).
 Regeln:
-- category: "hochschule" (Unis, Hochschulen, Berufsakademien), "schule" (alle Schulformen inkl.
-  Berufsschulen), "ausbildung" (Firmen, Ausbildungsmessen, Betriebe, Kammern), "sonstiges" (Behörden,
-  Feuerwehr, Polizei, Museen, Forschung, Bundeswehr, alles andere).
+- category, genau eine von:
+{cats}
 - min_age: ausdrücklich genanntes Mindestalter, sonst 0. "unter 16 nur mit Begleitung" ist KEIN
   Mindestalter, sondern needs_adult = true.
 - audience: "fachpublikum", wenn nur Fachbesucher, Mitarbeitende, geladene Gäste oder geschlossene
   Gruppen teilnehmen dürfen; "erwachsene" bei Veranstaltungen nur für Volljährige; sonst "alle",
   "schueler", "studieninteressierte" oder "familien".
 - needs_adult: true, wenn Jugendliche eine erwachsene Begleitperson brauchen.
-- Bundeswehr-Termine nur, wenn sie ausdrücklich öffentlich/für Familien sind oder ab 14 erlaubt sind.
 - date/end_date als YYYY-MM-DD, start_time/end_time als HH:MM (24 h). Mehrtägig: end_date setzen.
+  daily = true, wenn die Uhrzeiten an jedem Tag des Zeitraums gelten (z. B. Weihnachtsmarkt 11–21 Uhr).
+- opening_hours: Öffnungszeiten als kurzer Text, wenn sie je nach Tag verschieden sind.
+- free: true bei freiem Eintritt/kostenlos, false wenn etwas kostet; price: z. B. "3 €" (sonst "").
 - lat/lng nur, wenn sie auf der Seite stehen, sonst 0.
 - description: ein bis zwei sachliche Sätze auf Deutsch, was man dort erleben kann.
-Wenn die Seite keinen passenden Termin enthält, gib eine leere Liste zurück."""
+{FEED.llm_instructions}
+Wenn die Seite keinen passenden Eintrag enthält, gib eine leere Liste zurück."""
 
-LLM_SCHEMA: dict[str, Any] = {
+
+def llm_schema() -> dict[str, Any]:
+    return {
     "type": "object",
     "properties": {
         "events": {
@@ -953,17 +1124,21 @@ LLM_SCHEMA: dict[str, Any] = {
                                           "fachpublikum", "erwachsene"]},
                     "needs_adult": {"type": "boolean"},
                     "description": {"type": "string"},
+                    "free": {"type": "boolean"},
+                    "price": {"type": "string"},
+                    "opening_hours": {"type": "string"},
+                    "daily": {"type": "boolean"},
                 },
                 "required": ["title", "org", "category", "date", "end_date", "start_time", "end_time",
                              "address", "city", "lat", "lng", "url", "min_age", "audience",
-                             "needs_adult", "description"],
+                             "needs_adult", "description", "free", "price", "opening_hours", "daily"],
                 "additionalProperties": False,
             },
         }
     },
     "required": ["events"],
     "additionalProperties": False,
-}
+    }
 
 LLM_PAGE_CHARS = 60_000  # Webseiten-Text pro Anfrage; der relevante Teil steht praktisch immer davor
 
@@ -1009,8 +1184,8 @@ class Claude:
             return []
         resp = self._create(
             max_tokens=16000,
-            system=LLM_SYSTEM,
-            output_config={"effort": "low", "format": {"type": "json_schema", "schema": LLM_SCHEMA}},
+            system=llm_system(),
+            output_config={"effort": "low", "format": {"type": "json_schema", "schema": llm_schema()}},
             messages=[{"role": "user", "content": f"Seite: {url}\n\n<seite>\n{text[:LLM_PAGE_CHARS]}\n</seite>"}],
         )
         if resp is None or resp.stop_reason in ("refusal", "max_tokens"):
@@ -1077,15 +1252,22 @@ def events_from_llm(items: list[dict[str, Any]], page_url: str, hint: str | None
             st = ""
         if et and not re.fullmatch(r"\d{2}:\d{2}", et):
             et = ""
+        cat = it.get("category") if it.get("category") in CATEGORIES else classify(text, hint=hint)
+        free = it.get("free") if (it.get("free") is True or it.get("price")) else None
+        if free is None and it.get("price"):
+            free = False
+        if FEED and cat in FEED.only_free and free is False:
+            continue
         out.append(Event(
-            title=clean_ws(it.get("title")) or "Tag der offenen Tür", org=clean_ws(it.get("org")),
-            category=it.get("category") if it.get("category") in CATEGORIES else classify(text, hint=hint),
+            title=clean_ws(it.get("title")) or (FEED.title if FEED else ""), org=clean_ws(it.get("org")),
+            category=cat,
             date=d, end_date=ed if ed and ed != d else None, start_time=st, end_time=et,
             address=clean_ws(it.get("address")), city=clean_ws(it.get("city")),
             lat=float(lat) if lat else None, lng=float(lng) if lng else None,
             url=urljoin(page_url, it.get("url") or page_url), min_age=min_age, audience=audience,
             needs_adult=bool(it.get("needs_adult")), description=short(it.get("description", ""), 280),
-            sources=[page_url],
+            sources=[page_url], free=free, price=clean_ws(it.get("price")),
+            opening_hours=short(it.get("opening_hours", ""), 80), daily=bool(it.get("daily")) and bool(ed),
         ))
     return out
 
@@ -1347,18 +1529,22 @@ REGION_LINKS = re.compile(
 
 
 def region_places(session: requests.Session, region: dict[str, Any]) -> list[dict[str, Any]]:
+    """Einrichtungen mit Website im Umkreis. Welche, steht in der Feed-Datei unter `osm:`:
+         - filter: '["amenity"="school"]'     # OpenStreetMap-Merkmale
+           category: schule                   # Kategorie für Einträge von dieser Website
+           name_category: {hochschule: "hochschule|universit"}   # optional: nach Name umstufen
+    """
+    assert FEED is not None
     lat, lng = float(region["lat"]), float(region["lng"])
     radius = int(float(region.get("radius_km", 15)) * 1000)
     around = f"(around:{radius},{lat},{lng})"
-    query = f"""[out:json][timeout:120];
-(
-  nwr["amenity"="school"]["website"]{around};
-  nwr["amenity"="school"]["contact:website"]{around};
-  nwr["amenity"~"^(university|college)$"]["website"]{around};
-  nwr["amenity"~"^(university|college)$"]["contact:website"]{around};
-  nwr["amenity"="fire_station"]["website"]{around};
-);
-out center tags;"""
+    clauses = []
+    for q in FEED.osm:
+        clauses.append(f'  nwr{q["filter"]}["website"]{around};')
+        clauses.append(f'  nwr{q["filter"]}["contact:website"]{around};')
+    if not clauses:
+        return []
+    query = "[out:json][timeout:120];\n(\n" + "\n".join(clauses) + "\n);\nout center tags;"
     try:
         r = session.post(OVERPASS_URL, data={"data": query}, timeout=180)
         r.raise_for_status()
@@ -1373,7 +1559,6 @@ out center tags;"""
         site = clean_ws(t.get("website") or t.get("contact:website"))
         if not name or not site:
             continue
-        amenity = t.get("amenity", "")
         if _SKIP_PLACE.search(name) or t.get("school") in ("primary", "kindergarten") or t.get("isced:level") in ("0", "1", "0;1"):
             continue
         if not site.startswith("http"):
@@ -1382,12 +1567,14 @@ out center tags;"""
         plng = el.get("lon", el.get("center", {}).get("lon"))
         if plat is None or plng is None:
             continue
-        if amenity == "fire_station":
-            cat = "sonstiges"
-        elif amenity in ("university", "college") and re.search(r"hochschule|universit|akademie", name, re.I):
-            cat = "hochschule"
-        else:
-            cat = "schule"
+        cat = FEED.default_category
+        for q in FEED.osm:                       # welche Abfrage passt zu diesem Objekt?
+            if all(_osm_match(t, k, v) for k, v in re.findall(r'\["([^"]+)"(?:[=~]+)"([^"]+)"\]', q["filter"])):
+                cat = q.get("category", cat)
+                for c2, rx in (q.get("name_category") or {}).items():
+                    if re.search(rx, name, re.I):
+                        cat = c2
+                break
         street = " ".join(x for x in (t.get("addr:street", ""), t.get("addr:housenumber", "")) if x)
         town = t.get("addr:city", "")
         addr = ", ".join(x for x in (street, " ".join(y for y in (t.get("addr:postcode", ""), town) if y)) if x)
@@ -1401,6 +1588,13 @@ out center tags;"""
     return out[: int(region.get("max_sites", 150))]
 
 
+def _osm_match(tags: dict[str, str], key: str, val: str) -> bool:
+    v = tags.get(key, "")
+    if val.startswith("^") or "|" in val:
+        return bool(re.search(val, v))
+    return v == val
+
+
 def adopt_place(e: Event, place: dict[str, Any]) -> None:
     """Termine von der Website einer Einrichtung gehören meist zu genau dieser Einrichtung."""
     other_org = e.org and _INSTITUTION.search(e.org) and _similar(e.org, place["name"]) < 0.5 \
@@ -1409,11 +1603,12 @@ def adopt_place(e: Event, place: dict[str, Any]) -> None:
         return                                   # Termin einer anderen Einrichtung mit eigener Adresse
     if not other_org:
         e.org = place["name"]
-        e.category = place["category"]
+        if FEED is None or FEED.hint_first:
+            e.category = place["category"]
     if e.lat is None or not other_org:
         e.lat, e.lng = place["lat"], place["lng"]
-        e.address = place["address"] or e.address
-        e.city = place["city"] or e.city
+        e.address = place["address"] or place["name"]
+        e.city = place["city"]                    # nie eine Stadt aus dem Seitentext mit fremden Koordinaten mischen
 
 
 # --------------------------------------------------------------------------------------
@@ -1434,25 +1629,20 @@ CITIES = [
     "Cottbus", "Schwerin", "Gera", "Zwickau", "Flensburg", "Greifswald", "Passau", "Bamberg", "Bayreuth",
     "Konstanz", "Tübingen", "Lüneburg", "Gießen", "Marburg", "Fulda", "Weimar", "Frankfurt (Oder)",
 ]
-TOPICS = [
-    "Tag der offenen Tür Gymnasium {city} {month}",
-    "Tag der offenen Tür Schule {city} {year}",
-    "Hochschulinformationstag Schnupperstudium {city} {year}",
-    "Ausbildungsmesse {city} {year} Schüler",
-    "Tag der offenen Tür Feuerwehr Polizei Rathaus {city} {year}",
-    "Tag der offenen Tür Museum Forschungsinstitut {city} {year}",
-    "Betriebsbesichtigung Tag der offenen Tür Unternehmen Ausbildung {city} {year}",
-]
 MONTH_NAMES = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September",
                "Oktober", "November", "Dezember"]
 
 
 def todays_queries(n: int) -> list[str]:
+    """Suchanfragen aus den `search_topics` der Feed-Datei; Städte rotieren täglich."""
+    topics = FEED.search_topics if FEED else []
+    if not topics:
+        return []
     day = TODAY.toordinal()
     out = []
     for i in range(n):
         city = CITIES[(day * n + i) % len(CITIES)]
-        topic = TOPICS[(day + i) % len(TOPICS)]
+        topic = topics[(day + i) % len(topics)]
         month_date = TODAY + dt.timedelta(days=30 * (i % 4))
         out.append(topic.format(city=city, month=f"{MONTH_NAMES[month_date.month - 1]} {month_date.year}",
                                 year=month_date.year))
@@ -1470,43 +1660,47 @@ def load_yaml(path: Path) -> Any:
 
 
 def manual_events() -> list[Event]:
-    raw = load_yaml(MANUAL_FILE) or []
+    """Von Hand geprüfte Einträge aus der Feed-Datei (Abschnitt `manual:`)."""
+    raw = FEED.manual if FEED else []
     out = []
     for it in raw:
         try:
             d = it["date"] if isinstance(it["date"], dt.date) else dt.date.fromisoformat(str(it["date"]))
         except (KeyError, ValueError):
-            log(f"  manual_events.yaml: Datum fehlt/ungültig bei {it.get('title')}")
+            log(f"  manual: Datum fehlt/ungültig bei {it.get('title')}")
             continue
         ed = it.get("end_date")
         if ed and not isinstance(ed, dt.date):
             ed = dt.date.fromisoformat(str(ed))
         e = Event(
-            title=it.get("title", "Tag der offenen Tür"), org=it.get("org", ""),
+            title=it.get("title", ""), org=it.get("org", ""),
             category=it.get("category") if it.get("category") in CATEGORIES else classify(it.get("title", ""), it.get("org", "")),
             date=d, end_date=ed, start_time=str(it.get("start_time", "") or ""), end_time=str(it.get("end_time", "") or ""),
             address=it.get("address", ""), city=it.get("city", ""), lat=it.get("lat"), lng=it.get("lng"),
             url=it.get("url", ""), min_age=it.get("min_age"), audience=it.get("audience", "alle"),
             needs_adult=bool(it.get("needs_adult", False)), description=it.get("description", ""),
             sources=[it.get("source") or it.get("url", "")], manual=True,
+            free=it.get("free"), price=str(it.get("price", "") or ""),
+            opening_hours=str(it.get("opening_hours", "") or ""), daily=bool(it.get("daily", False)),
         )
         out.append(e)
     return out
 
 
-def previous_events() -> list[Event]:
-    if not EVENTS_FILE.exists():
+def previous_events(path: Path) -> list[Event]:
+    if not path.exists():
         return []
     try:
-        data = json.loads(EVENTS_FILE.read_text("utf-8"))
+        data = json.loads(path.read_text("utf-8"))
         return [Event.from_json(d) for d in data.get("events", [])]
     except (json.JSONDecodeError, KeyError, ValueError) as e:
-        log(f"Alte events.json unlesbar ({e}) – fange neu an")
+        log(f"Alte {path.name} unlesbar ({e}) – fange neu an")
         return []
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--feed", action="append", help="nur diese Kategorie(n), z. B. --feed freizeit (Standard: alle)")
     ap.add_argument("--no-llm", action="store_true", help="Claude nicht benutzen")
     ap.add_argument("--no-search", action="store_true", help="keine Websuche")
     ap.add_argument("--only", action="append", help="nur diese URL(s) verarbeiten (zum Testen)")
@@ -1516,12 +1710,16 @@ def main() -> int:
     ap.add_argument("--max-geocode", type=int, default=int(os.environ.get("MAX_GEOCODE", 250)))
     ap.add_argument("--dry-run", action="store_true", help="nichts speichern, nur ausgeben")
     ap.add_argument("--regions-only", action="store_true", help="nur den Umkreis-Modus laufen lassen (zum Testen)")
-    ap.add_argument("--out", type=Path, help="Ergebnis in diese Datei statt data/events.json (zum Testen)")
+    ap.add_argument("--out", type=Path, help="Ergebnis in diese Datei statt nach data/ (zum Testen, nur mit einem --feed)")
     args = ap.parse_args()
 
     DATA_DIR.mkdir(exist_ok=True)
-    cfg = load_yaml(SOURCES_FILE) or {}
-    fetcher = PoliteFetcher(cfg.get("blocked_domains", []))
+    feeds = [f for f in all_feeds() if not args.feed or f.name in args.feed]
+    if not feeds:
+        log(f"Keine passende Feed-Datei in {FEEDS_DIR}")
+        return 1
+    blocked = sorted({d for f in feeds for d in f.blocked_domains})
+    fetcher = PoliteFetcher(blocked)
 
     claude: Claude | None = None
     if not args.no_llm and os.environ.get("ANTHROPIC_API_KEY"):
@@ -1533,19 +1731,47 @@ def main() -> int:
     else:
         log("KI-Auswertung aus (kein ANTHROPIC_API_KEY) – nutze strukturierte Daten und Text-Erkennung")
 
+    geo = Geocoder(fetcher.s, args.max_geocode)
+    status = 0
+    for feed in feeds:
+        set_feed(feed)
+        log(f"\n===== {feed.title} ({feed.name} -> data/{feed.output}) =====")
+        try:
+            if feed.kind == "jobs":
+                sys.path.insert(0, str(Path(__file__).resolve().parent))
+                import jobs as jobs_mod
+                jobs_mod.run(feed, fetcher, claude, args, geo)
+            else:
+                run_events_feed(feed, fetcher, claude, args, geo)
+        except Exception as e:  # noqa: BLE001 – ein kaputter Feed soll die anderen nicht aufhalten
+            import traceback
+            traceback.print_exc()
+            log(f"Feed {feed.name} fehlgeschlagen: {e}")
+            status = 1
+    geo.save()
+    return status
+
+
+def run_events_feed(feed: Feed, fetcher: PoliteFetcher, claude: Claude | None, args: argparse.Namespace,
+                    geo: Geocoder) -> None:
+    global REQUIRE_YEAR
     crawl = Crawl(fetcher, claude, args.max_pages, args.max_llm_pages)
     found: list[Event] = []
+    out_file = args.out or (DATA_DIR / feed.output)
 
     if args.only:
         for u in args.only:
             found += crawl.process(u, None, follow=15, same_host=True)
     else:
-        for src in ([] if args.regions_only else cfg.get("sources", [])):
+        for src in ([] if args.regions_only else feed.sources):
             pat = re.compile(src["link_pattern"], re.I) if src.get("link_pattern") else None
-            found += crawl.process(src["url"], src.get("category"), follow=int(src.get("follow", 0)),
-                                   same_host=bool(src.get("same_host", True)), link_pattern=pat)
-        global REQUIRE_YEAR
-        for region in cfg.get("regions", []):
+            evs = crawl.process(src["url"], src.get("category"), follow=int(src.get("follow", 0)),
+                                same_host=bool(src.get("same_host", True)), link_pattern=pat)
+            for e in evs:                          # Stadt der Quelle hilft beim Finden der Koordinaten
+                if src.get("city") and not e.city and e.lat is None:
+                    e.city = src["city"]
+            found += evs
+        for region in feed.regions:
             places = region_places(fetcher.s, region)
             follow = int(region.get("follow", 4))
             log(f"\nUmkreis {region.get('name')}: {len(places)} Einrichtungen mit Website")
@@ -1576,7 +1802,7 @@ def main() -> int:
     if args.only:
         merged_input = manual + found
     else:
-        old = previous_events()
+        old = previous_events(out_file)
         forget = (NOW - dt.timedelta(days=FORGET_AFTER_DAYS)).isoformat()
         old = [e for e in old if (e.last_seen or "") >= forget and not e.manual]
         merged_input = manual + found + old
@@ -1592,7 +1818,6 @@ def main() -> int:
         e.org = short(e.org, 100)
         cleaned.append(e)
 
-    geo = Geocoder(fetcher.s, args.max_geocode)
     for e in cleaned:
         geocode(e, geo)
     events = dedupe(cleaned)
@@ -1600,20 +1825,20 @@ def main() -> int:
 
     payload = {
         "version": 1,
+        "feed": feed.name,
+        "title": feed.title,
         "generated": stamp,
         "count": len(events),
         "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
         "events": [e.to_json() for e in events],
     }
-    log(f"\nFertig: {len(events)} Termine | Seiten: {fetcher.stats} | KI-Aufrufe: {claude.calls if claude else 0}")
+    log(f"\nFertig ({feed.name}): {len(events)} Einträge | Seiten: {fetcher.stats} | "
+        f"KI-Aufrufe: {claude.calls if claude else 0}")
     if args.dry_run:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
-        return 0
-    target = args.out or EVENTS_FILE
-    target.write_text(json.dumps(payload, ensure_ascii=False, indent=1), "utf-8")
-    geo.save()
-    log(f"Gespeichert: {target}")
-    return 0
+        return
+    out_file.write_text(json.dumps(payload, ensure_ascii=False, indent=1), "utf-8")
+    log(f"Gespeichert: {out_file}")
 
 
 if __name__ == "__main__":

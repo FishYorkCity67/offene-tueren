@@ -1,6 +1,9 @@
-# Sammelt jeden Morgen neue Termine und speichert data/events.json im Repository.
-# Die App lädt diese Datei über die "Raw"-Adresse:
-#   https://raw.githubusercontent.com/<DEIN-NAME>/<REPO>/main/data/events.json
+# Sammelt jeden Morgen neue Einträge für alle Kategorien (crawler/feeds/*.yaml) und speichert
+#   data/events.json   (Tag der offenen Tür)
+#   data/freizeit.json (Freizeit & Events)
+#   data/jobs.json     (Ferienjobs)
+# im Repository. Die App lädt die Dateien über die "Raw"-Adresse:
+#   https://raw.githubusercontent.com/<DEIN-NAME>/<REPO>/main/data/<datei>.json
 name: Termine aktualisieren
 
 on:
@@ -9,7 +12,7 @@ on:
   workflow_dispatch: {}        # "Run workflow"-Knopf zum Starten von Hand
 
 permissions:
-  contents: write              # damit die Action events.json zurückschreiben darf
+  contents: write              # damit die Action die JSON-Dateien zurückschreiben darf
 
 concurrency:
   group: update-events
@@ -18,7 +21,7 @@ concurrency:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -31,29 +34,33 @@ jobs:
       - name: Pakete installieren
         run: pip install -r crawler/requirements.txt
 
-      - name: Termine sammeln
+      - name: Einträge sammeln (alle Kategorien)
         env:
           # Optional: Claude-API-Schlüssel als Repository-Secret "ANTHROPIC_API_KEY" anlegen.
           # Ohne Schlüssel läuft der Crawler trotzdem (strukturierte Daten + Text-Erkennung).
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # Modell für die KI-Auswertung. claude-haiku-5-5 kostet nur einen Bruchteil.
           LLM_MODEL: claude-opus-5-5
-          MAX_LLM_PAGES: "40"      # höchstens so viele Seiten pro Tag von der KI lesen lassen
-          SEARCH_QUERIES: "8"      # so viele Websuchen pro Tag (nur mit Schlüssel)
+          MAX_LLM_PAGES: "40"      # höchstens so viele Seiten pro Kategorie und Tag von der KI lesen lassen
+          SEARCH_QUERIES: "8"      # so viele Websuchen pro Kategorie und Tag (nur mit Schlüssel)
           MAX_PAGES: "400"
         run: python crawler/crawl.py
 
       - name: Ergebnis prüfen
-        run: python crawler/summary.py data/events.json | head -n 5
+        run: |
+          python crawler/summary.py data/events.json | head -n 3
+          python crawler/summary.py data/freizeit.json | head -n 3
+          python -c "import json; d=json.load(open('data/jobs.json')); print(d['count'], 'Jobs')"
 
       - name: Änderungen speichern
         run: |
           git config user.name "termine-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/events.json data/geocache.json
+          git add data/*.json
           if git diff --cached --quiet; then
             echo "Keine Änderungen."
           else
-            git commit -m "Termine aktualisiert ($(date -u +%Y-%m-%d))"
+            git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
+            git pull --rebase --autostash
             git push
           fi

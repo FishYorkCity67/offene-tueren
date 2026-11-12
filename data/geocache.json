@@ -12,6 +12,16 @@
 "20. Februar 2027, 10 bis 12.30 Uhr, Heidelberg": null,
 "27. Februar 2027, 10 bis 14 Uhr, Heidelberg": null,
 "3. März 2027, 17 bis 19 Uhr, Heidelberg": null,
+"41352 Korschenbroich": [
+51.1856981,
+6.5493159,
+"Korschenbroich"
+],
+"47807 Krefeld": [
+51.3011482,
+6.5836892,
+"Krefeld"
+],
 "50676 Köln": [
 50.9312716,
 6.9524309,
@@ -83,6 +93,12 @@
 "Berlin"
 ],
 "Droste-Hülshoff-Gymnasium, Berlin": null,
+"Düsseldorf": [
+51.2254018,
+6.7763137,
+"Düsseldorf"
+],
+"Düsseldorfer Weihnachtsmarkt, Düsseldorf": null,
 "Eichenstraße 4, 12435 Berlin-Bezirk": null,
 "Englisches Institut, Heidelberg": [
 49.3891266,
@@ -179,6 +195,11 @@
 13.3443722,
 "Berlin"
 ],
+"Krefeld, Krefeld": [
+51.326021,
+6.5695006,
+"Krefeld"
+],
 "Kurfürst-Friedrich-Gymnasium, Heidelberg": [
 49.4112039,
 8.6938164
@@ -235,6 +256,7 @@
 49.4097753,
 8.7052487
 ],
+"Weihnachten, Düsseldorf": null,
 "Werner-von-Siemens-Gymnasium, Berlin": [
 52.4319369,
 13.2118471,
@@ -249,5 +271,6 @@
 52.4553801,
 13.2598062,
 "Berlin"
-]
+],
+"www.visitduesseldorf.de, Düsseldorf": null
 }

@@ -1,0 +1,171 @@
+# ==========================================================================================
+#  Kategorie "Freizeit & Events"  ->  data/freizeit.json
+#  (Aufbau wie offene-tueren.yaml – dort stehen alle Felder erklärt)
+# ==========================================================================================
+
+title: Freizeit & Events
+output: freizeit.json
+max_span_days: 75          # Weihnachtsmärkte, Eisbahnen und Ferienprogramme dauern Wochen
+hint_first: false          # erst die Wort-Regeln (Flohmarkt, Weihnachtsmarkt …), dann die Quelle
+title_from_line: true      # Titel = ganze Zeile/Überschrift ("Weihnachtsmarkt auf dem Marktplatz")
+only_free: [gratis]        # "Gratis-Events" nur, wenn sie wirklich nichts kosten
+
+categories:
+  gratis: Kostenlose Veranstaltungen – Stadtfeste, Konzerte im Park, Museumstage mit freiem Eintritt, Aktionstage
+  flohmarkt: Flohmärkte, Trödelmärkte, Kinder- und Hofflohmärkte, Basare
+  ferienprogramm: Ferienangebote von Städten, Vereinen und Jugendzentren (Altersangabe beachten!)
+  saisonal: Weihnachtsmärkte, Eisbahnen, Osterfeuer, Sommerfeste, Martinszüge, Kirmes – mit Öffnungszeiten
+
+llm_instructions: |
+  - Nur Angebote, die für Jugendliche (ab 14) offen sind. Reine Kinderangebote bis 12 Jahre: min_age 0,
+    aber audience "familien"; Angebote nur für Erwachsene: audience "erwachsene".
+  - Ferienprogramme: Altersangabe (z. B. "12–16 Jahre") genau übernehmen; min_age = untere Grenze.
+  - Kategorie "gratis" nur, wenn der Eintritt frei ist (free = true).
+
+keywords:
+  # Gratis & Aktionstage
+  - eintritt frei
+  - freier eintritt
+  - museumstag
+  - museumssonntag
+  - museumsnacht
+  - stadtfest
+  - straßenfest
+  - strassenfest
+  - dorffest
+  - stadtteilfest
+  - familienfest
+  - kinderfest
+  - weltkindertag
+  - aktionstag
+  - familientag
+  - open air
+  - open-air
+  - konzert im park
+  - parkkonzert
+  - lichterfest
+  # Flohmärkte
+  - flohmarkt
+  - trödelmarkt
+  - kinderflohmarkt
+  - hofflohmarkt
+  - kindersachenbasar
+  - kleiderbasar
+  - büchermarkt
+  # Ferienprogramme
+  - ferienprogramm
+  - ferienspaß
+  - ferienspass
+  - ferienspiele
+  - ferienaktion
+  - ferienangebot
+  - ferienfreizeit
+  - ferienkurs
+  - ferienworkshop
+  - ferienpass
+  - jugendfreizeit
+  # Saisonales
+  - weihnachtsmarkt
+  - adventsmarkt
+  - christkindlmarkt
+  - weihnachtsdorf
+  - wintermarkt
+  - winterwelt
+  - eisbahn
+  - eislaufbahn
+  - schlittschuhbahn
+  - osterfeuer
+  - ostermarkt
+  - martinszug
+  - martinsmarkt
+  - laternenumzug
+  - sommerfest
+  - herbstfest
+  - kirmes
+  - rosenmontagszug
+  - karnevalszug
+  - halloween
+
+rules:
+  - category: flohmarkt
+    words: [flohmarkt, trödel, basar, büchermarkt]
+  - category: ferienprogramm
+    words: [ferienprogramm, ferienspaß, ferienspass, ferienspiele, ferienaktion, ferienangebot,
+            ferienfreizeit, ferienkurs, ferienworkshop, ferienpass, jugendfreizeit, jugendzentrum]
+  - category: saisonal
+    words: [weihnacht, advent, christkind, wintermarkt, winterwelt, eisbahn, eislauf, schlittschuh, oster,
+            martin, laterne, sommerfest, herbstfest, kirmes, karneval, rosenmontag, halloween]
+  - category: gratis
+    words: [eintritt frei, freier eintritt, kostenlos, museumstag, stadtfest, straßenfest, strassenfest,
+            open air, open-air, konzert, aktionstag, familienfest, kinderfest]
+default_category: gratis
+
+# ---- Umkreis-Modus: Jugendzentren, Eisbahnen, Museen mit eigener Website -------------------
+osm:
+  - filter: '["amenity"="community_centre"]["community_centre"="youth_centre"]'
+    category: ferienprogramm
+  - filter: '["leisure"="ice_rink"]'
+    category: saisonal
+  - filter: '["tourism"="museum"]'
+    category: gratis
+
+regions:
+  - name: Meerbusch-Büderich (mit Düsseldorf, Neuss, Krefeld)
+    lat: 51.2556
+    lng: 6.6933
+    radius_km: 16
+    max_sites: 70
+    follow: 3
+
+sources:
+  # ---- Städtische Veranstaltungskalender -----------------------------------------------------
+  - url: https://meerbusch.de/aktuelles/stadtkalender
+    city: Meerbusch
+    follow: 40
+    link_pattern: "/aktuelles/stadtkalender/termin/"
+  - url: https://www.neuss.de/veranstaltungskalender
+    city: Neuss
+    follow: 30
+  - url: https://www.krefeld.de/veranstaltungen
+    city: Krefeld
+    follow: 15
+  - url: https://www.krefeld.de/weihnachtsmarkt-miks
+    city: Krefeld
+    category: saisonal
+  - url: https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt
+    city: Krefeld
+    category: saisonal
+  # ---- Düsseldorf (offizielle Tourismus-Seite; duesseldorf.de sperrt Crawler per robots.txt) ---
+  - url: https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf
+    city: Düsseldorf
+    category: saisonal
+    follow: 10
+  - url: https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44
+    city: Düsseldorf
+    category: saisonal
+
+search_topics:
+  - "Weihnachtsmarkt {city} {year} Öffnungszeiten"
+  - "Flohmarkt {city} {month} Termine"
+  - "Kinderflohmarkt Hofflohmarkt {city} {year}"
+  - "Ferienprogramm Jugendliche {city} {year}"
+  - "Eintritt frei Museum Aktionstag {city} {month}"
+  - "Stadtfest Sommerfest {city} {year}"
+  - "Eisbahn {city} {year} Öffnungszeiten"
+
+blocked_domains:
+  - facebook.com
+  - instagram.com
+  - x.com
+  - twitter.com
+  - tiktok.com
+  - youtube.com
+  - eventbrite.de
+  - eventbrite.com
+  - eventim.de
+  - meinestadt.de
+  - festivalsindeutschland.de
+  - google.com
+  - google.de
+
+manual: []
