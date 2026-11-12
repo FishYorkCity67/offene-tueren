@@ -98,6 +98,7 @@
 "Berlin"
 ],
 "Campus Krefeld-Süd/West / Mönchengladbach": null,
+"Campus Krefeld-Süd/West / Mönchengladbach, Neuss": null,
 "Dreilinden-Gymnasium, Berlin": [
 52.4202569,
 13.1878739,
@@ -181,6 +182,12 @@
 "Berlin"
 ],
 "Hochschule Niederrhein. Dein Weg.": null,
+"Hochschule Niederrhein. Dein Weg., Neuss": null,
+"Hubertusstraße 120, 47798 Krefeld": [
+51.3334926,
+6.5558448,
+"Krefeld"
+],
 "Hölderlin-Gymnasium, Heidelberg": [
 49.4090621,
 8.7008017
@@ -236,6 +243,11 @@
 13.3058943,
 "Berlin"
 ],
+"Neuss": [
+51.1981778,
+6.6916476,
+"Neuss"
+],
 "Paulsen-Gymnasium, Berlin": [
 52.4613966,
 13.3149378,
@@ -272,6 +284,11 @@
 "Theodor-Heuss-Realschule, Heidelberg": [
 49.4097753,
 8.7052487
+],
+"Vulkanstraße 264, 47807 Krefeld": [
+51.3082834,
+6.5566608,
+"Krefeld"
 ],
 "Weihnachten, Düsseldorf": null,
 "Werner-von-Siemens-Gymnasium, Berlin": [

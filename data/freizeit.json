@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-12T01:50:27+01:00",
- "count": 18,
+ "generated": "2026-11-12T13:51:54+01:00",
+ "count": 19,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -35,6 +35,35 @@
    "daily": false
   },
   {
+   "id": "41b622eec564ac",
+   "title": "Martinszug der Marienschule",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2026-11-12T17:15:00+01:00",
+   "end": "2026-11-12T18:45:00+01:00",
+   "allDay": false,
+   "address": "Hubertusstraße 120, 47798 Krefeld",
+   "city": "Krefeld",
+   "lat": 51.333493,
+   "lng": 6.555845,
+   "url": "https://www.krefeld.de/martinszug-der-marienschule",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "| Krefeld Martinszug der Marienschule Durch Teil der Innenstadt zieht der Martinszug der Krefelder Mareinschule. Vorlesen © Canva Auch in diesem Jahr gibt es wieder viele Sankt Martins-Züge in Krefeld. Die Marienschule …",
+   "sources": [
+    "https://www.krefeld.de/martinszug-der-marienschule",
+    "https://www.krefeld.de/martinszug-der-grundschule-vulkanstrasse"
+   ],
+   "firstSeen": "2026-11-12T13:51:54+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
+  },
+  {
    "id": "1c89a1f80d2fab",
    "title": "Eintritt frei",
    "org": "Geschichtswerkstatt der Realschule in Korschenbroich",
@@ -63,9 +92,9 @@
    "daily": true
   },
   {
-   "id": "d78258f775ab90",
+   "id": "7b0a4ca1b19eed",
    "title": "Weihnachtsmarkt in Düsseldorf",
-   "org": "Weihnachten",
+   "org": "www.visitduesseldorf.de",
    "category": "saisonal",
    "start": "2026-11-19T00:00:00+01:00",
    "end": "2026-11-19T23:59:00+01:00",
@@ -83,7 +112,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -111,7 +140,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -139,7 +168,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -167,7 +196,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +224,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -365,7 +394,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -394,7 +423,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -422,7 +451,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -450,7 +479,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +507,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -507,7 +536,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:50:27+01:00",
+   "lastSeen": "2026-11-12T13:51:54+01:00",
    "verified": false,
    "free": null,
    "price": "",
