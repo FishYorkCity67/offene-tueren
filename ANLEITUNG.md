@@ -1,125 +1,112 @@
-# Offene Türen – Anleitung
+# Was geht? (früher „Offene Türen“) – Anleitung
 
-Die App zeigt Tage der offenen Tür in ganz Deutschland – nur solche, zu denen du mit 14 hindarfst.
-Sie besteht aus zwei Teilen:
+Die App zeigt dir in drei Bereichen, was in deiner Nähe los ist – nur Angebote, die mit deinem Alter erlaubt sind:
 
-| Teil | Ordner | Was er macht |
+| Bereich | Datei | Woher die Daten kommen |
 |---|---|---|
-| **App** (Flutter) | `app/` | Karte, Kalender, Favoriten. Lädt `events.json` und speichert sie offline. |
-| **Sammel-Skript** (Python) | `crawler/` | Sucht Termine auf öffentlichen Websites und schreibt `data/events.json`. Läuft täglich kostenlos über GitHub Actions. |
+| **Tag der offenen Tür** (Schulen, Unis, Firmen, Behörden) | `data/events.json` | städtische Terminlisten, Hochschul- und Messeseiten, **alle Schulen/Hochschulen/Feuerwachen im Umkreis von Meerbusch** (aus OpenStreetMap) |
+| **Freizeit & Events** (Gratis-Events, Flohmärkte, Ferienprogramme, Saisonales) | `data/freizeit.json` | Stadtkalender Meerbusch, Neuss, Krefeld, visitduesseldorf.de, Jugendzentren/Museen/Eisbahnen im Umkreis |
+| **Ferienjobs** | `data/jobs.json` | Jobsuche der Bundesagentur für Arbeit, eingestuft nach dem Jugendarbeitsschutzgesetz |
+
+Ein Python-Skript sammelt das jeden Morgen automatisch über GitHub Actions:
+**https://github.com/FishYorkCity67/offene-tueren** (Reiter „Actions“ → „Termine aktualisieren“).
+Die App lädt die Dateien beim Start und speichert sie für unterwegs (offline).
 
 ---
 
-## 1. APK aufs Handy bringen und installieren
+## 1. Neue APK installieren (Update)
 
-Die fertige APK liegt hier: **`C:\Users\erika\OffeneTueren-arm64.apk`** (ca. 19 MB).
+Datei: **`C:\Users\erika\OffeneTueren-arm64.apk`** (ca. 20 MB, Version 2.0.0)
 
-1. **APK aufs Handy kopieren** – z. B. per USB-Kabel in den Ordner *Download*, per Google Drive
-   oder per Mail an dich selbst.
-2. Auf dem Handy die App **„Eigene Dateien“** (Samsung) öffnen → *Downloads* → **OffeneTueren-arm64.apk** antippen.
-3. Android fragt: *„Aus Sicherheitsgründen ist die Installation unbekannter Apps aus dieser Quelle nicht erlaubt.“*
-   - Tippe auf **Einstellungen**.
-   - Schalte **„Berechtigung zulassen“** (bzw. *„Unbekannte Apps installieren“*) für „Eigene Dateien“ **ein**.
-   - Mit dem Zurück-Pfeil zurückgehen.
-4. Auf **Installieren** tippen. Falls Google Play Protect warnt („App wurde nicht geprüft“):
-   **Weitere Details → Trotzdem installieren**. Das ist normal bei Apps, die nicht aus dem Play Store kommen.
-5. Fertig – „Offene Türen“ erscheint bei deinen Apps (Symbol: geöffnete Tür).
-6. **Sicherheit:** Danach kannst du die Erlaubnis aus Schritt 3 wieder ausschalten
-   (*Einstellungen → Apps → ⋮ → Spezieller Zugriff → Unbekannte Apps installieren → Eigene Dateien → aus*).
+1. APK aufs Handy kopieren (USB-Kabel → Ordner *Download*, Google Drive oder Mail an dich selbst).
+2. In **„Eigene Dateien“** → *Downloads* → **OffeneTueren-arm64.apk** antippen.
+3. Falls Android fragt: **Einstellungen** → „Berechtigung zulassen“ (*Unbekannte Apps installieren*) **einschalten** → zurück.
+4. **Aktualisieren** bzw. **Installieren** tippen. Warnt Play Protect: *Weitere Details → Trotzdem installieren*.
+5. Fertig. Die App heißt jetzt **„Was geht?“** – deine gemerkten Termine bleiben erhalten.
+6. Danach die Erlaubnis aus Schritt 3 am besten wieder ausschalten.
 
-Beim ersten Benutzen fragt die App:
-- **Standort** (wenn du auf den Standort-Knopf tippst) – für „Zu meinem Standort“, Suchradius und Sortierung nach Entfernung.
-- **Mitteilungen** (wenn du den ersten Termin merkst) – für die Erinnerung am Vortag um 18 Uhr.
+Beim ersten Benutzen fragt die App nach **Standort** (für „in deiner Nähe“) und **Mitteilungen**
+(Erinnerung am Vortag und „Neue Ferienjobs in 10 km Umkreis“).
 
 ---
 
-## 2. Termine automatisch jeden Tag aktualisieren (GitHub)
+## 2. Was ist neu in 2.0
 
-Ohne diesen Schritt zeigt die App die Termine, die beim Bauen mitgeliefert wurden (aktuell 37 echte Termine).
-Damit jeden Tag neue dazukommen:
+- **Untere Leiste:** Karte | Kalender | Ferienjobs | Favoriten
+- **Karte & Kalender:** oben umschaltbar „Tag der offenen Tür“ / „Freizeit & Events“, darunter die
+  Unterkategorien (eigene Farbe + Symbol) und **„Nur kostenlos“**.
+- **Kalender:** Mehrtägiges (z. B. Weihnachtsmarkt) als **durchgehender Balken**, eintägige Termine als Punkte.
+- **„Gerade offen“** bei Weihnachtsmärkten & Co. mit täglichen Öffnungszeiten.
+- **Ferienjobs:** Liste oder Karte, Filter für Entfernung, Art, Zeitraum (Weihnachts-/Oster-/Sommer-/Herbstferien)
+  und Bezahlung, Hinweis „Sprich vor einer Bewerbung mit deinen Eltern.“ und **„Was darf ich?“** mit Link zum
+  Bundesarbeitsministerium. Jeder Job ist eingestuft: **ab 13/14 möglich, ab 15, ab 16, ab 18** – du siehst nur,
+  was zu deinem Alter passt. Anzeigen ohne Arbeitgeber oder mit Vorkasse, „schnell reich“, Krypto,
+  Paketagent oder nur Chat-Kontakt werden verworfen.
+- **Einstellungen:** Alter, welche Kategorien du sehen willst, Mitteilungen pro Bereich
+  (neue Tage der offenen Tür / Freizeit-Events / Ferienjobs im Umkreis von 5–50 km).
+  Geprüft wird beim Öffnen der App und etwa alle 6 Stunden im Hintergrund.
 
-1. Kostenloses Konto auf **github.com** anlegen (falls noch nicht vorhanden).
-2. Neues Repository erstellen: **New repository** → Name z. B. `offene-tueren` → **Public** → *Create*.
-   (Public, damit die App die Datei ohne Passwort laden kann. Es stehen nur öffentliche Termine drin.)
-3. Den Ordner `C:\Users\erika\OffeneTueren` hochladen. Im Ordner ist schon ein Git-Projekt angelegt:
-   ```bash
-   git remote add origin https://github.com/DEIN-NAME/offene-tueren.git
-   ```
-   ```bash
-   git push -u origin main
-   ```
-4. Auf GitHub: **Settings → Actions → General → Workflow permissions → „Read and write permissions“** → *Save*.
-5. **Actions**-Reiter → „Termine aktualisieren“ → **Run workflow** (einmal von Hand starten zum Testen).
-   Danach läuft es jeden Morgen um ca. 5 Uhr von selbst.
-6. Die Adresse deiner Termine-Datei lautet dann:
-   `https://raw.githubusercontent.com/DEIN-NAME/offene-tueren/main/data/events.json`
-7. In der App: **Gemerkt → Einstellungen → Termine → Quelle** → diese Adresse eintragen → *Speichern*.
-   (Oder die APK gleich mit der Adresse bauen, siehe Abschnitt 4.)
-
-### Optional: KI-Auswertung mit Claude
-Ohne KI liest das Skript strukturierte Daten (schema.org, iCal) und erkennt Termine in Terminlisten
-und PDFs mit einfachen Regeln. **Mit** einem Claude-API-Schlüssel liest eine KI jede Seite genauer
-und es gibt zusätzlich eine tägliche Websuche („Tag der offenen Tür“ + Stadt/Monat).
-
-- Den Schlüssel gibt es unter console.anthropic.com – **dafür muss ein Erwachsener das Konto anlegen**
-  (die API ist erst ab 18 und kostet Geld; dein Claude-Abo gilt dafür nicht).
-- Im Repository: **Settings → Secrets and variables → Actions → New repository secret**,
-  Name `ANTHROPIC_API_KEY`, Wert = Schlüssel.
-- Kosten steuern in `.github/workflows/update-events.yml`: `LLM_MODEL` (z. B. `claude-haiku-5-5`
-  ist sehr viel günstiger als das voreingestellte `claude-opus-5-5`), `MAX_LLM_PAGES`, `SEARCH_QUERIES`.
-
-### Quellen erweitern
-Weitere Seiten trägst du in `crawler/sources.yaml` ein (städtische Terminlisten, Hochschul-Seiten,
-Messe-Seiten, iCal-Kalender, PDFs). Das Skript beachtet **robots.txt** automatisch und ruft jede Website
-höchstens alle 2 Sekunden auf (oder langsamer, wenn die Seite das verlangt). Soziale Netzwerke und
-Ticketportale stehen auf einer Sperrliste.
-
-Lokal testen:
-```bash
-.venv\Scripts\python.exe crawler\crawl.py --no-llm
-```
-```bash
-.venv\Scripts\python.exe crawler\summary.py data\events.json
-```
+**Ehrlich gesagt:** Bei der Arbeitsagentur gibt es rund um Meerbusch gerade fast keine Jobs „ab 13/14“
+(solche Jobs laufen meist über Nachbarn und Aushänge). Für 14 Jahre ist die Liste deshalb oft leer –
+die App sagt dir dann, wie viele Jobs erst ab 15/16/18 erlaubt sind, und gibt Tipps.
 
 ---
 
-## 3. Wie die Altersregel funktioniert
+## 3. Welche Dateien geändert wurden
 
-- Veranstaltungen **nur für Fachpublikum**, geladene Gäste oder Mitarbeitende werden schon vom Skript aussortiert.
-- Termine mit **Mindestalter** (z. B. „ab 16 Jahren“, „nur für Volljährige“) werden in der App ausgeblendet,
-  solange dein Alter darunter liegt (*Einstellungen → Mein Alter*, steht auf 14).
-- **Bundeswehr**-Termine kommen nur rein, wenn sie ausdrücklich öffentlich/für Familien sind oder ab 14 erlaubt.
-- Steht „nur in Begleitung eines Erwachsenen“ dabei, zeigt die App einen gelben Hinweis **„Begleitung nötig“**.
+**Sammel-Skript (`crawler/`)**
+- `crawler/feeds/offene-tueren.yaml`, `freizeit.yaml`, `jobs.yaml` – **neu: eine Konfiguration pro Kategorie**
+  (Stichwörter, Unterkategorien, Regeln, Quellen, Umkreis-Modus, Websuche, Sperrliste). Ersetzt `sources.yaml`.
+- `crawler/crawl.py` – liest alle Feed-Dateien, Umkreis-Modus über OpenStreetMap, Preise/„Eintritt frei“,
+  Öffnungszeiten, mehrwöchige Zeiträume, Aussteller-Aufrufe werden aussortiert.
+- `crawler/jobs.py` – **neu:** Jobsuche der Arbeitsagentur, Einstufung nach Jugendarbeitsschutz, Betrugs-Filter.
+- `.github/workflows/update-events.yml` – erzeugt jetzt alle drei Dateien.
 
-Wichtig: Alles wird automatisch gefunden. Schau vor dem Hingehen kurz auf die Website des Termins.
+**App (`app/lib/`)**
+- `models/event.dart` (Bereiche + 8 Kategorien), `models/job.dart` (neu)
+- `data/feeds.dart` (neu: Laden/Offline-Speicher für 3 Dateien), `config.dart` (neu: Name, Datenadresse, BMAS-Link)
+- `state/app_state.dart` (Filter, Jobs, Einstellungen, Mitteilungen)
+- `services/watch.dart` (neu: „neue Einträge in deiner Nähe“, Hintergrund-Prüfung), `services/notifications.dart`
+- `ui/filter_card.dart` (neu), `ui/jobs_screen.dart` (neu), `ui/job_sheet.dart` (neu, inkl. „Was darf ich?“),
+  `ui/map_screen.dart`, `ui/calendar_screen.dart` (Balken), `ui/event_sheet.dart`, `ui/favorites_screen.dart`,
+  `ui/home.dart` (4 Tabs), `ui/widgets.dart`, `ui/format.dart`, `theme.dart` (Farben), `main.dart`
+- `app/assets/app_name.txt` (neu), `app/pubspec.yaml` (Version 2.0.0, Paket `workmanager`),
+  `app/android/app/build.gradle.kts` + `AndroidManifest.xml` (App-Name aus der Datei)
 
 ---
 
-## 4. APK selbst neu bauen
+## 4. Eine neue Kategorie hinzufügen
 
-Voraussetzungen sind auf diesem PC schon installiert (Flutter in `C:\Users\erika\flutter`, Android-SDK, Java 21).
+1. `crawler/feeds/freizeit.yaml` kopieren, z. B. nach `crawler/feeds/sport.yaml`.
+2. `title`, `output: sport.json`, `keywords`, `categories`, `rules`, `sources` anpassen.
+3. Hochladen – ab dem nächsten Morgen entsteht `data/sport.json`.
+   (Damit die **App** sie anzeigt, muss sie noch in `app/lib/models/event.dart` als `Area` eingetragen werden.)
+
+## 5. App-Name ändern
+
+`app/assets/app_name.txt` öffnen, z. B. `Offene Türen` hineinschreiben, speichern, APK neu bauen.
+
+## 6. APK selbst neu bauen
 
 ```powershell
 cd C:\Users\erika\OffeneTueren
-.\build-apk.ps1
+.\build-apk.ps1 -Version "2.0.1+3"
 ```
-Mit fester Termine-Adresse und neuer Versionsnummer (für Updates über die installierte App):
-```powershell
-.\build-apk.ps1 -EventsUrl "https://raw.githubusercontent.com/DEIN-NAME/offene-tueren/main/data/events.json" -Version "1.1.0+2"
-```
+Die Zahl nach dem **+** bei jedem Update erhöhen. **Signierschlüssel:** `C:\Users\erika\OffeneTuerenKeys\` –
+nicht löschen und am besten sichern, sonst gehen keine Updates über die installierte App.
 
-**Signierschlüssel:** `C:\Users\erika\OffeneTuerenKeys\` (bewusst *außerhalb* von OneDrive und nicht im Git).
-Nicht löschen und am besten sichern – ohne diesen Schlüssel lassen sich keine Updates über die
-installierte App spielen (man müsste sie dann erst deinstallieren, und gemerkte Termine wären weg).
+## 7. KI-Auswertung (optional)
 
----
+Mit einem Claude-API-Schlüssel (Repository → *Settings → Secrets and variables → Actions* →
+`ANTHROPIC_API_KEY`) liest eine KI die Seiten genauer, sucht zusätzlich im Web und stuft Jobs genauer ein
+(sie darf Jobs nur **strenger** einstufen als die festen Regeln). Das Konto muss ein Erwachsener anlegen;
+die Nutzung kostet Geld (`LLM_MODEL: claude-haiku-5-5` in der Workflow-Datei ist deutlich günstiger).
+Ohne Schlüssel funktioniert alles, die Freizeit-Titel sind dann aber manchmal etwas holprig.
 
-## Technik in Kürze
+## Hinweise zu den Quellen
 
-- Flutter 3.47 / Dart 3.13, Material 3, Pakete: flutter_map, geolocator, table_calendar, http,
-  flutter_local_notifications, add_2_calendar (+ shared_preferences, url_launcher, path_provider, timezone, intl).
-- Karte: OpenStreetMap-Kacheln (ohne API-Schlüssel), farblich gedämpft bzw. im Dunkelmodus umgekehrt.
-  Pins werden beim Rauszoomen zu Gruppen zusammengefasst; der farbige Ring zeigt die Kategorien darin.
-- Termine, die gerade laufen, haben einen ruhig pulsierenden Ring.
-- Animationen werden abgeschaltet, wenn Android „Animationen entfernen“ aktiv ist.
+- robots.txt wird immer beachtet, jede Website höchstens alle 2 Sekunden abgerufen.
+- **Nicht** genutzt, weil die Nutzungsbedingungen das automatische Übernehmen verbieten: meinestadt.de,
+  festivalsindeutschland.de. duesseldorf.de sperrt Crawler per robots.txt.
+- Gespeichert werden nur Fakten (Datum, Ort, Titel, kurze Beschreibung) mit Link zur Quelle.
+- Karte: © OpenStreetMap-Mitwirkende. Jobs: Jobbörse der Bundesagentur für Arbeit.

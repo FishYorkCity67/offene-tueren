@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../config.dart';
 import '../models/event.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import 'event_sheet.dart';
+import 'job_sheet.dart';
+import 'jobs_screen.dart';
 import 'widgets.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -17,6 +20,8 @@ class FavoritesScreen extends StatelessWidget {
     final p = Palette.of(context);
     final t = Theme.of(context).textTheme;
     final favs = s.favoriteEvents;
+    final favJobs = s.favoriteJobs;
+    final total = favs.length + favJobs.length;
 
     return ListView(
       padding: EdgeInsets.fromLTRB(16, MediaQuery.paddingOf(context).top + 18, 16, bottomInset + 28),
@@ -27,15 +32,15 @@ class FavoritesScreen extends StatelessWidget {
             Text('Gemerkt', style: t.headlineMedium),
             const SizedBox(height: 4),
             Text(
-              favs.isEmpty
+              total == 0
                   ? 'Deine Favoriten erscheinen hier.'
-                  : '${favs.length} ${favs.length == 1 ? 'Termin' : 'Termine'}${s.reminders ? ' · Erinnerung am Vortag an' : ''}',
+                  : '$total gemerkt${s.reminders && favs.isNotEmpty ? ' · Erinnerung am Vortag an' : ''}',
               style: t.bodySmall,
             ),
           ]),
         ),
         const SizedBox(height: 16),
-        if (favs.isEmpty)
+        if (total == 0)
           Container(
             decoration: BoxDecoration(
               color: p.surface,
@@ -45,48 +50,70 @@ class FavoritesScreen extends StatelessWidget {
             child: const EmptyState(
               icon: Icons.favorite_border_rounded,
               title: 'Noch nichts gemerkt',
-              text: 'Tippe bei einem Termin auf „Merken“ – dann findest du ihn hier und wirst am Tag davor erinnert.',
+              text: 'Tippe bei einem Termin, Event oder Job auf das Herz – dann findest du ihn hier. '
+                  'Für Termine bekommst du am Tag davor eine Erinnerung.',
             ),
-          )
-        else
-          for (final (i, e) in favs.indexed)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Appear(
-                key: ValueKey('fav${e.id}'),
-                index: i,
-                child: EventTile(
-                  event: e,
-                  onTap: () => showEventSheet(context, e),
-                  trailing: RoundIconButton(
-                    icon: Icons.favorite_rounded,
-                    color: p.category(Category.sonstiges),
-                    tooltip: 'Entfernen',
-                    onTap: () => s.toggleFavorite(e),
-                  ),
+          ),
+        for (final (i, e) in favs.indexed)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Appear(
+              key: ValueKey('fav${e.id}'),
+              index: i,
+              child: EventTile(
+                event: e,
+                onTap: () => showEventSheet(context, e),
+                trailing: RoundIconButton(
+                  icon: Icons.favorite_rounded,
+                  color: p.category(Category.sonstiges),
+                  tooltip: 'Entfernen',
+                  onTap: () => s.toggleFavorite(e),
                 ),
               ),
             ),
+          ),
+        if (favJobs.isNotEmpty) ...[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(6, 8, 6, 10),
+            child: Text('Gemerkte Jobs', style: t.titleMedium),
+          ),
+          for (final j in favJobs)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: JobTile(
+                job: j,
+                trailing: RoundIconButton(
+                  icon: Icons.favorite_rounded,
+                  color: p.category(Category.sonstiges),
+                  tooltip: 'Entfernen',
+                  onTap: () => s.toggleFavoriteId(j.id, remind: false),
+                ),
+              ),
+            ),
+        ],
         const SizedBox(height: 26),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 6),
           child: Text('Einstellungen', style: t.headlineSmall),
         ),
         const SizedBox(height: 12),
+
+        // ---- Über mich ---------------------------------------------------------------------
         _Group(children: [
           _Row(
-            icon: Icons.notifications_none_rounded,
-            title: 'Erinnerung am Vortag',
-            subtitle: 'Um 18 Uhr eine Mitteilung für jeden gemerkten Termin',
-            trailing: Switch(value: s.reminders, onChanged: s.setReminders),
+            icon: Icons.cake_outlined,
+            title: 'Mein Alter',
+            subtitle: 'Termine und Jobs mit höherer Altersgrenze werden ausgeblendet'
+                '${s.hiddenByAge + s.jobsTooYoung > 0 ? ' (gerade ${s.hiddenByAge + s.jobsTooYoung})' : ''}',
+            trailing: _Stepper(value: s.age, onChanged: s.setAge),
           ),
           _Row(
             icon: Icons.radar_rounded,
-            title: 'Suchradius',
+            title: 'Suchradius für Karte & Kalender',
             subtitle: _radiusHint(s),
             below: Wrap(spacing: 8, runSpacing: 8, children: [
               for (final km in const [10, 25, 50, 100, null])
-                _Choice(
+                ChoicePill(
                   label: km == null ? 'Ganz Deutschland' : '$km km',
                   selected: s.radiusKm == km,
                   onTap: () async {
@@ -96,9 +123,82 @@ class FavoritesScreen extends StatelessWidget {
                 ),
             ]),
           ),
+        ]),
+        const SizedBox(height: 14),
+
+        // ---- Was ich sehen will -----------------------------------------------------------
+        _SectionTitle('Was ich auf Karte & Kalender sehen will'),
+        _Group(children: [
+          for (final a in Area.values)
+            _Row(
+              icon: a.icon,
+              title: a.label,
+              trailing: Switch(
+                value: a.categories.any(s.categoryVisible),
+                onChanged: (v) => s.setAreaVisible(a, v),
+              ),
+              below: a.categories.any(s.categoryVisible)
+                  ? Wrap(spacing: 8, runSpacing: 8, children: [
+                      for (final c in a.categories)
+                        ChoicePill(
+                          label: c.label,
+                          icon: c.icon,
+                          selected: s.categoryVisible(c),
+                          onTap: () => s.setCategoryVisible(c, !s.categoryVisible(c)),
+                        ),
+                    ])
+                  : null,
+            ),
+        ]),
+        const SizedBox(height: 14),
+
+        // ---- Mitteilungen -----------------------------------------------------------------
+        _SectionTitle('Mitteilungen'),
+        _Group(children: [
+          _Row(
+            icon: Icons.notifications_none_rounded,
+            title: 'Erinnerung am Vortag',
+            subtitle: 'Um 18 Uhr für jeden gemerkten Termin',
+            trailing: Switch(value: s.reminders, onChanged: s.setReminders),
+          ),
+          _Row(
+            icon: Icons.door_front_door_outlined,
+            title: 'Neue Tage der offenen Tür',
+            subtitle: 'in ${s.notifyRadiusKm} km Umkreis',
+            trailing: Switch(value: s.notifyOffene, onChanged: (v) => s.setNotify(offene: v)),
+          ),
+          _Row(
+            icon: Icons.local_activity_outlined,
+            title: 'Neue Freizeit-Events',
+            subtitle: 'in ${s.notifyRadiusKm} km Umkreis',
+            trailing: Switch(value: s.notifyFreizeit, onChanged: (v) => s.setNotify(freizeit: v)),
+          ),
+          _Row(
+            icon: Icons.work_outline_rounded,
+            title: 'Neue Ferienjobs',
+            subtitle: 'in ${s.notifyRadiusKm} km Umkreis, passend zu deinem Alter',
+            trailing: Switch(value: s.notifyJobs, onChanged: (v) => s.setNotify(jobs: v)),
+          ),
+          _Row(
+            icon: Icons.near_me_outlined,
+            title: 'Umkreis für Mitteilungen',
+            subtitle: s.myLocation == null
+                ? 'Braucht deinen Standort – sonst kommt keine „in deiner Nähe“-Mitteilung'
+                : 'Geprüft wird beim Öffnen der App und etwa alle 6 Stunden',
+            below: Wrap(spacing: 8, runSpacing: 8, children: [
+              for (final km in const [5, 10, 25, 50])
+                ChoicePill(label: '$km km', selected: s.notifyRadiusKm == km, onTap: () => s.setNotify(radius: km)),
+            ]),
+          ),
+        ]),
+        const SizedBox(height: 14),
+
+        // ---- Darstellung ------------------------------------------------------------------
+        _SectionTitle('Darstellung'),
+        _Group(children: [
           _Row(
             icon: Icons.contrast_rounded,
-            title: 'Darstellung',
+            title: 'Hell oder dunkel',
             below: SegmentPill<ThemeMode>(
               values: const [ThemeMode.system, ThemeMode.light, ThemeMode.dark],
               selected: s.themeMode,
@@ -112,25 +212,19 @@ class FavoritesScreen extends StatelessWidget {
             subtitle: s.calmMap ? 'Gedämpfte Kartenfarben, damit die Pins gut auffallen' : 'Kräftige Farben wie bei OpenStreetMap',
             trailing: Switch(value: s.calmMap, onChanged: s.setCalmMap),
           ),
-          _Row(
-            icon: Icons.cake_outlined,
-            title: 'Mein Alter',
-            subtitle: s.hiddenByAge == 0
-                ? 'Termine mit höherer Altersgrenze werden ausgeblendet'
-                : '${s.hiddenByAge} ${s.hiddenByAge == 1 ? 'Termin ist' : 'Termine sind'} erst ab einem höheren Alter erlaubt und ausgeblendet',
-            trailing: _Stepper(value: s.age, onChanged: s.setAge),
-          ),
         ]),
         const SizedBox(height: 14),
+
+        // ---- Daten ------------------------------------------------------------------------
         _Group(children: [
           _Row(
             icon: Icons.cloud_sync_outlined,
-            title: 'Termine',
+            title: 'Daten',
             subtitle: _sourceHint(s),
             below: Row(children: [
               Expanded(
                 child: FilledButton.icon(
-                  onPressed: s.sourceUrl.isEmpty || s.refreshing ? null : s.refresh,
+                  onPressed: s.dataBase.isEmpty || s.refreshing ? null : s.refresh,
                   icon: s.refreshing
                       ? SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2, color: p.onInk))
                       : const Icon(Icons.refresh_rounded, size: 19),
@@ -141,13 +235,21 @@ class FavoritesScreen extends StatelessWidget {
               OutlinedButton(onPressed: () => _editSource(context, s), child: const Text('Quelle')),
             ]),
           ),
+          _Row(
+            icon: Icons.gavel_rounded,
+            title: 'Was darf ich arbeiten?',
+            subtitle: 'Jugendarbeitsschutz kurz erklärt',
+            trailing: Icon(Icons.chevron_right_rounded, color: p.muted),
+            onTap: () => showJobRules(context),
+          ),
         ]),
         const SizedBox(height: 22),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Text(
-            'Die Termine sammelt ein Skript jeden Tag automatisch von öffentlichen Websites. '
-            'Veranstaltungen nur für Fachpublikum sind ausgeblendet. Angaben ohne Gewähr.\n'
+            '${AppConfig.appName} sammelt Termine, Events und Jobs jeden Tag automatisch von öffentlichen '
+            'Websites und der Jobbörse der Bundesagentur für Arbeit. Angebote nur für Fachpublikum oder '
+            'Erwachsene sind ausgeblendet. Alle Angaben ohne Gewähr.\n'
             'Karte © OpenStreetMap-Mitwirkende (ODbL), Kartenkacheln von openstreetmap.org.',
             style: t.bodySmall,
           ),
@@ -157,47 +259,63 @@ class FavoritesScreen extends StatelessWidget {
   }
 
   static String _radiusHint(AppState s) {
-    if (s.radiusKm == null) return 'Zeigt Termine in ganz Deutschland';
+    if (s.radiusKm == null) return 'Zeigt alles in ganz Deutschland';
     return switch (s.locationStatus) {
       LocationStatus.denied => 'Ohne Standort-Erlaubnis gilt der Radius nicht',
       LocationStatus.off => 'Standort ist aus – der Radius gilt erst, wenn er an ist',
       _ when s.myLocation == null => 'Wird angewendet, sobald dein Standort bekannt ist',
-      _ => 'Nur Termine bis ${s.radiusKm} km um dich herum',
+      _ => 'Nur Einträge bis ${s.radiusKm} km um dich herum',
     };
   }
 
   static String _sourceHint(AppState s) {
-    if (s.sourceUrl.isEmpty) {
-      return 'Keine Online-Quelle eingestellt – es werden die mitgelieferten Termine gezeigt.';
-    }
-    final stand = s.generated != null ? 'Stand ${DateFormat('d. MMM, HH:mm', 'de_DE').format(s.generated!.toLocal())} Uhr' : 'Noch nicht geladen';
-    return s.fetchError != null ? '$stand · ${s.fetchError}' : '$stand · ${s.allCount} Einträge';
+    final g = s.generated;
+    final stand = g != null ? 'Stand ${DateFormat('d. MMM, HH:mm', 'de_DE').format(g.toLocal())} Uhr' : 'Noch nicht geladen';
+    final counts = '${s.countIn(Area.offeneTuer)} Tage der offenen Tür · ${s.countIn(Area.freizeit)} Events · ${s.jobCount} Jobs';
+    return s.fetchError != null ? '$stand · ${s.fetchError}' : '$stand\n$counts';
   }
 
   Future<void> _editSource(BuildContext context, AppState s) async {
-    final ctl = TextEditingController(text: s.sourceUrl);
+    final ctl = TextEditingController(text: s.dataBase);
     final url = await showDialog<String>(
       context: context,
       builder: (ctx) => AlertDialog(
         title: const Text('Datenquelle'),
         content: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text('Adresse der events.json, z. B. die „Raw“-Adresse aus deinem GitHub-Projekt.'),
+          const Text('Ordner mit events.json, freizeit.json und jobs.json – z. B. die „Raw“-Adresse '
+              'des data-Ordners in deinem GitHub-Projekt.'),
           const SizedBox(height: 12),
           TextField(
             controller: ctl,
             keyboardType: TextInputType.url,
             autocorrect: false,
-            decoration: const InputDecoration(hintText: 'https://raw.githubusercontent.com/…/events.json'),
+            decoration: const InputDecoration(hintText: 'https://raw.githubusercontent.com/…/data/'),
           ),
         ]),
         actions: [
+          TextButton(onPressed: () => ctl.text = kDefaultDataBase, child: const Text('Standard')),
           TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Abbrechen')),
           FilledButton(onPressed: () => Navigator.pop(ctx, ctl.text), child: const Text('Speichern')),
         ],
       ),
     );
     ctl.dispose();
-    if (url != null) await s.setSourceUrl(url);
+    if (url != null) await s.setDataBase(url);
+  }
+}
+
+class _SectionTitle extends StatelessWidget {
+  const _SectionTitle(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 6, 8, 8),
+      child: Text(text.toUpperCase(),
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, letterSpacing: 0.8, color: p.muted)),
+    );
   }
 }
 
@@ -209,6 +327,7 @@ class _Group extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     return Container(
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: p.surface,
         borderRadius: BorderRadius.circular(24),
@@ -225,18 +344,19 @@ class _Group extends StatelessWidget {
 }
 
 class _Row extends StatelessWidget {
-  const _Row({required this.icon, required this.title, this.subtitle, this.trailing, this.below});
+  const _Row({required this.icon, required this.title, this.subtitle, this.trailing, this.below, this.onTap});
   final IconData icon;
   final String title;
   final String? subtitle;
   final Widget? trailing;
   final Widget? below;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final t = Theme.of(context).textTheme;
-    return Padding(
+    final content = Padding(
       padding: const EdgeInsets.fromLTRB(14, 14, 14, 14),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
@@ -261,36 +381,17 @@ class _Row extends StatelessWidget {
           ),
           if (trailing != null) ...[const SizedBox(width: 8), trailing!],
         ]),
-        if (below != null) Padding(padding: const EdgeInsets.only(left: 48, top: 12), child: below!),
+        AnimatedSize(
+          duration: Motion.of(context, Motion.medium),
+          curve: Motion.curve,
+          alignment: Alignment.topCenter,
+          child: below != null
+              ? Padding(padding: const EdgeInsets.only(left: 48, top: 12), child: below!)
+              : const SizedBox(width: double.infinity),
+        ),
       ]),
     );
-  }
-}
-
-class _Choice extends StatelessWidget {
-  const _Choice({required this.label, required this.selected, required this.onTap});
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final p = Palette.of(context);
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: Motion.of(context, Motion.fast),
-        curve: Motion.curve,
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-        decoration: BoxDecoration(
-          color: selected ? p.ink : p.surface,
-          borderRadius: BorderRadius.circular(99),
-          border: Border.all(color: selected ? p.ink : p.outline),
-        ),
-        child: Text(label,
-            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: selected ? p.onInk : p.inkSoft)),
-      ),
-    );
+    return onTap == null ? content : InkWell(onTap: onTap, child: content);
   }
 }
 

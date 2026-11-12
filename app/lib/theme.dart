@@ -72,6 +72,18 @@ class Palette {
         Category.schule => dark ? const Color(0xFFE8A64A) : const Color(0xFFC97A12),
         Category.ausbildung => dark ? const Color(0xFF5CC09A) : const Color(0xFF23845F),
         Category.sonstiges => dark ? const Color(0xFFE77F72) : const Color(0xFFBF4436),
+        Category.gratis => dark ? const Color(0xFF4FC3C1) : const Color(0xFF0E8486),
+        Category.flohmarkt => dark ? const Color(0xFFC79AD4) : const Color(0xFF8A548F),
+        Category.ferienprogramm => dark ? const Color(0xFFA9C95A) : const Color(0xFF5E8A1C),
+        Category.saisonal => dark ? const Color(0xFFE48AA2) : const Color(0xFFA83A5B),
+      };
+
+  /// Farbe der Altersstufe eines Ferienjobs.
+  Color ageColor(int minAge) => switch (minAge) {
+        <= 14 => accent,
+        15 => dark ? const Color(0xFF7F9CE8) : const Color(0xFF3B5BB0),
+        16 => dark ? const Color(0xFFE8A64A) : const Color(0xFFC97A12),
+        _ => muted,
       };
 
   Color categoryTint(Category c) =>

@@ -31,7 +31,8 @@ class CategoryBadge extends StatelessWidget {
 
 /// Kleiner Hinweis „Jetzt“ mit ruhig pulsierendem Punkt.
 class LiveBadge extends StatelessWidget {
-  const LiveBadge({super.key});
+  const LiveBadge({super.key, this.label = 'Jetzt'});
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class LiveBadge extends StatelessWidget {
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         PulseDot(color: p.accent, size: 7),
         const SizedBox(width: 6),
-        Text('Jetzt', style: TextStyle(color: p.accent, fontWeight: FontWeight.w700, fontSize: 12)),
+        Text(label, style: TextStyle(color: p.accent, fontWeight: FontWeight.w700, fontSize: 12)),
       ]),
     );
   }
@@ -122,13 +123,14 @@ class EventTile extends StatelessWidget {
     final p = Palette.of(context);
     final s = AppScope.of(context);
     final now = DateTime.now();
-    final km = s.distanceKm(event);
+    final km = s.distanceKm(event.point);
     final rel = relativeDay(event, now);
     final t = Theme.of(context).textTheme;
     final meta = [
       showDate ? dateAndTime(event) : timeRange(event),
       if (km != null) distance(km),
     ].join(' · ');
+    final price = priceLabel(event);
     return Material(
       color: p.surface,
       borderRadius: BorderRadius.circular(20),
@@ -154,16 +156,22 @@ class EventTile extends StatelessWidget {
                         style: t.labelMedium?.copyWith(
                             color: p.category(event.category), fontWeight: FontWeight.w700, letterSpacing: 0.6)),
                   ),
-                  if (event.isLive(now)) ...[const SizedBox(width: 8), const LiveBadge()],
+                  if (event.isLive(now)) ...[
+                    const SizedBox(width: 8),
+                    LiveBadge(label: event.daily ? 'Offen' : 'Jetzt'),
+                  ],
                 ]),
                 const SizedBox(height: 3),
                 Text(event.headline, maxLines: 2, overflow: TextOverflow.ellipsis, style: t.titleMedium),
                 const SizedBox(height: 4),
                 Text(meta, style: t.bodySmall),
-                if (event.city.isNotEmpty || rel.isNotEmpty || event.needsAdult) ...[
+                if (event.city.isNotEmpty || rel.isNotEmpty || event.needsAdult || price.isNotEmpty) ...[
                   const SizedBox(height: 6),
                   Wrap(spacing: 6, runSpacing: 6, children: [
                     if (rel.isNotEmpty && !event.isLive(now)) _Tag(rel, color: p.accent),
+                    if (price.isNotEmpty)
+                      _Tag(price, color: event.free == true ? p.category(Category.gratis) : null,
+                          icon: event.free == true ? Icons.money_off_rounded : null),
                     if (event.city.isNotEmpty) _Tag(event.city),
                     if (event.needsAdult) _Tag('mit Begleitung', color: p.warn, icon: Icons.family_restroom_rounded),
                   ]),
@@ -178,8 +186,13 @@ class EventTile extends StatelessWidget {
   }
 }
 
+/// Kleines Etikett (öffentlich, damit es auch die Job-Ansicht nutzen kann).
+class InfoTag extends _Tag {
+  const InfoTag(super.text, {super.key, super.color, super.icon});
+}
+
 class _Tag extends StatelessWidget {
-  const _Tag(this.text, {this.color, this.icon});
+  const _Tag(this.text, {super.key, this.color, this.icon});
   final String text;
   final Color? color;
   final IconData? icon;
@@ -358,6 +371,45 @@ class CategoryChip extends StatelessWidget {
                     color: active ? Colors.white.withValues(alpha: 0.8) : p.muted)),
           ],
         ]),
+      ),
+    );
+  }
+}
+
+/// Auswahl-Kapsel (z. B. "25 km", "Sommerferien"): gewählt = dunkel gefüllt.
+class ChoicePill extends StatelessWidget {
+  const ChoicePill({super.key, required this.label, required this.selected, required this.onTap, this.icon});
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final IconData? icon;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Semantics(
+      button: true,
+      selected: selected,
+      child: GestureDetector(
+        onTap: onTap,
+        child: AnimatedContainer(
+          duration: Motion.of(context, Motion.fast),
+          curve: Motion.curve,
+          padding: EdgeInsets.fromLTRB(icon != null ? 10 : 14, 8, 14, 8),
+          decoration: BoxDecoration(
+            color: selected ? p.ink : p.surface,
+            borderRadius: BorderRadius.circular(99),
+            border: Border.all(color: selected ? p.ink : p.outline),
+          ),
+          child: Row(mainAxisSize: MainAxisSize.min, children: [
+            if (icon != null) ...[
+              Icon(icon, size: 16, color: selected ? p.onInk : p.inkSoft),
+              const SizedBox(width: 6),
+            ],
+            Text(label,
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: selected ? p.onInk : p.inkSoft)),
+          ]),
+        ),
       ),
     );
   }

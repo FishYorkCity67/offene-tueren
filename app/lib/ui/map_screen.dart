@@ -9,6 +9,7 @@ import '../models/event.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import 'event_sheet.dart';
+import 'filter_card.dart';
 import 'widgets.dart';
 
 // leicht nach Norden verschoben, weil oben die Filterkarte liegt
@@ -64,7 +65,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     final top = MediaQuery.paddingOf(context).top;
     final target = CameraFit.bounds(
       bounds: LatLngBounds.fromPoints(pts),
-      padding: EdgeInsets.fromLTRB(56, top + 200, 56, widget.bottomInset + 60),
+      padding: EdgeInsets.fromLTRB(56, top + 260, 56, widget.bottomInset + 60),
       maxZoom: 16,
     ).fit(_map.camera);
     _flyTo(target.center, target.zoom);
@@ -145,8 +146,6 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     final now = DateTime.now();
     final top = MediaQuery.paddingOf(context).top;
 
-    final filter = _tileFilter(calm: s.calmMap, dark: p.dark);
-
     return Stack(children: [
       Positioned.fill(
         child: ColoredBox(
@@ -170,14 +169,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
               },
             ),
             children: [
-              TileLayer(
-                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                userAgentPackageName: 'app.offenetueren',
-                maxNativeZoom: 19,
-                tileBuilder: filter == null
-                    ? null
-                    : (context, tile, _) => ColorFiltered(colorFilter: filter, child: tile),
-              ),
+              buildTileLayer(calm: s.calmMap, dark: p.dark),
               if (s.myLocation != null)
                 MarkerLayer(markers: [
                   Marker(
@@ -221,7 +213,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
           alignment: Alignment.topLeft,
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 520),
-            child: _FilterCard(count: events.length),
+            child: FilterCard(count: events.length, showTime: true),
           ),
         ),
       ),
@@ -238,17 +230,9 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
               text: s.allCount == 0
                   ? 'Noch keine Termine geladen. Prüfe die Datenquelle in den Einstellungen.'
                   : 'Keine Termine für diese Auswahl.',
-              action: s.allCount == 0 || (s.timeFilter == TimeFilter.all && s.categories.length == 4)
+              action: s.allCount == 0 || !s.filtersActive
                   ? null
-                  : TextButton(
-                      onPressed: () {
-                        s.setTimeFilter(TimeFilter.all);
-                        for (final c in Category.values) {
-                          if (!s.categories.contains(c)) s.toggleCategory(c);
-                        }
-                      },
-                      child: const Text('Alle zeigen'),
-                    ),
+                  : TextButton(onPressed: s.resetFilters, child: const Text('Alle zeigen')),
             ),
           ),
         ),
@@ -320,6 +304,17 @@ List<double> _mul(List<double> a, List<double> b) => [
 
 /// Farbton um 180° drehen: nach dem Umkehren wird Wasser so wieder blau statt braun.
 const _hue180 = [-0.574, 1.43, 0.144, 0.426, 0.43, 0.144, 0.426, 1.43, -0.856];
+
+/// OpenStreetMap-Kacheln im App-Stil (für Hauptkarte und Job-Karte).
+TileLayer buildTileLayer({required bool calm, required bool dark}) {
+  final filter = _tileFilter(calm: calm, dark: dark);
+  return TileLayer(
+    urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    userAgentPackageName: 'app.offenetueren',
+    maxNativeZoom: 19,
+    tileBuilder: filter == null ? null : (context, tile, _) => ColorFiltered(colorFilter: filter, child: tile),
+  );
+}
 
 ColorFilter? _tileFilter({required bool calm, required bool dark}) {
   if (!calm && !dark) return null;
@@ -403,79 +398,6 @@ List<_Cluster> _cluster(List<OpenDayEvent> events, double zoom) {
 // Bausteine
 // =====================================================================================
 
-class _FilterCard extends StatelessWidget {
-  const _FilterCard({required this.count});
-  final int count;
-
-  @override
-  Widget build(BuildContext context) {
-    final s = AppScope.of(context);
-    final p = Palette.of(context);
-    final t = Theme.of(context).textTheme;
-    final counts = {for (final c in Category.values) c: 0};
-    for (final e in s.relevant) {
-      counts[e.category] = counts[e.category]! + 1;
-    }
-    return Container(
-      padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
-      decoration: BoxDecoration(
-        color: p.surface,
-        borderRadius: BorderRadius.circular(26),
-        border: Border.all(color: p.outline),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: p.dark ? 0.3 : 0.06), blurRadius: 18, offset: const Offset(0, 6))],
-      ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-        Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Text('Offene Türen', style: t.titleLarge),
-          const SizedBox(width: 10),
-          if (s.refreshing)
-            SizedBox(width: 14, height: 14, child: CircularProgressIndicator(strokeWidth: 1.8, color: p.muted)),
-          const Spacer(),
-          AnimatedSwitcher(
-            duration: Motion.of(context, Motion.fast),
-            transitionBuilder: (c, a) => FadeTransition(opacity: a, child: c),
-            child: Text(
-              count == 1 ? '1 Termin' : '$count Termine',
-              key: ValueKey(count),
-              style: t.labelLarge?.copyWith(color: p.muted),
-            ),
-          ),
-        ]),
-        if (s.fetchError != null && s.allCount > 0) ...[
-          const SizedBox(height: 4),
-          Text(s.fetchError!, style: t.bodySmall),
-        ],
-        const SizedBox(height: 10),
-        SegmentPill<TimeFilter>(
-          values: TimeFilter.values,
-          selected: s.timeFilter,
-          label: (f) => f == TimeFilter.month ? 'Monat' : f.label,
-          onChanged: s.setTimeFilter,
-        ),
-        const SizedBox(height: 10),
-        SizedBox(
-          height: 36,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: Category.values.length,
-            separatorBuilder: (_, _) => const SizedBox(width: 8),
-            itemBuilder: (_, i) {
-              final c = Category.values[i];
-              final allOn = s.categories.length == Category.values.length;
-              return CategoryChip(
-                category: c,
-                active: s.categories.contains(c),
-                count: counts[c],
-                onTap: () => allOn ? s.onlyCategory(c) : s.toggleCategory(c),
-                onLongPress: () => s.onlyCategory(c),
-              );
-            },
-          ),
-        ),
-      ]),
-    );
-  }
-}
 
 class _Pin extends StatelessWidget {
   const _Pin({required this.event, required this.live});

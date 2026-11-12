@@ -9,14 +9,29 @@ final _hm = DateFormat('H:mm', 'de_DE');
 
 String _clock(DateTime t) => t.minute == 0 ? '${t.hour}' : _hm.format(t);
 
-/// "10–14 Uhr", "ab 18:30 Uhr" oder "ganztägig".
+/// "10–14 Uhr", "ab 18:30 Uhr", "täglich 11–21 Uhr" oder "ganztägig".
 String timeRange(OpenDayEvent e) {
-  if (e.allDay) return 'ganztägig';
+  if (e.openingHours.isNotEmpty && e.isMultiDay) return e.openingHours;
+  if (e.daily) {
+    final endIsMarker = e.end.hour == 23 && e.end.minute == 59;
+    return endIsMarker ? 'täglich ab ${_clock(e.start)} Uhr' : 'täglich ${_clock(e.start)}–${_clock(e.end)} Uhr';
+  }
+  if (e.allDay) return e.isMultiDay ? 'mehrere Tage' : 'ganztägig';
   final sameMoment = e.end.difference(e.start).inMinutes <= 0;
   final endIsMarker = e.end.hour == 23 && e.end.minute == 59;
   if (sameMoment || endIsMarker || e.isMultiDay) return 'ab ${_clock(e.start)} Uhr';
   return '${_clock(e.start)}–${_clock(e.end)} Uhr';
 }
+
+/// "Eintritt frei", "3 €" oder leer.
+String priceLabel(OpenDayEvent e) {
+  if (e.free == true) return 'Eintritt frei';
+  if (e.price.isNotEmpty) return e.price;
+  return '';
+}
+
+/// "bis 30. Dez." für laufende mehrtägige Termine.
+String untilLabel(OpenDayEvent e) => 'bis ${_dayMonth.format(e.end)}';
 
 /// "Sa., 24. Jan." bzw. "27.–28. Jan." bei mehrtägigen Terminen.
 String dateShort(OpenDayEvent e) {
@@ -44,7 +59,8 @@ String relativeDay(OpenDayEvent e, DateTime now) {
   final today = DateTime(now.year, now.month, now.day);
   final d = DateTime(e.start.year, e.start.month, e.start.day);
   final diff = d.difference(today).inDays;
-  if (e.isLive(now)) return 'läuft gerade';
+  if (e.isLive(now)) return e.daily ? 'gerade offen' : 'läuft gerade';
+  if (diff < 0 && e.occursOn(today)) return untilLabel(e);
   if (diff <= 0 && e.occursOn(today)) return 'heute';
   if (diff == 1) return 'morgen';
   if (diff > 1 && diff <= 14) return 'in $diff Tagen';

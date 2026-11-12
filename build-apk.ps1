@@ -1,25 +1,26 @@
 ﻿# Baut die fertige APK für dein Handy.
 #
-#   .\build-apk.ps1                         -> APK mit den mitgelieferten Terminen
-#   .\build-apk.ps1 -EventsUrl "https://raw.githubusercontent.com/NAME/offene-tueren/main/data/events.json"
-#                                           -> APK lädt die Termine täglich frisch aus deinem GitHub-Projekt
+#   .\build-apk.ps1 -Version "2.0.1+3"      -> neue Version (Zahl nach + bei JEDEM Update erhöhen)
+#   .\build-apk.ps1 -DataUrl "https://raw.githubusercontent.com/NAME/REPO/main/data/"
+#                                           -> anderer Datenordner (Standard: FishYorkCity67/offene-tueren)
 #
+# App-Name ändern: app\assets\app_name.txt bearbeiten, dann neu bauen.
 # Ergebnis: C:\Users\erika\OffeneTueren-arm64.apk
 param(
-    [string]$EventsUrl = "",
-    [string]$Version = ""          # z. B. "1.1.0+2" – bei jedem Update die Zahl nach + erhöhen
+    [string]$DataUrl = "",
+    [string]$Version = ""          # z. B. "2.0.1+3" – bei jedem Update die Zahl nach + erhöhen
 )
 $ErrorActionPreference = "Stop"
 $root = $PSScriptRoot
 $env:Path = "C:\Users\erika\flutter\bin;$env:Path"
 
-# aktuellen Stand der Termine in die App packen (für den ersten Start ohne Internet)
-Copy-Item "$root\data\events.json" "$root\app\assets\events.json" -Force
+# aktuellen Stand der Daten in die App packen (für den ersten Start ohne Internet)
+foreach ($d in "events.json","freizeit.json","jobs.json") { if (Test-Path "$root\data\$d") { Copy-Item "$root\data\$d" "$root\app\assets\$d" -Force } }
 
 Push-Location "$root\app"
 try {
     $flutterArgs = @("build", "apk", "--release", "--split-per-abi", "--target-platform", "android-arm64")
-    if ($EventsUrl) { $flutterArgs += "--dart-define=EVENTS_URL=$EventsUrl" }
+    if ($DataUrl) { $flutterArgs += "--dart-define=DATA_BASE_URL=$DataUrl" }
     if ($Version) {
         $parts = $Version.Split("+")
         $flutterArgs += @("--build-name", $parts[0])

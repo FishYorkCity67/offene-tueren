@@ -6,6 +6,7 @@ import '../state/app_state.dart';
 import '../theme.dart';
 import 'calendar_screen.dart';
 import 'favorites_screen.dart';
+import 'jobs_screen.dart';
 import 'map_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,11 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
     final bottomPad = MediaQuery.paddingOf(context).bottom;
     final barBottom = bottomPad + 12;
     final inset = barBottom + _barHeight;
-    final favCount = s.favoriteEvents.length;
+    final favCount = s.favoriteEvents.length + s.favoriteJobs.length;
 
     final pages = [
       MapScreen(bottomInset: inset),
       CalendarScreen(bottomInset: inset),
+      JobsScreen(bottomInset: inset),
       FavoritesScreen(bottomInset: inset),
     ];
 
@@ -151,7 +153,8 @@ class _NavCapsule extends StatelessWidget {
   static const _items = [
     (Icons.map_outlined, Icons.map_rounded, 'Karte'),
     (Icons.calendar_month_outlined, Icons.calendar_month_rounded, 'Kalender'),
-    (Icons.favorite_border_rounded, Icons.favorite_rounded, 'Gemerkt'),
+    (Icons.work_outline_rounded, Icons.work_rounded, 'Ferienjobs'),
+    (Icons.favorite_border_rounded, Icons.favorite_rounded, 'Favoriten'),
   ];
 
   @override
@@ -173,7 +176,7 @@ class _NavCapsule extends StatelessWidget {
             activeIcon: _items[i].$2,
             label: _items[i].$3,
             active: i == index,
-            badge: i == 2 && favCount > 0 ? favCount : null,
+            badge: i == 3 && favCount > 0 ? favCount : null,
             onTap: () => onTap(i),
           ),
       ]),

@@ -1,9 +1,105 @@
 {
  "version": 1,
- "generated": "2026-11-11T21:50:22+01:00",
- "count": 37,
+ "generated": "2026-11-11T22:33:10+01:00",
+ "count": 76,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
+  {
+   "id": "91834e0e2a2ff8",
+   "title": "Tag der offenen Tür",
+   "org": "Carl-Benz-Realschule",
+   "category": "schule",
+   "start": "2026-11-12T00:00:00+01:00",
+   "end": "2026-11-12T23:59:00+01:00",
+   "allDay": true,
+   "address": "Lewitstraße 2, 40547 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.237926,
+   "lng": 6.751297,
+   "url": "https://carl-benz-realschule.de/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Donnerstag, 12.11.2026, 19.00 Uhr · , Lewitstr. 2, orangefarbenes Hauptgebäude, Raum 3",
+   "sources": [
+    "https://carl-benz-realschule.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "78e620a281fc26",
+   "title": "Tag der offenen Tür",
+   "org": "Gymnasium Marienberg",
+   "category": "schule",
+   "start": "2026-11-12T19:00:00+01:00",
+   "end": "2026-11-12T23:59:00+01:00",
+   "allDay": false,
+   "address": "Rheinstraße 3, 41460 Neuss",
+   "city": "Neuss",
+   "lat": 51.200949,
+   "lng": 6.692869,
+   "url": "https://www.gymnasiummarienberg.de/anmeldung/Herbstakademie_2026/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Am Donnerstag, dem 12.11.2026, findet um 19:00 Uhr der Informationsabend für Eltern in unserem Forum statt.",
+   "sources": [
+    "https://www.gymnasiummarienberg.de/anmeldung/Herbstakademie_2026/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "327dbb6bd2f996",
+   "title": "Tag der offenen Tür am GBG",
+   "org": "Georg-Büchner-Gymnasium der Stadt Kaarst",
+   "category": "schule",
+   "start": "2026-11-14T00:00:00+01:00",
+   "end": "2026-11-14T23:59:00+01:00",
+   "allDay": true,
+   "address": "Am Holzbüttger Haus 1, 41564 Kaarst",
+   "city": "Kaarst",
+   "lat": 51.222883,
+   "lng": 6.592064,
+   "url": "https://gbg-kaarst.de/events/events/tag-der-offenen-tuer-am-gbg-3.html",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "",
+   "sources": [
+    "https://gbg-kaarst.de/events/tag-der-offenen-tuer-am-gbg-3.html"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "69d55818b76506",
+   "title": "Vocatium",
+   "org": "IST-Studieninstitut",
+   "category": "schule",
+   "start": "2026-11-14T00:00:00+01:00",
+   "end": "2026-11-14T23:59:00+01:00",
+   "allDay": true,
+   "address": "Erkrather Straße 220 a-c, 40233 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.219688,
+   "lng": 6.813833,
+   "url": "https://www.ist.de/infoveranstaltungen",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Vocatium München II · 14.11.26, Stuzubi Hannover",
+   "sources": [
+    "https://www.ist.de/infoveranstaltungen"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
   {
    "id": "fecc9d59bb990d",
    "title": "Tag der offenen Tür",
@@ -25,7 +121,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -49,7 +145,35 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "e9ae70c6556f46",
+   "title": "Tag der Offenen Tür",
+   "org": "Quirinus-Gymnasium Neuss",
+   "category": "schule",
+   "start": "2026-11-14T08:30:00+01:00",
+   "end": "2026-11-14T12:30:00+01:00",
+   "allDay": false,
+   "address": "Sternstraße 49, 41460 Neuss",
+   "city": "Neuss",
+   "lat": 51.196639,
+   "lng": 6.68331,
+   "url": "https://www.quirinus-gymnasium.de/aufnahme/infoveranstaltungen/tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "– Quirinus-Gymnasium Quirinus-Gymnasium 02131-907460 quirinus-gymnasium@stadt.neuss.de Sternstr. 49, 41460 Neuss Schulnummer: 165130 Tag der Offenen Tür Liebe Schülerinnen und Schüler, liebe Eltern der 4. Klassen, am …",
+   "sources": [
+    "https://www.quirinus-gymnasium.de/aufnahme/infoveranstaltungen/tag-der-offenen-tuer/",
+    "https://www.gymnasiummarienberg.de/aktuelles/artikel/Tag-der-offenen-Tuer-Sa-14.11.-0830-und-1030-Uhr/",
+    "https://www.gymnasiummarienberg.de/",
+    "https://www.gymnasiummarienberg.de/anmeldung/TadeoT/",
+    "https://www.gymnasiummarienberg.de/termine/veranstaltung/Tag-der-offenen-Tuer-2026.11.14/?instancedate=1794641400000"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -73,7 +197,134 @@
     "https://www.stuttgart.de/veranstaltungskalender/veranstaltungen/tag-der-offenen-tuer-im-fernmeldemuseum-530180"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "8ab0fcd7409419",
+   "title": "Tag der offenen Tür",
+   "org": "Lessing-Gymnasium",
+   "category": "schule",
+   "start": "2026-11-14T10:00:00+01:00",
+   "end": "2026-11-14T13:00:00+01:00",
+   "allDay": false,
+   "address": "Ellerstraße 84, 40227 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.216392,
+   "lng": 6.796964,
+   "url": "https://www.lgbk.de/news/1/994162/nachrichten/tag-der-offenen-tuer-am-14.11.26.html",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Lessing-Gymnasium und-Berufskolleg Navigation überspringen und zum Inhaltsbereich Gymnasium Tel.: (0211) 8922610 Berufskolleg Tel.: (0211) 8922630 Start Tag der offenen Tür am 14.11.26 Tag der offenen Tür am 14.11.26 …",
+   "sources": [
+    "https://www.lgbk.de/news/1/994162/nachrichten/tag-der-offenen-tuer-am-14.11.26.html",
+    "https://lore-lorentz-schule.de/tag-der-offenen-tuer-2026/",
+    "https://www.lgbk.de/",
+    "https://www.lgbk.de/news/index.php?rubrik=1",
+    "https://www.lore-lorentz-schule.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "f9493bae1b9caf",
+   "title": "Tag der offenen Tür",
+   "org": "Max-Planck-Gymnasium",
+   "category": "schule",
+   "start": "2026-11-14T10:00:00+01:00",
+   "end": "2026-11-14T13:00:00+01:00",
+   "allDay": false,
+   "address": "",
+   "city": "",
+   "lat": 51.259427,
+   "lng": 6.760529,
+   "url": "https://max-planck.com/tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "| Max-Planck-Gymnasium Düsseldorf Skip to content Herzlich Willkommen am Max-Planck-Gymnasium! Am Samstag, dem 14. November 2026, laden wir von 10:00 bis 13:00 Uhr interessierte Eltern und Schüler:innen zum …",
+   "sources": [
+    "https://max-planck.com/tag-der-offenen-tuer/",
+    "https://max-planck.com/",
+    "https://max-planck.com/kalender/tag-der-offenen-tuer-6/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "fc0284a24c146c",
+   "title": "Tag der offenen Tür",
+   "org": "Gesamtschule An der Erft",
+   "category": "schule",
+   "start": "2026-11-16T10:00:00+01:00",
+   "end": "2026-11-16T13:30:00+01:00",
+   "allDay": false,
+   "address": "Aurinstraße 55, 41466 Neuss",
+   "city": "Neuss",
+   "lat": 51.167172,
+   "lng": 6.693116,
+   "url": "http://www.ge-erft.de/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür · Am 16.11.26 um 18.30 Uhr findet unser Informationsabend zum neuen 5. Jahrgang statt, am 28.11.26 öffnen wir die Türen für alle Interessierten von 10 - 13.30 Uhr. Mehr …",
+   "sources": [
+    "http://www.ge-erft.de/",
+    "http://www.ge-erft.de/index.html"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "13dbd6b0a35d13",
+   "title": "Tag der offenen Tür",
+   "org": "Käthe-Kollwitz-Schule",
+   "category": "schule",
+   "start": "2026-11-18T10:30:00+01:00",
+   "end": "2026-11-18T12:30:00+01:00",
+   "allDay": false,
+   "address": "Erfurter Straße 40, 40880 Ratingen",
+   "city": "Ratingen",
+   "lat": 51.292284,
+   "lng": 6.81971,
+   "url": "https://kksreal.de/tag/tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "lwitz-Schule in Ratingen Lintorf: 10.30 – 12.30 Uhr West: 09.30 – 11.30 Uhr Komm vorbei und schaue dir unsere Schule an! Am Freitag, 29.11.2024 startet um 16.00 Uhr am Standort West der Tag der offenen Tür. Einen Tag …",
+   "sources": [
+    "https://kksreal.de/tag/tag-der-offenen-tuer/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "72e43b0dff7fd0",
+   "title": "Tag der offenen Tür",
+   "org": "BTI Neuss",
+   "category": "schule",
+   "start": "2026-11-21T00:00:00+01:00",
+   "end": "2026-11-21T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "",
+   "lat": 51.19128,
+   "lng": 6.709602,
+   "url": "https://www.btineuss.de",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür am 21.11.2026 · Kalender · VP",
+   "sources": [
+    "https://www.btineuss.de"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -97,7 +348,58 @@
     "https://www.stadt-koeln.de/leben-in-koeln/freizeit-natur-sport/veranstaltungskalender/tag-der-offenen-tuer-humboldt-gymnasium-musikzweig-regionalschule-sued"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "a7d7cb431d6bb9",
+   "title": "Tag der offenen Tür",
+   "org": "Elly-Heuss-Knapp-Schule (Außenstelle Räuscherweg)",
+   "category": "schule",
+   "start": "2026-11-21T10:00:00+01:00",
+   "end": "2026-11-21T14:00:00+01:00",
+   "allDay": false,
+   "address": "Königsallee 57, 40212 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.198108,
+   "lng": 6.759948,
+   "url": "https://www.elly-bk.de/schulleben/tag-der-offenen-tuer-16-11-24/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Elly-Heuss-Knapp-Schule Zum Inhalt springen Tag der offenen Tür | 21.11.26 Wir laden interessierte Schüler:innen, Erziehungsberechtigte und Lehrkräfte am Samstag, 21.11.26 von 10 bis 14 Uhr ein, die Schule durch den …",
+   "sources": [
+    "https://www.elly-bk.de/schulleben/tag-der-offenen-tuer-16-11-24/",
+    "https://www.elly-bk.de/pinnwand/tag-der-offenen-tuer-2024/",
+    "https://goerres.de/category/aktuelles/",
+    "https://www.elly-bk.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "b9545c0d9b8955",
+   "title": "Tag der offenen Tür",
+   "org": "Friedrich-Rückert-Gymnasium",
+   "category": "schule",
+   "start": "2026-11-21T10:00:00+01:00",
+   "end": "2026-11-21T13:00:00+01:00",
+   "allDay": false,
+   "address": "Rückertstraße 6, 40470 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.258978,
+   "lng": 6.813367,
+   "url": "https://www.rueckert-gymnasium.de/aktuelles/detail/tag-der-offenen-tuer-2026.html",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Rückert-Gymnasium Direkt zum Inhalt (Eingabetaste) Direkt zum Hauptmenu (Eingabetaste) Direkt zur Suche (Eingabetaste) Direkt zum Footer (Eingabetaste) 21.11.2026 Tag der offenen Tür 2026 Wir informieren über unser …",
+   "sources": [
+    "https://www.rueckert-gymnasium.de/aktuelles/detail/tag-der-offenen-tuer-2026.html"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -121,7 +423,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -145,7 +447,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -169,7 +471,80 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "577debc77727fc",
+   "title": "Tag der offenen Tür",
+   "org": "Städtisches Meerbusch-Gymnasium",
+   "category": "schule",
+   "start": "2026-11-21T10:00:00+01:00",
+   "end": "2026-11-21T13:00:00+01:00",
+   "allDay": false,
+   "address": "Mönkesweg 50, 40670 Meerbusch",
+   "city": "Meerbusch",
+   "lat": 51.277991,
+   "lng": 6.649648,
+   "url": "https://smg-meerbusch.de/tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "– Städtisches Meerbusch-Gymnasium Zum Inhalt springen Am Samstag, dem 21.11.2026, öffnen wir von 10:00 bis 13:00 Uhr unsere Türen für alle neugierigen Viertklässlerinnen, Viertklässler und ihre Eltern. Verpasst nicht …",
+   "sources": [
+    "https://smg-meerbusch.de/tag-der-offenen-tuer/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "6b16db26be0221",
+   "title": "Infotag",
+   "org": "Technisches Berufskolleg Färberstraße",
+   "category": "schule",
+   "start": "2026-11-21T10:00:00+01:00",
+   "end": "2026-11-21T14:00:00+01:00",
+   "allDay": false,
+   "address": "",
+   "city": "",
+   "lat": 51.208373,
+   "lng": 6.789543,
+   "url": "https://www.tbkf.de/termin/infotag/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "<p>Wir laden alle herzlich zu unserem Infotag am 21. November 2026 von 10 Uhr bis 14 Uhr im Werkstattgebäude in der Redinghovenstr. 20 ein. Unsere Schülerinnen und Schüler stellen die verschiedenen Vollzeitbildungsgänge der Schule vor: - Berufsfachschulen Metalltechnik - …",
+   "sources": [
+    "https://www.tbkf.de/kalender",
+    "https://www.tbkf.de/termin/infotag/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "56ed290d23c911",
+   "title": "Tag der offenen Tür",
+   "org": "Anne-Frank-Realschule",
+   "category": "schule",
+   "start": "2026-11-21T11:00:00+01:00",
+   "end": "2026-11-21T14:00:00+01:00",
+   "allDay": false,
+   "address": "",
+   "city": "",
+   "lat": 51.230877,
+   "lng": 6.808495,
+   "url": "http://www.rs-anne-frank.eschool.de",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür in die Anne Frank Realschule · Samstag, 21. November 2026, 11:00 - 14:00 Uhr · An diesem Tag laden wir Sie mit Ihrem Kind ein, Informationen über unser Schulleben zu erfahren, …",
+   "sources": [
+    "http://www.rs-anne-frank.eschool.de"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -193,7 +568,109 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "95d5c72507e1d6",
+   "title": "Tag der offenen Tür",
+   "org": "Theodor-Fliedner-Gymnasium",
+   "category": "schule",
+   "start": "2026-11-27T00:00:00+01:00",
+   "end": "2026-11-27T23:59:00+01:00",
+   "allDay": true,
+   "address": "Kalkumer Schloßallee 28, 40489 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.305913,
+   "lng": 6.746423,
+   "url": "https://tfg-duesseldorf.ekir.de/cms/2026/10/tot-und-anmeldung-fuer-2027/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Theodor-Fliedner-Gymnasium Zum Inhalt springen Nr. 174 6.10.2026 3271 Zeichen TFG Öffentlichkeitsarbeit Unser Schulprospekt Für Viertklässler und ihre Eltern Am 27.11.2026 findet am Theodor-Fliedner-Gymnasium der Tag …",
+   "sources": [
+    "https://tfg-duesseldorf.ekir.de/cms/2026/10/tot-und-anmeldung-fuer-2027/",
+    "https://tfg-duesseldorf.ekir.de/aktuelles/tag-der-offenen-tuer-und-anmeldung-fuer-2027-37419?ref=aHR0cHMlM0ElMkYlMkZ0ZmctZHVlc3NlbGRvcmYuZWtpci5kZSUyRg=="
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "33d19b3e848ad0",
+   "title": "Tag der offenen Tür",
+   "org": "Robert-Schuman-Europaschule Willich",
+   "category": "schule",
+   "start": "2026-11-28T00:00:00+01:00",
+   "end": "2026-11-28T23:59:00+01:00",
+   "allDay": true,
+   "address": "Kantstraße 2 - 6, 47877 Willich",
+   "city": "Willich",
+   "lat": 51.270223,
+   "lng": 6.541225,
+   "url": "http://www.rsg-willich.de/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür am 28.11.2026 · 09.11.2026",
+   "sources": [
+    "http://www.rsg-willich.de/",
+    "http://www.rsg-willich.de/news/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "b72ae69cea9a69",
+   "title": "Tag der offenen Tür",
+   "org": "Städtisches Gymnasium mit bilingualem Zweig Englisch und Doppelqualifikation zum/zur Chemi",
+   "category": "schule",
+   "start": "2026-11-28T00:00:00+01:00",
+   "end": "2026-11-28T23:59:00+01:00",
+   "allDay": true,
+   "address": "41462 Neuss",
+   "city": "Neuss",
+   "lat": 51.216989,
+   "lng": 6.662995,
+   "url": "https://www.mcg-neuss.de",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür am 28.11.2026 · und zum",
+   "sources": [
+    "https://www.mcg-neuss.de"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "31cf8b81daf71b",
+   "title": "Tag der offenen Tür",
+   "org": "Comenius-Gymnasium",
+   "category": "schule",
+   "start": "2026-11-28T10:00:00+01:00",
+   "end": "2026-11-30T13:30:00+01:00",
+   "allDay": false,
+   "address": "Eiskellerstraße 11, 40213 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.23576,
+   "lng": 6.744766,
+   "url": "https://comenius-gymnasium.de/einladung-zum-tag-der-offenen-tuer-2026",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Comenius Gymnasium Elternbriefe Zurück Freitag 16. Oktober 2026 Einladung zum Tag der offenen Tür 2026 Liebe Schüler*innen der vierten Grundschulklassen, liebe Interessent*innen für die Oberstufe, liebe Eltern, wir …",
+   "sources": [
+    "https://comenius-gymnasium.de/einladung-zum-tag-der-offenen-tuer-2026",
+    "https://comenius-gymnasium.de/termine/tag-der-offenen-tuer-6",
+    "https://comenius-gymnasium.de/",
+    "http://www.st-ursula-gymnasium.de/",
+    "http://www.st-ursula-gymnasium.de/aktuelles/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -217,7 +694,82 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "71dcc428fd8487",
+   "title": "Tag der offenen Tür",
+   "org": "Gesamtschule An der Erft",
+   "category": "schule",
+   "start": "2026-11-28T10:00:00+01:00",
+   "end": "2026-11-28T13:30:00+01:00",
+   "allDay": false,
+   "address": "Aurinstraße 55, 41466 Neuss",
+   "city": "Neuss",
+   "lat": 51.167172,
+   "lng": 6.693116,
+   "url": "http://www.ge-erft.de/uploads/news/2026/09/tdot/2026-ge-erftbroschuere-3.pdf",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür: Sa 28.11.26 · 10:00 - 13:30 Uhr · Einzelberatung: ab Anfang Dezember",
+   "sources": [
+    "http://www.ge-erft.de/uploads/news/2026/09/tdot/2026-ge-erftbroschuere-3.pdf"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "28caaf6a70dddf",
+   "title": "Tag der offenen Tür",
+   "org": "Infoabend für Grundschuleltern und",
+   "category": "schule",
+   "start": "2026-11-28T10:00:00+01:00",
+   "end": "2026-11-28T14:00:00+01:00",
+   "allDay": false,
+   "address": "Lindenstraße 140, 40233 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.228855,
+   "lng": 6.806643,
+   "url": "https://www.montessori-gesamtschule.com/infoabend-fuer-grundschuleltern-und-tag-der-offenen-tuer-2/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "– Maria Montessori Gesamtschule Login Lernplattform Login Untis Login Logineo NRW Webmenü Zum Inhalt springen Allgemein 13. Oktober 2026 Swen Dahlhaus Liebe Grundschuleltern, Ihre Kinder befinden sich in Klasse 4 und …",
+   "sources": [
+    "https://www.montessori-gesamtschule.com/infoabend-fuer-grundschuleltern-und-tag-der-offenen-tuer-2/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "69abe8dc54c9f1",
+   "title": "Tag der offenen Tür",
+   "org": "Städtische Hulda-Pankok-Gesamtschule",
+   "category": "schule",
+   "start": "2026-11-28T10:00:00+01:00",
+   "end": "2026-11-28T14:00:00+01:00",
+   "allDay": false,
+   "address": "Brinckmannstraße 16, 40225 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.203342,
+   "lng": 6.791226,
+   "url": "https://hulda-pankok-gesamtschule.de/herzlich-willkommen-zu-unserem-tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Hulda Pankok Gesamtschule Zum Inhalt springen Beitrag veröffentlicht: 10. November 2026 Liebe Kinder, liebe Eltern, wie fühlt sich der Unterricht an einer weiterführenden Schule an? Und ist unsere Schule die richtige …",
+   "sources": [
+    "https://hulda-pankok-gesamtschule.de/herzlich-willkommen-zu-unserem-tag-der-offenen-tuer/",
+    "https://ww-gym.de/anmeldung-zum-tag-der-offenen-tuer-information/",
+    "https://hulda-pankok-gesamtschule.de/tag-der-offenen-tuer/",
+    "https://ww-gym.de/ihr-weg-zu-uns/anmeldung-am-wim-wenders-gymnasium/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -241,7 +793,79 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "915dc336d6a0dd",
+   "title": "Tag der offenen Tür",
+   "org": "Städtisches Meerbusch-Gymnasium",
+   "category": "schule",
+   "start": "2026-12-01T14:00:00+01:00",
+   "end": "2026-12-01T18:00:00+01:00",
+   "allDay": false,
+   "address": "Mönkesweg 50, 40670 Meerbusch",
+   "city": "Meerbusch",
+   "lat": 51.277991,
+   "lng": 6.649648,
+   "url": "https://smg-meerbusch.de/news/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Der Elternsprechtag findet am Dienstag, 1. Dezember 2026, von 14:00 bis 18:00 Uhr statt. Die Gesprächstermine… · Aktuelles",
+   "sources": [
+    "https://smg-meerbusch.de/news/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "abf3b7b932d917",
+   "title": "Tag der offenen Tür",
+   "org": "Werner-von-Siemens-Realschule",
+   "category": "schule",
+   "start": "2026-12-05T00:00:00+01:00",
+   "end": "2026-12-05T23:59:00+01:00",
+   "allDay": true,
+   "address": "Rethelstraße 13, 40237 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.231459,
+   "lng": 6.799645,
+   "url": "http://schulen.duesseldorf.de/rs-rethelstr/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür am 5. Dezember 2026 von 10:00 Uhr bis … · Infowoche für Grundschuleltern",
+   "sources": [
+    "http://schulen.duesseldorf.de/rs-rethelstr/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "69540249e47698",
+   "title": "Tag der offenen Tür",
+   "org": "Erzbischöfliches Suitbertus-Gymnasium",
+   "category": "schule",
+   "start": "2026-12-05T10:00:00+01:00",
+   "end": "2026-12-05T23:59:00+01:00",
+   "allDay": false,
+   "address": "An Sankt Swidbert 53, 40489 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.299369,
+   "lng": 6.733103,
+   "url": "https://www.suitbertus.de/gemeindeleben/informationen-tdot-und-neue-5er/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür : Am Samstag, 5. Dezember 2026, starten wir um 10 Uhr gemeinsam in der Friendship-Hall mit allen Infos zum Ablauf. Bei einer anschließenden Führung kommen Sie mit Schülerinnen und Schülern, …",
+   "sources": [
+    "https://www.suitbertus.de/gemeindeleben/informationen-tdot-und-neue-5er/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -265,7 +889,83 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "eb7b2cfddf241a",
+   "title": "Tag der offenen Tür",
+   "org": "Käthe-Kollwitz-Schule",
+   "category": "schule",
+   "start": "2026-12-05T10:30:00+01:00",
+   "end": "2026-12-05T12:30:00+01:00",
+   "allDay": false,
+   "address": "Erfurter Straße 40, 40880 Ratingen",
+   "city": "Ratingen",
+   "lat": 51.292284,
+   "lng": 6.81971,
+   "url": "https://kksreal.de/neue-bilder/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "– Käthe-Kollwitz-Schule in Ratingen Lintorf : 10.30 – 12.30 Uhr West : 09.30 – 11.30 Uhr Käthe-Kollwitz-Schule Standort West : Erfurter Str. 40, 40880 Ratingen Telefon West : 02102 - 550 49 10 Email West : …",
+   "sources": [
+    "https://kksreal.de/neue-bilder/",
+    "https://www.borbecker-x.de/",
+    "https://www.borbecker-x.de",
+    "https://www.kksreal.de/",
+    "https://kksreal.de/calendar/anstehende-termine/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "e39702448390b3",
+   "title": "Infotag",
+   "org": "Michael-Ende-Schule, Förderschule: Förderschwerpunkt Sprache",
+   "category": "schule",
+   "start": "2026-12-14T00:00:00+01:00",
+   "end": "2026-12-14T23:59:00+01:00",
+   "allDay": true,
+   "address": "Aurinstraße 63, 41466 Neuss",
+   "city": "Neuss",
+   "lat": 51.164227,
+   "lng": 6.690042,
+   "url": "https://michael-ende-schule.de/aktuelles/termine-und-schulferien/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Infotag · nur mit Voranmeldung · Montag, 14.12.26",
+   "sources": [
+    "https://michael-ende-schule.de/aktuelles/termine-und-schulferien/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "79c3d55f49d40c",
+   "title": "Tag der offenen Tür",
+   "org": "Geschwister-Scholl-Gymnasium",
+   "category": "schule",
+   "start": "2027-01-09T10:00:00+01:00",
+   "end": "2027-01-09T13:00:00+01:00",
+   "allDay": false,
+   "address": "Redinghovenstraße 41, 40225 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.204774,
+   "lng": 6.792062,
+   "url": "https://www.gsg-duesseldorf.de/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür am 09.01.2027 · Die SCHOLLgemeinschaft lädt Sie herzlich von 10:00 – 13:00 Uhr ein unsere Schule zu erkunden. Führungen von Schülerinnen und Schülern, Eltern und Lehrkräfte; …",
+   "sources": [
+    "https://www.gsg-duesseldorf.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -289,7 +989,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -313,7 +1013,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -337,7 +1037,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -361,7 +1061,60 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "eed1c5fbf7ddef",
+   "title": "Schnuppertag",
+   "org": "Janusz-Korczak-Gesamtschule Neuss (Abteilung 2)",
+   "category": "schule",
+   "start": "2027-01-11T00:00:00+01:00",
+   "end": "2027-01-15T23:59:00+01:00",
+   "allDay": true,
+   "address": "Platz am Niedertor 6, 41460 Neuss",
+   "city": "Neuss",
+   "lat": 51.200587,
+   "lng": 6.685336,
+   "url": "https://jkg-neuss.de/tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Schnuppertage 2027 · Montag, 11.01.2027, bis Freitag, 15.01.2027 · Infoabend für die gymnasiale Oberstufe",
+   "sources": [
+    "https://jkg-neuss.de/tag-der-offenen-tuer/",
+    "https://jkg-neuss.de/tag-der-offenen-tuer/?fb-edit=1",
+    "https://www.jkg-neuss.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "6de894b5f61b63",
+   "title": "Tag der offenen Tür",
+   "org": "Görres-Gymnasium",
+   "category": "schule",
+   "start": "2027-01-13T00:00:00+01:00",
+   "end": "2027-01-13T23:59:00+01:00",
+   "allDay": true,
+   "address": "Königsallee 57, 40212 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.22108,
+   "lng": 6.777704,
+   "url": "https://goerres.de/tag-der-offenen-tuer/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "– Görres-Gymnasium Düsseldorf Schulnachrichten Informationsabend für Eltern von Viertklässlerinnen und Viertklässlern, 13.01.2027 Tag der offenen Tür Görres-Varieté am 12. November EF zum kommunalpolitischen Planspiel …",
+   "sources": [
+    "https://goerres.de/tag-der-offenen-tuer/",
+    "https://goerres.de/tag-der-offenen-tuer-2/",
+    "https://goerres.de/",
+    "https://goerres.de/kalender/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -385,7 +1138,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -409,7 +1162,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -433,7 +1186,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -457,7 +1210,31 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "d5e9f554a1a261",
+   "title": "Tag der offenen Tür",
+   "org": "Quirinus-Gymnasium Neuss",
+   "category": "schule",
+   "start": "2027-01-16T10:00:00+01:00",
+   "end": "2027-01-16T13:00:00+01:00",
+   "allDay": false,
+   "address": "Sternstraße 49, 41460 Neuss",
+   "city": "Neuss",
+   "lat": 51.196639,
+   "lng": 6.68331,
+   "url": "https://www.quirinus-gymnasium.de/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Samstag, 16.1.2027, von 10.00 bis 13.00 Uhr · bieten wir einen · Informations-Brunch",
+   "sources": [
+    "https://www.quirinus-gymnasium.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -481,7 +1258,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -505,7 +1282,56 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "30941d72551fd5",
+   "title": "Tag der offenen Tür",
+   "org": "IST-Studieninstitut",
+   "category": "schule",
+   "start": "2027-01-22T18:00:00+01:00",
+   "end": "2027-01-22T23:59:00+01:00",
+   "allDay": false,
+   "address": "Erkrather Straße 220 a-c, 40233 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.219688,
+   "lng": 6.813833,
+   "url": "https://www.ist.de/news/12894/tag-der-offenen-tuer-lass-dich-inspirieren",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Home News „Tag der offenen Tür“: Lass' Dich inspirieren! Zur News-Übersicht 06.11.2026 „Tag der offenen Tür“: Lass' Dich inspirieren! Du möchtest studieren, bist Dir aber noch unsicher, welcher Studiengang wirklich zu …",
+   "sources": [
+    "https://www.ist.de/news/12894/tag-der-offenen-tuer-lass-dich-inspirieren",
+    "https://www.ist.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "f018b81befc648",
+   "title": "Vocatium",
+   "org": "IST-Studieninstitut",
+   "category": "schule",
+   "start": "2027-01-23T00:00:00+01:00",
+   "end": "2027-01-23T23:59:00+01:00",
+   "allDay": true,
+   "address": "Erkrather Straße 220 a-c, 40233 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.219688,
+   "lng": 6.813833,
+   "url": "https://www.ist.de/infoveranstaltungen",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Vocatium München II · 23.01.2027 Stuzubi Mainz/Wiesbaden · 29.- 31.01.2027, TheraPro Stuttgart",
+   "sources": [
+    "https://www.ist.de/infoveranstaltungen"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -529,7 +1355,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -553,7 +1379,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -577,7 +1403,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -601,7 +1427,7 @@
     "https://www.uni-giessen.de/de/ueber-uns/veranstaltungen/sonstige/hit"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -625,7 +1451,31 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "80961ff9de28ef",
+   "title": "Infotag",
+   "org": "Michael-Ende-Schule, Förderschule: Förderschwerpunkt Sprache",
+   "category": "schule",
+   "start": "2027-02-05T00:00:00+01:00",
+   "end": "2027-02-05T23:59:00+01:00",
+   "allDay": true,
+   "address": "Aurinstraße 63, 41466 Neuss",
+   "city": "Neuss",
+   "lat": 51.164227,
+   "lng": 6.690042,
+   "url": "https://michael-ende-schule.de/aktuelles/termine-und-schulferien/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Infotag · Freitag, 05.02.27 · Karnevalsfreitag",
+   "sources": [
+    "https://michael-ende-schule.de/aktuelles/termine-und-schulferien/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -649,7 +1499,56 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "aa0ae9fb2caa2e",
+   "title": "Tag der offenen Tür",
+   "org": "Berufskolleg Glockenspitz",
+   "category": "schule",
+   "start": "2027-02-13T00:00:00+01:00",
+   "end": "2027-02-13T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "",
+   "lat": 51.338169,
+   "lng": 6.611604,
+   "url": "https://www.glockenspitz.de/details/glockenspitztag-13-02-2027.html",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "- Berufskolleg Glockenspitz Krefeld Glockenspitztag 13.02.2027 - Tag der offenen Tür 02.11.2026 09:00 Anmeldung + Information + Beratung + Präsentation Liebe Interessenten! Ihr habt Eure Halbjahreszeugnisse erhalten …",
+   "sources": [
+    "https://www.glockenspitz.de/details/glockenspitztag-13-02-2027.html",
+    "https://www.glockenspitz.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "3608a9017a9a12",
+   "title": "Tag der offenen Tür",
+   "org": "Erzbischöfliches Suitbertus-Gymnasium",
+   "category": "schule",
+   "start": "2027-02-20T00:00:00+01:00",
+   "end": "2027-02-20T23:59:00+01:00",
+   "allDay": true,
+   "address": "An Sankt Swidbert 53, 40489 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.299369,
+   "lng": 6.733103,
+   "url": "https://www.suitbertus.de/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür und das Kontaktformular für die neuen 5er! · 20. Feb. 2027 · Mehr",
+   "sources": [
+    "https://www.suitbertus.de/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -673,7 +1572,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -697,7 +1596,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -721,7 +1620,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -745,7 +1644,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -769,7 +1668,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -793,7 +1692,31 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "dc07b617a3deca",
+   "title": "Vocatium",
+   "org": "Carl-Benz-Realschule",
+   "category": "schule",
+   "start": "2027-04-15T00:00:00+02:00",
+   "end": "2027-04-15T23:59:00+02:00",
+   "allDay": true,
+   "address": "Lewitstraße 2, 40547 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.237926,
+   "lng": 6.751297,
+   "url": "https://carl-benz-realschule.de/termine/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Vocatium Klassen 9 (1.-4. Stunde) · Dienstag bis Donnerstag · 13.-15.4.2027",
+   "sources": [
+    "https://carl-benz-realschule.de/termine/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   },
   {
@@ -817,7 +1740,7 @@
     "https://www.aubi-plus.de/messe/azubi-studientage-koblenz-2027-9162/"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -841,7 +1764,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -865,7 +1788,7 @@
     "https://www.aubi-plus.de/messe/vocatium-erlangen-2027-fachmesse-fuer-ausbildungstudium-9154/"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
    "verified": false
   },
   {
@@ -889,7 +1812,55 @@
     "https://www.aubi-plus.de/messe/vocatium-fuerth-2027-fachmesse-fuer-ausbildungstudium-9155/"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-11T21:50:22+01:00",
+   "lastSeen": "2026-11-11T22:34:45+01:00",
+   "verified": false
+  },
+  {
+   "id": "ad4f1c5f5845c6",
+   "title": "Tag der offenen Tür",
+   "org": "Schule Willicher Heide",
+   "category": "schule",
+   "start": "2027-06-24T00:00:00+02:00",
+   "end": "2027-06-24T23:59:00+02:00",
+   "allDay": true,
+   "address": "Krefelder Straße 352, 47877 Willich",
+   "city": "Willich",
+   "lat": 51.285733,
+   "lng": 6.55602,
+   "url": "https://www.willicherheide.de/termine/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Tag der offenen Tür · (Schule, OGS und Bienenstock bleiben geschlossen!) · 24.06.2027,",
+   "sources": [
+    "https://www.willicherheide.de/termine/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
+   "verified": false
+  },
+  {
+   "id": "02fe40098f3c42",
+   "title": "Vocatium",
+   "org": "Carl-Benz-Realschule",
+   "category": "schule",
+   "start": "2027-07-06T00:00:00+02:00",
+   "end": "2027-07-06T23:59:00+02:00",
+   "allDay": true,
+   "address": "Lewitstraße 2, 40547 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.237926,
+   "lng": 6.751297,
+   "url": "https://carl-benz-realschule.de/termine/",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Vocatium Klassen 9 · Dienstag · 6.7.2027",
+   "sources": [
+    "https://carl-benz-realschule.de/termine/"
+   ],
+   "firstSeen": "2026-11-11T22:33:10+01:00",
+   "lastSeen": "2026-11-11T22:33:10+01:00",
    "verified": false
   }
  ]

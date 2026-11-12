@@ -13,8 +13,15 @@ val keyProps = Properties().apply {
     if (f.exists()) f.inputStream().use { load(it) }
 }
 
+// App-Name: steht in app/assets/app_name.txt (eine Stelle für Android UND die App selbst)
+val appName = file("../../assets/app_name.txt").takeIf { it.exists() }?.readText()?.trim()?.ifEmpty { null } ?: "Was geht?"
+
 android {
     namespace = "app.offenetueren.offene_tueren"
+
+    buildFeatures {
+        resValues = true
+    }
     compileSdk = 37   // flutter_local_notifications 23 verlangt mindestens 37
     ndkVersion = flutter.ndkVersion
 
@@ -31,6 +38,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        resValue("string", "app_name", appName)
     }
 
     signingConfigs {

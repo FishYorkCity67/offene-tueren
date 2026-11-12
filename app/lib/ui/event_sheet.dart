@@ -33,7 +33,8 @@ class EventSheet extends StatelessWidget {
     final t = Theme.of(context).textTheme;
     final e = event;
     final now = DateTime.now();
-    final km = s.distanceKm(e);
+    final km = s.distanceKm(e.point);
+    final price = priceLabel(e);
     final place = [
       if (e.address.isNotEmpty) e.address,
       if (e.city.isNotEmpty && !e.address.contains(e.city)) e.city,
@@ -51,8 +52,14 @@ class EventSheet extends StatelessWidget {
           Row(children: [
             CategoryBadge(e.category, size: 30, filled: true),
             const SizedBox(width: 10),
-            Text(e.category.label, style: t.labelLarge?.copyWith(color: p.category(e.category))),
-            if (e.isLive(now)) ...[const SizedBox(width: 10), const LiveBadge()],
+            Flexible(
+              child: Text(e.category.label,
+                  overflow: TextOverflow.ellipsis, style: t.labelLarge?.copyWith(color: p.category(e.category))),
+            ),
+            if (e.isLive(now)) ...[
+              const SizedBox(width: 10),
+              LiveBadge(label: e.daily ? 'Gerade offen' : 'Jetzt'),
+            ],
             const Spacer(),
             _FavButton(event: e),
           ]),
@@ -64,6 +71,14 @@ class EventSheet extends StatelessWidget {
           ],
           const SizedBox(height: 18),
           _InfoRow(icon: Icons.calendar_today_rounded, title: dateLong(e), subtitle: timeRange(e)),
+          if (e.openingHours.isNotEmpty && timeRange(e) != e.openingHours)
+            _InfoRow(icon: Icons.schedule_rounded, title: 'Öffnungszeiten', subtitle: e.openingHours),
+          if (price.isNotEmpty)
+            _InfoRow(
+              icon: e.free == true ? Icons.money_off_rounded : Icons.euro_rounded,
+              title: price,
+              subtitle: e.free == true ? null : 'Preis laut Veranstalter',
+            ),
           if (place.isNotEmpty || km != null)
             _InfoRow(
               icon: Icons.place_outlined,

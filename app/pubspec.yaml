@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
   sdk: ^3.13.7
@@ -47,6 +47,7 @@ dependencies:
   intl: ^0.20.3
   flutter_localizations:
     sdk: flutter
+  workmanager: ^0.10.10
 
 dev_dependencies:
   flutter_test:
@@ -70,9 +71,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # Mitgelieferter Stand der Termine (wird beim Bauen aus data/events.json kopiert)
+  # Mitgelieferter Stand der Daten (build-apk.ps1 kopiert sie aus data/) und der App-Name
   assets:
     - assets/events.json
+    - assets/freizeit.json
+    - assets/jobs.json
+    - assets/app_name.txt
 
   # To add assets to your application, add an assets section, like this:
   # assets:

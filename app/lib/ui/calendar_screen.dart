@@ -7,6 +7,7 @@ import '../services/actions.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import 'event_sheet.dart';
+import 'filter_card.dart';
 import 'widgets.dart';
 
 class CalendarScreen extends StatefulWidget {
@@ -53,8 +54,28 @@ class _CalendarScreenState extends State<CalendarScreen> {
     final nextDay = (byDay.keys.where((d) => d.isAfter(_selected)).toList()..sort()).firstOrNull;
     final monthTitle = DateFormat('MMMM y', 'de_DE').format(_focused);
 
+    // Mehrtägige Termine bekommen eine feste "Spur", damit ihr Balken über alle Tage gerade durchläuft.
+    final laneOf = <String, int>{};
+    final laneEnds = <DateTime>[];
+    final multi = s.calendarEvents.where((e) => e.isMultiDay).toList()..sort((a, b) => a.start.compareTo(b.start));
+    for (final e in multi) {
+      final start = _dateOnly(e.start);
+      var lane = laneEnds.indexWhere((end) => end.isBefore(start));
+      if (lane < 0 && laneEnds.length < _DayMarks.maxLanes) {
+        laneEnds.add(DateTime(0));
+        lane = laneEnds.length - 1;
+      }
+      if (lane < 0) continue; // mehr als 3 gleichzeitig: dann als Punkt
+      laneEnds[lane] = _dateOnly(e.end);
+      laneOf[e.id] = lane;
+    }
+
     return CustomScrollView(slivers: [
       SliverToBoxAdapter(child: SizedBox(height: MediaQuery.paddingOf(context).top + 12)),
+      SliverPadding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+        sliver: SliverToBoxAdapter(child: FilterCard(count: s.calendarEvents.length, title: 'Kalender')),
+      ),
       SliverPadding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         sliver: SliverToBoxAdapter(
@@ -105,7 +126,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 availableGestures: AvailableGestures.horizontalSwipe,
                 calendarFormat: CalendarFormat.month,
                 availableCalendarFormats: const {CalendarFormat.month: 'Monat'},
-                rowHeight: 50,
+                rowHeight: 64,
                 daysOfWeekHeight: 26,
                 pageAnimationDuration: Motion.of(context, Motion.medium),
                 pageAnimationCurve: Motion.curve,
@@ -125,7 +146,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   selectedBuilder: (ctx, day, _) => _DayCell(day: day, selected: true, today: isSameDay(day, _today)),
                   outsideBuilder: (ctx, day, _) => _DayCell(day: day, outside: true),
                   disabledBuilder: (ctx, day, _) => _DayCell(day: day, outside: true),
-                  markerBuilder: (ctx, day, events) => events.isEmpty ? null : _Dots(events: events),
+                  markerBuilder: (ctx, day, events) =>
+                      events.isEmpty ? null : _DayMarks(day: day, events: events, laneOf: laneOf),
                 ),
               ),
             ]),
@@ -214,13 +236,14 @@ class _DayCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: AnimatedContainer(
         duration: Motion.of(context, Motion.fast),
         curve: Motion.curve,
-        width: 38,
-        height: 38,
-        margin: const EdgeInsets.only(bottom: 8),
+        width: 36,
+        height: 36,
+        margin: const EdgeInsets.only(top: 3),
         decoration: BoxDecoration(
           color: selected ? p.ink : Colors.transparent,
           shape: BoxShape.circle,
@@ -240,26 +263,68 @@ class _DayCell extends StatelessWidget {
   }
 }
 
-/// Bis zu vier Punkte unter dem Tag – je Kategorie einer.
-class _Dots extends StatelessWidget {
-  const _Dots({required this.events});
+/// Markierungen unter einem Tag:
+///   - eintägige Termine: Punkte (je Kategorie einer, höchstens vier)
+///   - mehrtägige Termine: durchgehende Balken, die über die Nachbartage hinweg verbunden sind
+class _DayMarks extends StatelessWidget {
+  const _DayMarks({required this.day, required this.events, required this.laneOf});
+  final DateTime day;
   final List<OpenDayEvent> events;
+  final Map<String, int> laneOf;
+
+  static const maxLanes = 3;
 
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final cats = Category.values.where((c) => events.any((e) => e.category == c)).toList();
+    final bars = events.where((e) => laneOf.containsKey(e.id)).toList();
+    final dots = events.where((e) => !laneOf.containsKey(e.id)).toList();
+    final cats = Category.values.where((c) => dots.any((e) => e.category == c)).take(4).toList();
+    return Positioned.fill(
+      child: IgnorePointer(
+        child: Stack(children: [
+          if (cats.isNotEmpty)
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 21,
+              child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                for (final c in cats)
+                  Container(
+                    width: 6,
+                    height: 6,
+                    margin: const EdgeInsets.symmetric(horizontal: 1.5),
+                    decoration: BoxDecoration(color: p.category(c), shape: BoxShape.circle),
+                  ),
+              ]),
+            ),
+          for (final e in bars) _bar(p, e),
+        ]),
+      ),
+    );
+  }
+
+  Widget _bar(Palette p, OpenDayEvent e) {
+    bool same(DateTime a, DateTime b) => a.year == b.year && a.month == b.month && a.day == b.day;
+    final isStart = same(day, e.start);
+    final isEnd = same(day, e.end);
+    final roundLeft = isStart || day.weekday == DateTime.monday;
+    final roundRight = isEnd || day.weekday == DateTime.sunday;
+    const r = Radius.circular(3);
     return Positioned(
-      bottom: 4,
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
-        for (final c in cats)
-          Container(
-            width: 6,
-            height: 6,
-            margin: const EdgeInsets.symmetric(horizontal: 1.5),
-            decoration: BoxDecoration(color: p.category(c), shape: BoxShape.circle),
+      left: isStart ? 7 : 0,
+      right: isEnd ? 7 : 0,
+      bottom: 3.0 + laneOf[e.id]! * 6,
+      height: 4,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: p.category(e.category).withValues(alpha: 0.9),
+          borderRadius: BorderRadius.horizontal(
+            left: roundLeft ? r : Radius.zero,
+            right: roundRight ? r : Radius.zero,
           ),
-      ]),
+        ),
+      ),
     );
   }
 }
