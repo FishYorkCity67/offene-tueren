@@ -22,6 +22,11 @@
 6.5493159,
 "Korschenbroich"
 ],
+"41460 Neuss": [
+51.2071566,
+6.7068177,
+"Neuss"
+],
 "41462 Neuss": [
 51.2169889,
 6.6629948,
@@ -183,6 +188,11 @@
 ],
 "Hochschule Niederrhein. Dein Weg.": null,
 "Hochschule Niederrhein. Dein Weg., Neuss": null,
+"Hohepfortestr. 37, 39104 Magdeburg": [
+52.1372987,
+11.6500431,
+"Magdeburg"
+],
 "Hubertusstraße 120, 47798 Krefeld": [
 51.3334926,
 6.5558448,
@@ -243,6 +253,7 @@
 13.3058943,
 "Berlin"
 ],
+"Montessori Gemeinschaftsschule, Heidelberg": null,
 "Neuss": [
 51.1981778,
 6.6916476,
@@ -289,6 +300,11 @@
 51.3082834,
 6.5566608,
 "Krefeld"
+],
+"Waldparkschule, Heidelberg": [
+49.3766611,
+8.7047943,
+"Heidelberg"
 ],
 "Weihnachten, Düsseldorf": null,
 "Werner-von-Siemens-Gymnasium, Berlin": [
