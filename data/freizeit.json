@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-13T13:19:29+01:00",
- "count": 18,
+ "generated": "2026-11-14T12:35:24+01:00",
+ "count": 20,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -63,6 +63,62 @@
    "daily": true
   },
   {
+   "id": "c448cc5f5754c8",
+   "title": "Martinszug des Bürgervereins Lehmheide e.V.",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2026-11-14T17:00:00+01:00",
+   "end": "2026-11-14T18:30:00+01:00",
+   "allDay": false,
+   "address": "Martinstraße 115, 47805 Kre",
+   "city": "Kre",
+   "lat": 51.397512,
+   "lng": 6.529169,
+   "url": "https://www.krefeld.de/martinszug-des-buergervereins-lehmheide-ev",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "| Krefeld Martinszug des Bürgervereins Lehmheide e.V. In Lehmheide zieht am 14. November der Martinszug vom Fußweg Rhodiusstraße / Ecke Vom-Bruck-Platz los. Vorlesen © Canva Auch in diesem Jahr gibt es wieder viele …",
+   "sources": [
+    "https://www.krefeld.de/martinszug-des-buergervereins-lehmheide-ev"
+   ],
+   "firstSeen": "2026-11-14T12:35:24+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
+  },
+  {
+   "id": "c9200002b7b856",
+   "title": "Martinszug des Bürgervereins Forstwald e.V.",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2026-11-14T17:00:00+01:00",
+   "end": "2026-11-14T18:30:00+01:00",
+   "allDay": false,
+   "address": "Bellenweg 50, 47804 Krefeld",
+   "city": "Krefeld",
+   "lat": 51.302384,
+   "lng": 6.505937,
+   "url": "https://www.krefeld.de/martinszug-des-buergervereins-forstwald-ev",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "| Krefeld Martinszug des Bürgervereins Forstwald e.V. Der Bürgerverein Forstwald e.V. veranstaltet einen Sankt Martinszug mit Start an der Forstwald Grundschule. Vorlesen © Canva Auch in diesem Jahr gibt es wieder …",
+   "sources": [
+    "https://www.krefeld.de/martinszug-des-buergervereins-forstwald-ev"
+   ],
+   "firstSeen": "2026-11-14T12:35:24+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
+  },
+  {
    "id": "d78258f775ab90",
    "title": "Weihnachtsmarkt in Düsseldorf",
    "org": "Weihnachten",
@@ -83,7 +139,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -91,9 +147,9 @@
    "daily": false
   },
   {
-   "id": "491a4f69f1d00e",
+   "id": "7b0a4ca1b19eed",
    "title": "Düsseldorfer Weihnachtsmarkt",
-   "org": "Düsseldorfer Weihnachtsmarkt",
+   "org": "www.visitduesseldorf.de",
    "category": "saisonal",
    "start": "2026-11-19T11:00:00+01:00",
    "end": "2026-12-30T15:00:00+01:00",
@@ -111,7 +167,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -139,7 +195,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -167,7 +223,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +251,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -365,7 +421,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -394,7 +450,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -422,7 +478,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -450,7 +506,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +534,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -507,7 +563,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-13T13:19:29+01:00",
+   "lastSeen": "2026-11-14T12:35:24+01:00",
    "verified": false,
    "free": null,
    "price": "",
