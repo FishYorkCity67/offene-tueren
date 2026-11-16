@@ -2,7 +2,7 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-15T13:00:18+01:00",
+ "generated": "2026-11-16T13:52:23+01:00",
  "count": 18,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
@@ -35,32 +35,32 @@
    "daily": false
   },
   {
-   "id": "1c89a1f80d2fab",
-   "title": "Eintritt frei",
-   "org": "Geschichtswerkstatt der Realschule in Korschenbroich",
-   "category": "gratis",
-   "start": "2026-11-14T13:00:00+01:00",
-   "end": "2026-11-15T18:00:00+01:00",
+   "id": "7fe1a9bf6bd87f",
+   "title": "Martinszug des Bürgerverein Krefeld Oppum 1960 e.V.",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2026-11-16T17:30:00+01:00",
+   "end": "2026-11-16T19:00:00+01:00",
    "allDay": false,
-   "address": "41352 Korschenbroich",
-   "city": "Korschenbroich",
-   "lat": 51.185698,
-   "lng": 6.549316,
-   "url": "https://heimatverein-korschenbroich.de/termine-und-veranstaltungen/",
+   "address": "Thielenstraße 40, 47809 Krefeld",
+   "city": "Krefeld",
+   "lat": 51.331945,
+   "lng": 6.610783,
+   "url": "https://www.krefeld.de/martinszug-des-buergerverein-krefeld-oppum-1960-ev",
    "minAge": null,
    "audience": "alle",
    "needsAdult": false,
-   "description": "Eintritt frei · , Spende erbeten für MIZWA · Wochenende 14. und 15. November2026 jeweils von 13.00 bis 18.00 Uhr",
+   "description": "| Krefeld Martinszug des Bürgerverein Krefeld Oppum 1960 e.V. Vom Schulhof der Grundschule an der Schönwasserstraße startet der Martinszug des Bürgervereins Krefeld Oppum 1960 e.V. am 16. November. Vorlesen © Canva …",
    "sources": [
-    "https://heimatverein-korschenbroich.de/termine-und-veranstaltungen/"
+    "https://www.krefeld.de/martinszug-des-buergerverein-krefeld-oppum-1960-ev"
    ],
-   "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-12T01:42:15+01:00",
+   "firstSeen": "2026-11-16T13:52:23+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
-   "free": true,
+   "free": null,
    "price": "",
    "openingHours": "",
-   "daily": true
+   "daily": false
   },
   {
    "id": "d78258f775ab90",
@@ -83,7 +83,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -111,7 +111,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -139,7 +139,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -167,7 +167,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +195,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -365,7 +365,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -394,7 +394,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -422,7 +422,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -450,7 +450,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +478,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -507,7 +507,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-15T13:00:18+01:00",
+   "lastSeen": "2026-11-16T13:52:23+01:00",
    "verified": false,
    "free": null,
    "price": "",
