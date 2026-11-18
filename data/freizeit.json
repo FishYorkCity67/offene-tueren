@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-17T14:35:01+01:00",
- "count": 20,
+ "generated": "2026-11-18T14:10:21+01:00",
+ "count": 17,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -35,90 +35,6 @@
    "daily": false
   },
   {
-   "id": "24e8c2a01ef55a",
-   "title": "Open-Air",
-   "org": "Museum der Stadt Ratingen",
-   "category": "gratis",
-   "start": "2026-11-17T00:00:00+01:00",
-   "end": "2026-11-17T23:59:00+01:00",
-   "allDay": true,
-   "address": "Grabenstraße 21, 40878 Ratingen",
-   "city": "Ratingen",
-   "lat": 51.29873,
-   "lng": 6.847009,
-   "url": "https://www.stadt-ratingen.de/aktuelles/pressemitteilungen",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "Open-Air-Kino · 17.11.2026 · Soziales |",
-   "sources": [
-    "https://www.stadt-ratingen.de/aktuelles/pressemitteilungen"
-   ],
-   "firstSeen": "2026-11-17T14:35:01+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
-  {
-   "id": "fa6047ac72ce74",
-   "title": "Martinszug der LVR-Gerd Jansen Schule",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-17T17:00:00+01:00",
-   "end": "2026-11-17T18:30:00+01:00",
-   "allDay": false,
-   "address": "47802 Krefeld",
-   "city": "Krefeld",
-   "lat": 51.378819,
-   "lng": 6.575846,
-   "url": "https://www.krefeld.de/martinszug-der-lvr-gerd-jansen-schule",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "| Krefeld Martinszug der LVR-Gerd Jansen Schule Die Gerd Jansen Schule zieht am 17. November auf dem Schulhof zum Sank Martinszug los. Vorlesen © Canva Auch in diesem Jahr gibt es wieder viele Sankt Martins-Züge in …",
-   "sources": [
-    "https://www.krefeld.de/martinszug-der-lvr-gerd-jansen-schule"
-   ],
-   "firstSeen": "2026-11-17T14:35:01+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
-  {
-   "id": "fa6047ac72ce74",
-   "title": "Martinszug des Bürgerverein Krefeld-Ost e.V.",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-17T18:00:00+01:00",
-   "end": "2026-11-17T19:30:00+01:00",
-   "allDay": false,
-   "address": "Freiligrathstraße 77, 47799 Krefeld",
-   "city": "Krefeld",
-   "lat": 51.334125,
-   "lng": 6.578718,
-   "url": "https://www.krefeld.de/martinszug-des-buergerverein-krefeld-ost-ev",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "| Krefeld Martinszug des Bürgerverein Krefeld-Ost e.V. Der Bürgerverein Krefeld-Ost e.V. zieht am 17. November an der Brüder-Grimm-Schule los. Vorlesen © Canva Auch in diesem Jahr ziehen wieder viele Sankt Martins-Züge …",
-   "sources": [
-    "https://www.krefeld.de/martinszug-des-buergerverein-krefeld-ost-ev"
-   ],
-   "firstSeen": "2026-11-17T14:35:01+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
-  {
    "id": "d78258f775ab90",
    "title": "Weihnachtsmarkt in Düsseldorf",
    "org": "Weihnachten",
@@ -139,7 +55,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -167,7 +83,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +111,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -223,7 +139,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -251,7 +167,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -421,7 +337,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +394,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -506,7 +422,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -534,7 +450,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -563,7 +479,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-18T14:10:21+01:00",
    "verified": false,
    "free": null,
    "price": "",

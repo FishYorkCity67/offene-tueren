@@ -66,6 +66,11 @@
 9.9389784,
 "Würzburg"
 ],
+"Alte Landstraße 179 E, 40489 Du": [
+51.3017442,
+6.7444771,
+"Düsseldorf"
+],
 "Anna-Essinger-Gemeinschaftsschule, Berlin": [
 52.4251502,
 13.225358,
@@ -268,6 +273,11 @@
 13.3126373,
 "Berlin"
 ],
+"Lübecker Ring 2, 59494 Soest": [
+51.5605484,
+8.1143256,
+"Soest"
+],
 "Martinstraße 115, 47805 Kre": null,
 "Max-von-Laue-Schule, Berlin": [
 52.4364839,
@@ -296,6 +306,11 @@
 "Bonn"
 ],
 "Realschule der St. Raphael Schulen, Heidelberg": null,
+"Residenzstraße 8, 91522 Ansbach": [
+49.3054791,
+10.5662137,
+"Ansbach"
+],
 "Rosenstraße 50, 90762 Fürth": [
 49.4790872,
 10.9831986,
@@ -350,5 +365,6 @@
 13.2598062,
 "Berlin"
 ],
+"auf dem Campus der Hochschule Ansbach": null,
 "www.visitduesseldorf.de, Düsseldorf": null
 }
