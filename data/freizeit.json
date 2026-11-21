@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-20T14:04:38+01:00",
- "count": 20,
+ "generated": "2026-11-21T13:45:44+01:00",
+ "count": 21,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -27,7 +27,7 @@
     "https://museum-kaiserswerth.de/aktuelles/andrea-bertolt-mohr-rheinwaerts"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -35,9 +35,9 @@
    "daily": false
   },
   {
-   "id": "7b0a4ca1b19eed",
+   "id": "491a4f69f1d00e",
    "title": "Düsseldorfer Weihnachtsmarkt",
-   "org": "www.visitduesseldorf.de",
+   "org": "Düsseldorfer Weihnachtsmarkt",
    "category": "saisonal",
    "start": "2026-11-19T11:00:00+01:00",
    "end": "2026-12-30T15:00:00+01:00",
@@ -55,7 +55,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -91,34 +91,6 @@
    "daily": true
   },
   {
-   "id": "ea68de5777ca05",
-   "title": "Martinszug des Bürgerverein Schicksbaum GmbH",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-20T17:30:00+01:00",
-   "end": "2026-11-20T19:00:00+01:00",
-   "allDay": false,
-   "address": "Am Mörterhof 116, 47804 Krefeld",
-   "city": "Krefeld",
-   "lat": 51.3289,
-   "lng": 6.521558,
-   "url": "https://www.krefeld.de/martinszug-des-buergerverein-schicksbaum-gmbh",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "| Krefeld Martinszug des Bürgerverein Schicksbaum GmbH Der Bürgerverein Schicksbaum startet seinen Sankt Martins Zug Am Kempschen Weg 1. Vorlesen © Canva Auch in diesem Jahr gibt es wieder viele Sankt Martins-Züge in …",
-   "sources": [
-    "https://www.krefeld.de/martinszug-des-buergerverein-schicksbaum-gmbh"
-   ],
-   "firstSeen": "2026-11-20T14:04:38+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
-  {
    "id": "a0cbacb8d787bb",
    "title": "Weihnachtsmarkt",
    "org": "Krefeld",
@@ -139,7 +111,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -167,7 +139,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -223,7 +195,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -251,7 +223,7 @@
     "https://www.deutschestextilmuseum.de/workshop/fuehrung/aktuelles"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -264,7 +236,7 @@
    "org": "Tuppenhof",
    "category": "saisonal",
    "start": "2026-12-12T12:00:00+01:00",
-   "end": "2026-12-12T19:00:00+01:00",
+   "end": "2026-12-13T19:00:00+01:00",
    "allDay": false,
    "address": "Tuppenhof",
    "city": "",
@@ -280,7 +252,7 @@
     "https://www.tuppenhof.de/"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -309,11 +281,39 @@
     "https://www.tuppenhof.de/"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
    "openingHours": "die ganze Familie: 14:00 – 17:00 Uhr",
+   "daily": false
+  },
+  {
+   "id": "d03ec4e50361a4",
+   "title": "Weihnachtsmarkt",
+   "org": "Löbbecke Museum",
+   "category": "saisonal",
+   "start": "2026-12-30T00:00:00+01:00",
+   "end": "2026-12-30T23:59:00+01:00",
+   "allDay": true,
+   "address": "Kaiserswerther Straße 380, 40474 Düsseldorf",
+   "city": "Düsseldorf",
+   "lat": 51.256458,
+   "lng": 6.74983,
+   "url": "https://www.duesseldorf.de/aktuelles/news",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Weihnachtsmarkt mit seinen unterschiedlichen Themenmärkten zwischen Rheinufer und Schadowstraße wird auch in diesem Jahr wieder viele Gäste in die Landeshauptstadt locken. Der Markt in der …",
+   "sources": [
+    "https://www.duesseldorf.de/aktuelles/news"
+   ],
+   "firstSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
    "daily": false
   },
   {
@@ -365,7 +365,7 @@
     "https://clemens-sels-museum-neuss.de/kalender"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -393,7 +393,7 @@
     "https://www.bebop-kaarst.de/ferienprogramm"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-17T14:35:01+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": false,
    "price": "45,00 €",
@@ -421,7 +421,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +478,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -506,7 +506,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -534,7 +534,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -563,7 +563,35 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
+  },
+  {
+   "id": "0c522a6de2feb1",
+   "title": "Weihnachtsmarkt in Düsseldorf",
+   "org": "Weihnachten",
+   "category": "saisonal",
+   "start": "2027-11-19T00:00:00+01:00",
+   "end": "2027-11-19T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "Düsseldorf",
+   "lat": 51.225402,
+   "lng": 6.776314,
+   "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Zur Vorweihnachtszeit erstrahlt die Stadt jedes Jahr im festlichen Glanz: Der Lichterdom strahlt hell, es duftet nach gebrannten Mandeln und der Düsseldorfer Weihnachtsmarkt lockt mit Kunsthandwerk, Altstadtmarkt und …",
+   "sources": [
+    "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
+   ],
+   "firstSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-21T13:45:44+01:00",
    "verified": false,
    "free": null,
    "price": "",
