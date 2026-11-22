@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "jobs",
  "title": "Ferienjobs",
- "generated": "2026-11-21T13:54:13+01:00",
- "count": 105,
+ "generated": "2026-11-22T13:40:41+01:00",
+ "count": 96,
  "source": "Jobsuche der Bundesagentur für Arbeit",
  "ageRule": "minAge 13 = ab 13/14 möglich (leichte Arbeit), 15 = Ferienjob ab 15, 16, 18",
  "jobs": [
@@ -53,7 +53,7 @@
    "description": "#### ​ Du bringst Erfahrung und Fachwissen mit – wir die passenden Perspektiven. Bei persona service erwarten dich abwechslungsreiche Aufgaben, ein professionelles Umfeld sowie Unternehmen, die dein Know-how schätzen. Starte mit uns deinen nächsten Karriereschritt – erstklassig, professionell und menschlich. ## Deine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984229407-S",
@@ -77,7 +77,7 @@
    "description": "#### ​ Du bringst Erfahrung und Fachwissen mit – wir die passenden Perspektiven. Bei persona service erwarten dich abwechslungsreiche Aufgaben, ein professionelles Umfeld sowie Unternehmen, die dein Know-how schätzen. Starte mit uns deinen nächsten Karriereschritt – erstklassig, professionell und menschlich. ## Deine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-17T14:44:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984291148-S",
@@ -101,7 +101,7 @@
    "description": "#### ​ Du bringst Erfahrung und Fachwissen mit – wir die passenden Perspektiven. Bei persona service erwarten dich abwechslungsreiche Aufgaben, ein professionelles Umfeld sowie Unternehmen, die dein Know-how schätzen. Starte mit uns deinen nächsten Karriereschritt – erstklassig, professionell und menschlich. ## Deine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984347274-S",
@@ -125,7 +125,7 @@
    "description": "#### ​ Du bringst Erfahrung und Fachwissen mit – wir die passenden Perspektiven. Bei persona service erwarten dich abwechslungsreiche Aufgaben, ein professionelles Umfeld sowie Unternehmen, die dein Know-how schätzen. Starte mit uns deinen nächsten Karriereschritt – erstklassig, professionell und menschlich. ## Deine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-13465-00021a6a0d3001-S",
@@ -149,7 +149,7 @@
    "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. In der WISAG Catering sind wir auf verschiedene Gastronomieleistungen spezialisiert. …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-17T14:44:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984099015-S",
@@ -200,30 +200,6 @@
    "lastSeen": "2026-11-18T14:11:03+01:00"
   },
   {
-   "id": "ba-10001-1003924141-S",
-   "title": "Bürokraft mit Vertriebserfahrung (M/W/D)",
-   "employer": "Lernstudio Barbarossa MegaKids Fortbildungs GmbH",
-   "type": "buero",
-   "minAge": 18,
-   "ageReason": "keine Hinweise, dass Jugendliche angesprochen sind",
-   "city": "Neuss",
-   "address": "Büchel, 41460 Neuss",
-   "lat": 51.19839,
-   "lng": 6.691698,
-   "hours": "12 Std. pro Woche",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Nebenbei",
-   "start": "2026-10-28",
-   "published": "2026-10-28",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003924141-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "Sie sind eine erfahrene Vertriebspersönlichkeit, die nach einer herausfordernden Tätigkeit sucht, die sich optimal in Ihr Leben einfügt? Das Lernstudio Barbarossa ist auf der Suche nach einer charismatischen Studioleitung für unser Studio in **Neuss**, die mit Lebenserfahrung und Vertriebskenntnissen unser Team …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
    "id": "ba-12122-984505977-S",
    "title": "Chemikant (m/w/d)",
    "employer": "persona service AG & Co. KG",
@@ -269,7 +245,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984555345-S",
@@ -317,7 +293,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984996945-S",
@@ -341,7 +317,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984182065-S",
@@ -440,78 +416,6 @@
    "lastSeen": "2026-11-19T14:25:53+01:00"
   },
   {
-   "id": "ba-12122-982889441-S",
-   "title": "Elektroniker Instandhaltung (m/w/d)",
-   "employer": "persona service AG & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "Nachtarbeit, Führerschein oder ausdrücklich ab 18",
-   "city": "Tönisvorst",
-   "address": "47918 Tönisvorst",
-   "lat": 51.31543,
-   "lng": 6.450736,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-12-01",
-   "published": "2026-11-13",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-982889441-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-13T13:20:13+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
-   "id": "ba-13465-00021a69a98001-S",
-   "title": "Elektroniker | Servicetechniker (m/w/d) Gebäudeautomation | HLK",
-   "employer": "WISAG Job & Karriere GmbH & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "Nachtarbeit, Führerschein oder ausdrücklich ab 18",
-   "city": "Neuss",
-   "address": "41460 Neuss",
-   "lat": 51.207093,
-   "lng": 6.696472,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-06",
-   "published": "2026-11-12",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/13465-00021a69a98001-S",
-   "contact": "+49 174 3130138",
-   "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. Unsere Spezialisten der WISAG Automatisierungstechnik sorgen für den Betrieb und die …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
-   "id": "ba-12122-983085567-S",
-   "title": "Erdbaugeräteführer (m/w/d)",
-   "employer": "persona service AG & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "Nachtarbeit, Führerschein oder ausdrücklich ab 18",
-   "city": "Duisburg",
-   "address": "47059 Duisburg",
-   "lat": 51.440092,
-   "lng": 6.747472,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-13",
-   "published": "2026-11-13",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-983085567-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-14T12:36:17+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
    "id": "ba-12122-984747882-S",
    "title": "Fachkraft für Lagerlogistik (m/w/d)",
    "employer": "persona service AG & Co. KG",
@@ -533,7 +437,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985127164-S",
@@ -557,7 +461,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du schneidest Holz mithilfe von Maschinen passgenau nach Vorgabe zu - nach Zeichnung oder Auftrag stellst du die benötigten …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985203481-S",
@@ -581,7 +485,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984785140-S",
@@ -605,7 +509,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984779538-S",
@@ -656,30 +560,6 @@
    "lastSeen": "2026-11-18T14:11:03+01:00"
   },
   {
-   "id": "ba-12122-982337501-S",
-   "title": "Industriemechaniker (m/w/d)",
-   "employer": "persona service AG & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "Nachtarbeit, Führerschein oder ausdrücklich ab 18",
-   "city": "Willich",
-   "address": "47877 Willich",
-   "lat": 51.263165,
-   "lng": 6.519928,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-12",
-   "published": "2026-11-10",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-982337501-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
    "id": "ba-10001-1003281481-S",
    "title": "Internationale Nanny / Babysitter",
    "employer": "Native Nanny",
@@ -701,7 +581,7 @@
    "description": "Native Nanny sucht derzeit Nannys und Babysitter für unsere Familien in ganz Deutschland. Die Aufgaben der Kinderbetreuung bestehen aus: - **Kinderbetreuung:** Die primäre Verantwortung einer Nanny ist die liebevolle und sichere Betreuung der Kinder. Dies beinhaltet das Spielen, Vorlesen, Unterstützen bei …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-13465-00021a69ef4001-S",
@@ -725,7 +605,7 @@
    "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. Unsere Spezialisten der WISAG Gebäudereinigung setzen Maßstäbe in Sachen Sauberkeit. Ob in …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-13T13:20:13+01:00",
-   "lastSeen": "2026-11-19T14:25:53+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985236958-S",
@@ -749,55 +629,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du verklebst Komponenten für Keramikverbundteile sauber und nach Vorgabe - keramische Platten legst du passgenau nach …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
-  },
-  {
-   "id": "ba-12122-981897439-S",
-   "title": "Kfz Mechatroniker (m/w/d)",
-   "employer": "persona service AG & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "verlangt Studium, Abitur oder Berufserfahrung",
-   "city": "Duisburg",
-   "address": "47229 Duisburg",
-   "lat": 51.390743,
-   "lng": 6.703488,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-08",
-   "published": "2026-11-08",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-981897439-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
-   "id": "ba-13465-00021a69ca8001-S",
-   "title": "Koch | Köchin mit Entwicklungsperspektive zum Küchenleiter (m/w/d)",
-   "employer": "WISAG Job & Karriere GmbH & Co. KG",
-   "type": "gastro",
-   "minAge": 18,
-   "ageReason": "verlangt Studium, Abitur oder Berufserfahrung",
-   "city": "Düsseldorf",
-   "address": "40476 Düsseldorf",
-   "lat": 51.247713,
-   "lng": 6.781909,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-12",
-   "published": "2026-11-12",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/13465-00021a69ca8001-S",
-   "contact": "+49 173 7689759",
-   "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. In der WISAG Business Catering sind wir auf facettenreiche Gastronomieleistungen …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985125872-S",
@@ -821,7 +653,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984851576-S",
@@ -845,7 +677,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984344989-S",
@@ -893,31 +725,7 @@
    "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. In der WISAG Business Catering sind wir auf facettenreiche Gastronomieleistungen …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
-  },
-  {
-   "id": "ba-12122-982393220-S",
-   "title": "Lagerhelfer (m/w/d)",
-   "employer": "persona service AG & Co. KG",
-   "type": "lager",
-   "minAge": 18,
-   "ageReason": "keine Hinweise, dass Jugendliche angesprochen sind",
-   "city": "Düsseldorf",
-   "address": "40227 Düsseldorf",
-   "lat": 51.21266,
-   "lng": 6.804248,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-11",
-   "published": "2026-11-11",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-982393220-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du unterstützt das Lagerteam bei allen allgemeinen Lagertätigkeiten im täglichen Ablauf - eingehende Waren nimmst du an und …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-982687586-S",
@@ -941,7 +749,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-12T13:53:30+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984620391-S",
@@ -965,7 +773,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du kommissionierst Kleidungsstücke anhand von Auftragslisten oder Scannerangaben und stellst die Ware für den Versand …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984108135-S",
@@ -989,7 +797,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-17T14:44:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984579595-S",
@@ -1037,7 +845,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984784741-S",
@@ -1085,7 +893,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984342903-S",
@@ -1109,10 +917,10 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
-   "id": "ba-12122-981879230-S",
+   "id": "ba-12122-985254310-S",
    "title": "Maschineneinrichter Konventionell/CNC (m/w/d)",
    "employer": "persona service AG & Co. KG",
    "type": "sonstiges",
@@ -1126,14 +934,14 @@
    "pay": "",
    "payPerHour": null,
    "period": "Weihnachtsferien",
-   "start": "2026-11-07",
-   "published": "2026-11-07",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-981879230-S",
+   "start": "2026-11-22",
+   "published": "2026-11-22",
+   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-985254310-S",
    "contact": "über die Jobbörse der Arbeitsagentur",
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
+   "firstSeen": "2026-11-22T13:40:41+01:00",
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-982391224-S",
@@ -1205,7 +1013,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985068522-S",
@@ -1301,7 +1109,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985041641-S",
@@ -1349,7 +1157,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985047149-S",
@@ -1373,7 +1181,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984789966-S",
@@ -1421,7 +1229,7 @@
    "description": "Jobangebote bei dir vor Ort. Minijob, Nebenjob, Teilzeitjob - Zeitung austragen in der Frühzustellung, Nachtarbeit. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach Gebiet und Beschäftigungsumfang …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984097237-S",
@@ -1469,7 +1277,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du übernimmst das Bestücken von Leiterplatten mit Dioden und Kondensatoren - auch die Nachbestückung der Platinen nach …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984511326-S",
@@ -1518,30 +1326,6 @@
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
    "lastSeen": "2026-11-18T14:11:03+01:00"
-  },
-  {
-   "id": "ba-13465-00021a697c0001-S",
-   "title": "Objektleiter (m/w/d) Verkehrsmittelbetriebe",
-   "employer": "WISAG Job & Karriere GmbH & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "Nachtarbeit, Führerschein oder ausdrücklich ab 18",
-   "city": "Neuss",
-   "address": "41460 Neuss",
-   "lat": 51.207093,
-   "lng": 6.696472,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Nebenbei",
-   "start": "2026-11-05",
-   "published": "2026-11-12",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/13465-00021a697c0001-S",
-   "contact": "+49 1523 1358739",
-   "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. Unsere Spezialisten für Verkehrsmittelwartung haben langjährige Erfahrung in der Reinigung, …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
   },
   {
    "id": "ba-13465-00021a69d9b001-S",
@@ -1613,7 +1397,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du übernimmst das Waren Um- und Abfüllen - auch den Stapler fährst du, um Rohstoffe usw. zu transportieren - du kümmerst …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984270987-S",
@@ -1637,7 +1421,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-17T14:44:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-13465-00021a69f40001-S",
@@ -1685,7 +1469,7 @@
    "description": "**Über uns:** Bei KKS Gebäudeservice bist Du Teil eines Teams, das täglich dafür sorgt, dass Gebäude, Anlagen und Außenbereiche in bestem Zustand bleiben. Ob Gebäudereinigung, Hausmeisterservice, Grünanlagenpflege oder technische Dienstleistungen – Deine Arbeit leistet einen wichtigen Beitrag für unsere Kunden. Wir …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984339540-S",
@@ -1709,7 +1493,7 @@
    "description": "#### ​ Du bringst Erfahrung und Fachwissen mit – wir die passenden Perspektiven. Bei persona service erwarten dich abwechslungsreiche Aufgaben, ein professionelles Umfeld sowie Unternehmen, die dein Know-how schätzen. Starte mit uns deinen nächsten Karriereschritt – erstklassig, professionell und menschlich. ## Deine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984606146-S",
@@ -1829,7 +1613,31 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
+  },
+  {
+   "id": "ba-12122-985242231-S",
+   "title": "Schweißer (m/w/d)",
+   "employer": "persona service AG & Co. KG",
+   "type": "sonstiges",
+   "minAge": 18,
+   "ageReason": "verlangt Studium, Abitur oder Berufserfahrung",
+   "city": "Ratingen",
+   "address": "40472 Ratingen",
+   "lat": 51.270384,
+   "lng": 6.82374,
+   "hours": "",
+   "pay": "",
+   "payPerHour": null,
+   "period": "Weihnachtsferien",
+   "start": "2026-11-22",
+   "published": "2026-11-22",
+   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-985242231-S",
+   "contact": "über die Jobbörse der Arbeitsagentur",
+   "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
+   "source": "Bundesagentur für Arbeit",
+   "firstSeen": "2026-11-22T13:40:41+01:00",
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984325659-S",
@@ -1853,7 +1661,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984284436-S",
@@ -1880,30 +1688,6 @@
    "lastSeen": "2026-11-18T14:11:03+01:00"
   },
   {
-   "id": "ba-12122-981745829-S",
-   "title": "Schweißer (m/w/d)",
-   "employer": "persona service AG & Co. KG",
-   "type": "sonstiges",
-   "minAge": 18,
-   "ageReason": "verlangt Studium, Abitur oder Berufserfahrung",
-   "city": "Ratingen",
-   "address": "40472 Ratingen",
-   "lat": 51.275866,
-   "lng": 6.822027,
-   "hours": "",
-   "pay": "",
-   "payPerHour": null,
-   "period": "Weihnachtsferien",
-   "start": "2026-11-07",
-   "published": "2026-11-07",
-   "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-981745829-S",
-   "contact": "über die Jobbörse der Arbeitsagentur",
-   "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
-   "source": "Bundesagentur für Arbeit",
-   "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-17T14:44:03+01:00"
-  },
-  {
    "id": "ba-12122-985126281-S",
    "title": "Schweißvorbereiter (m/w/d)",
    "employer": "persona service AG & Co. KG",
@@ -1925,7 +1709,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-13465-00021a69aa0001-S",
@@ -1997,7 +1781,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984797673-S",
@@ -2021,7 +1805,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985093781-S",
@@ -2045,7 +1829,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984742186-S",
@@ -2069,7 +1853,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du be- und entlädst Lkw mit dem Stapler - Gebinde verlädst du sicher ins Hochregal - du übernimmst allgemeine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984743560-S",
@@ -2093,7 +1877,7 @@
    "description": "#### ​ Du willst durchstarten, ganz ohne komplizierten Bewerbungsprozess? Dann bist du bei genau uns richtig. Wir haben für dich den richtigen Job, der zu deinem Leben passt! ## Deine Aufgaben - du be- und entlädst Lkw sicher und effizient - innerhalb des Lagers transportierst du Waren und sorgst für einen …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-19T14:25:53+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984513852-S",
@@ -2189,7 +1973,7 @@
    "description": "Jobangebote bei dir vor Ort. Minijob, Nebenjob, Teilzeitjob - Zeitung austragen in der Frühzustellung, Nachtarbeit. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach Gebiet und Beschäftigungsumfang …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-10001-1000641774-S",
@@ -2213,7 +1997,7 @@
    "description": "Jobangebote bei dir vor Ort. Minijob, Nebenjob, Teilzeitjob - Zeitung austragen in der Frühzustellung, Nachtarbeit. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach Gebiet und Beschäftigungsumfang …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-10001-1000641796-S",
@@ -2237,7 +2021,7 @@
    "description": "Jobangebote bei dir vor Ort. Minijob, Nebenjob, Teilzeitjob - Zeitung austragen in der Frühzustellung, Nachtarbeit. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach Gebiet und Beschäftigungsumfang …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-10001-1001054175-S",
@@ -2261,7 +2045,7 @@
    "description": "Jobangebote bei dir vor Ort. Minijob, Nebenjob, Teilzeitjob - Zeitung austragen in der Frühzustellung, Nachtarbeit. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach Gebiet und Beschäftigungsumfang …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-10001-1003038368-S",
@@ -2285,7 +2069,7 @@
    "description": "Minijob, Teilzeitjob oder Vollzeitjob bei dir vor Ort. Zeitung austragen in der Frühzustellung, Nachtarbeit. Stellenangebote auf dem Jobportal Zustellerkom. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-10001-1003038251-S",
@@ -2309,7 +2093,7 @@
    "description": "Minijob, Teilzeitjob oder Vollzeitjob bei dir vor Ort. Zeitung austragen in der Frühzustellung, Nachtarbeit. Stellenangebote auf dem Jobportal Zustellerkom. Arbeitstage: täglich von Montag bis Samstag (6 Tage Woche) Arbeitszeit: Nachtzustellung bis 6:00 Uhr morgens Arbeitsdauer: 1-2 Stunden pro Arbeitstag je nach …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984032361-S",
@@ -2357,7 +2141,7 @@
    "description": "Willkommen bei der WISAG … einem der führenden Dienstleistungsunternehmen in Deutschland für die Bereiche: Aviation, Facility und Industrie. Mehr als 60.000 Mitarbeiterinnen und Mitarbeiter sind Tag für Tag bei uns im Einsatz. In der WISAG Care Catering sind wir auf die Gemeinschaftsverpflegung spezialisiert. …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-18T14:11:03+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984787170-S",
@@ -2381,7 +2165,7 @@
    "description": "#### ​ Du bringst Erfahrung und Fachwissen mit – wir die passenden Perspektiven. Bei persona service erwarten dich abwechslungsreiche Aufgaben, ein professionelles Umfeld sowie Unternehmen, die dein Know-how schätzen. Starte mit uns deinen nächsten Karriereschritt – erstklassig, professionell und menschlich. ## Deine …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-10001-1003281492-S",
@@ -2405,7 +2189,7 @@
    "description": "**Native Nanny** ist auf internationale Kinderbetreuung in ganz Deutschland spezialisiert. Wir bringen Familien mit engagierten, qualifizierten Kinderbetreuer*innen zusammen – und helfen Nannys, Babysitter*innen und Tutor*innen mit internationalem Hintergrund, die passende Familie zu finden. Aktuell suchen wir …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-11T22:47:10+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984988035-S",
@@ -2429,7 +2213,7 @@
    "description": "#### Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben - …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-20T14:05:24+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-985061538-S",
@@ -2453,7 +2237,7 @@
    "description": "#### ​ Du weißt, was du kannst – und suchst einen Arbeitgeber, der das genauso sieht? Bei persona service bekommst du den Job, der zu deiner Erfahrung passt. Ob im Handwerk, in der Industrie oder in einer anderen Branche: Wir sorgen dafür, dass deine Leistung gesehen und dein Einsatz geschätzt wird. ## Deine Aufgaben …",
    "source": "Bundesagentur für Arbeit",
    "firstSeen": "2026-11-21T13:54:13+01:00",
-   "lastSeen": "2026-11-21T13:54:13+01:00"
+   "lastSeen": "2026-11-22T13:40:41+01:00"
   },
   {
    "id": "ba-12122-984188877-S",

@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-21T13:45:44+01:00",
- "count": 21,
+ "generated": "2026-11-22T13:40:03+01:00",
+ "count": 20,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -55,68 +55,12 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": null,
    "price": "",
    "openingHours": "Donnerstag, 24. Dezember) ist er von 11 bis 15 Uhr",
    "daily": true
-  },
-  {
-   "id": "ea68de5777ca05",
-   "title": "Wintermarkt der Evangelischen Kinder- und Familienhilfe Krefeld",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-20T15:00:00+01:00",
-   "end": "2026-11-21T19:00:00+01:00",
-   "allDay": false,
-   "address": "47802 Krefeld",
-   "city": "Krefeld",
-   "lat": 51.378819,
-   "lng": 6.575846,
-   "url": "https://www.krefeld.de/wintermarkt-der-evangelischen-kinder-und-familienhilfe-krefeld",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "| Krefeld Wintermarkt der Evangelischen Kinder- und Familienhilfe Krefeld Wir, die Evangelische Kinder- und Familienhilfe Krefeld veranstalten zugunsten unserer Kinder und Jugendlichen einen Wintermarkt. Vorlesen © …",
-   "sources": [
-    "https://www.krefeld.de/wintermarkt-der-evangelischen-kinder-und-familienhilfe-krefeld"
-   ],
-   "firstSeen": "2026-11-20T14:04:38+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": true
-  },
-  {
-   "id": "a0cbacb8d787bb",
-   "title": "Weihnachtsmarkt",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-21T00:00:00+01:00",
-   "end": "2026-11-21T23:59:00+01:00",
-   "allDay": true,
-   "address": "",
-   "city": "Krefeld",
-   "lat": 51.326021,
-   "lng": 6.569501,
-   "url": "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "Weihnachtsmarkt. Im Schatten der Dionysiuskirche entsteht vom 21. November bis zum 23. Dezember wieder ein festlicher Stadtgarten. · News · News:",
-   "sources": [
-    "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
-   ],
-   "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
   },
   {
    "id": "ccc34fdd51c3fc",
@@ -139,7 +83,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +139,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -286,6 +230,34 @@
    "free": null,
    "price": "",
    "openingHours": "die ganze Familie: 14:00 – 17:00 Uhr",
+   "daily": false
+  },
+  {
+   "id": "72f3999a206ec7",
+   "title": "Weihnachtsmarkt",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2026-12-23T00:00:00+01:00",
+   "end": "2026-12-23T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "Krefeld",
+   "lat": 51.326021,
+   "lng": 6.569501,
+   "url": "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Weihnachtsmarkt. Im Schatten der Dionysiuskirche entsteht vom 21. November bis zum 23. Dezember wieder ein festlicher Stadtgarten. · News · News:",
+   "sources": [
+    "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
+   ],
+   "firstSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
    "daily": false
   },
   {
@@ -421,7 +393,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -478,7 +450,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -506,7 +478,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -534,7 +506,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -563,7 +535,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -591,7 +563,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-21T13:45:44+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-22T13:40:03+01:00",
    "verified": false,
    "free": null,
    "price": "",
