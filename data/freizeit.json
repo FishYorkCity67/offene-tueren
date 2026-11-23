@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-22T13:40:03+01:00",
- "count": 20,
+ "generated": "2026-11-23T15:50:49+01:00",
+ "count": 23,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -27,11 +27,39 @@
     "https://museum-kaiserswerth.de/aktuelles/andrea-bertolt-mohr-rheinwaerts"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": true,
    "price": "",
    "openingHours": "Samstag 14–17 Uhr",
+   "daily": false
+  },
+  {
+   "id": "d78258f775ab90",
+   "title": "Weihnachtsmarkt in Düsseldorf",
+   "org": "Weihnachten",
+   "category": "saisonal",
+   "start": "2026-11-19T00:00:00+01:00",
+   "end": "2026-12-30T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "Düsseldorf",
+   "lat": 51.225402,
+   "lng": 6.776314,
+   "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Zur Vorweihnachtszeit erstrahlt die Stadt jedes Jahr im festlichen Glanz: Der Lichterdom strahlt hell, es duftet nach gebrannten Mandeln und der Düsseldorfer Weihnachtsmarkt lockt mit Kunsthandwerk, Altstadtmarkt und …",
+   "sources": [
+    "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
+   ],
+   "firstSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
    "daily": false
   },
   {
@@ -55,12 +83,40 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
    "openingHours": "Donnerstag, 24. Dezember) ist er von 11 bis 15 Uhr",
    "daily": true
+  },
+  {
+   "id": "bef53a56656fab",
+   "title": "Der Ratinger Weihnachtsmarkt ist eröffnet",
+   "org": "Museum der Stadt Ratingen",
+   "category": "saisonal",
+   "start": "2026-11-23T00:00:00+01:00",
+   "end": "2026-11-23T23:59:00+01:00",
+   "allDay": true,
+   "address": "Grabenstraße 21, 40878 Ratingen",
+   "city": "Ratingen",
+   "lat": 51.29873,
+   "lng": 6.847009,
+   "url": "https://www.stadt-ratingen.de/aktuelles/pressemitteilungen",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Weihnachtsmarkt ist eröffnet · Die Winterbeleuchtung taucht die Ratinger Innenstadt in festliches Licht · 23.11.2026",
+   "sources": [
+    "https://www.stadt-ratingen.de/aktuelles/pressemitteilungen"
+   ],
+   "firstSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
   },
   {
    "id": "ccc34fdd51c3fc",
@@ -83,7 +139,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -139,7 +195,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -196,7 +252,7 @@
     "https://www.tuppenhof.de/"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -225,7 +281,7 @@
     "https://www.tuppenhof.de/"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -281,7 +337,7 @@
     "https://www.duesseldorf.de/aktuelles/news"
    ],
    "firstSeen": "2026-11-21T13:45:44+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -334,10 +390,11 @@
    "needsAdult": false,
    "description": "Manche besten Freunde haben statt zwei vier Beine, ein paar Flügel, einen Panzer oder auch Flossen … In unserer aktuellen Sonderausstellung »Beste Freunde« laden wir dich zu einer Reise in die wunderbare Welt der Tiere ein! Neben einem tollen Programm mit Kinderschminken, …",
    "sources": [
-    "https://clemens-sels-museum-neuss.de/kalender"
+    "https://clemens-sels-museum-neuss.de/kalender",
+    "https://clemens-sels-museum-neuss.de/kalender/familienfuehrung-22-11-2026"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -365,7 +422,7 @@
     "https://www.bebop-kaarst.de/ferienprogramm"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-21T13:45:44+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": false,
    "price": "45,00 €",
@@ -393,7 +450,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -450,7 +507,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -478,7 +535,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -506,7 +563,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -535,7 +592,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-22T13:40:03+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -564,6 +621,34 @@
    ],
    "firstSeen": "2026-11-21T13:45:44+01:00",
    "lastSeen": "2026-11-22T13:40:03+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
+  },
+  {
+   "id": "e244b10b1a2e88",
+   "title": "Weihnachtsmarkt",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2027-11-21T00:00:00+01:00",
+   "end": "2027-11-21T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "Krefeld",
+   "lat": 51.326021,
+   "lng": 6.569501,
+   "url": "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "Weihnachtsmarkt. Im Schatten der Dionysiuskirche entsteht vom 21. November bis zum 23. Dezember wieder ein festlicher Stadtgarten. · News · News:",
+   "sources": [
+    "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
+   ],
+   "firstSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-23T15:50:49+01:00",
    "verified": false,
    "free": null,
    "price": "",

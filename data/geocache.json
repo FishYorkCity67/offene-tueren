@@ -124,6 +124,7 @@
 ],
 "Campus Krefeld-Süd/West / Mönchengladbach": null,
 "Campus Krefeld-Süd/West / Mönchengladbach, Neuss": null,
+"Campusführung": null,
 "Dreilinden-Gymnasium, Berlin": [
 52.4202569,
 13.1878739,
@@ -243,6 +244,11 @@
 50.5735892,
 8.6999768,
 "Gießen"
+],
+"Kaistraße 16-16a, 40221 Düsseldorf": [
+51.2148346,
+6.7537423,
+"Düsseldorf"
 ],
 "Kant-Oberschule, Berlin": [
 52.4589515,
