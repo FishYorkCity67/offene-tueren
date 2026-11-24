@@ -2,7 +2,7 @@
  "version": 1,
  "feed": "offene-tueren",
  "title": "Tag der offenen Tür",
- "generated": "2026-11-23T15:50:49+01:00",
+ "generated": "2026-11-24T15:57:07+01:00",
  "count": 72,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
@@ -432,7 +432,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -544,7 +544,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -661,7 +661,7 @@
     "https://tu-dresden.de/studium/vor-dem-studium/termine/termine/studienmesse-studierbar"
    ],
    "firstSeen": "2026-11-13T13:19:29+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -946,7 +946,7 @@
     "https://studieren.de/studium-veranstaltungen.t-0.s-12.html"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1255,7 +1255,7 @@
     "https://www.uni-giessen.de/de/ueber-uns/veranstaltungen/sonstige/hit"
    ],
    "firstSeen": "2026-11-12T01:50:27+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -1311,7 +1311,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1480,7 +1480,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1508,7 +1508,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1592,7 +1592,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1620,7 +1620,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-13T13:19:29+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1648,7 +1648,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1676,7 +1676,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1704,7 +1704,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1760,7 +1760,7 @@
     "https://www.aubi-plus.de/messe/azubi-studientage-koblenz-2027-9162/"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -1788,7 +1788,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -2041,7 +2041,7 @@
     "https://studieren.de/offener-campustag.veranstaltungshinweis.t-0.event-195990.html"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",

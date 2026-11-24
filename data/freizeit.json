@@ -2,7 +2,7 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-23T15:50:49+01:00",
+ "generated": "2026-11-24T15:57:07+01:00",
  "count": 23,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
@@ -55,7 +55,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -83,7 +83,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -91,27 +91,28 @@
    "daily": true
   },
   {
-   "id": "bef53a56656fab",
-   "title": "Der Ratinger Weihnachtsmarkt ist eröffnet",
-   "org": "Museum der Stadt Ratingen",
+   "id": "a09360372a7687",
+   "title": "Tradition: 40. Linner Weihnachtsmarkt",
+   "org": "Krefeld",
    "category": "saisonal",
-   "start": "2026-11-23T00:00:00+01:00",
-   "end": "2026-11-23T23:59:00+01:00",
+   "start": "2026-11-24T00:00:00+01:00",
+   "end": "2026-11-24T23:59:00+01:00",
    "allDay": true,
-   "address": "Grabenstraße 21, 40878 Ratingen",
-   "city": "Ratingen",
-   "lat": 51.29873,
-   "lng": 6.847009,
-   "url": "https://www.stadt-ratingen.de/aktuelles/pressemitteilungen",
+   "address": "",
+   "city": "Krefeld",
+   "lat": 51.326021,
+   "lng": 6.569501,
+   "url": "https://www.krefeld.de/veranstaltungen",
    "minAge": null,
    "audience": "alle",
    "needsAdult": false,
-   "description": "Weihnachtsmarkt ist eröffnet · Die Winterbeleuchtung taucht die Ratinger Innenstadt in festliches Licht · 23.11.2026",
+   "description": "Weihnachtsmarkt · Datum · 24.11.2026",
    "sources": [
-    "https://www.stadt-ratingen.de/aktuelles/pressemitteilungen"
+    "https://www.krefeld.de/veranstaltungen",
+    "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
-   "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "firstSeen": "2026-11-24T15:57:07+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -139,7 +140,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -195,7 +196,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -450,7 +451,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -507,7 +508,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -535,7 +536,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -563,7 +564,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -592,7 +593,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -648,7 +649,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-23T15:50:49+01:00",
+   "lastSeen": "2026-11-24T15:57:07+01:00",
    "verified": false,
    "free": null,
    "price": "",
