@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-25T15:32:24+01:00",
- "count": 23,
+ "generated": "2026-11-26T14:58:58+01:00",
+ "count": 22,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -35,9 +35,9 @@
    "daily": false
   },
   {
-   "id": "7b0a4ca1b19eed",
+   "id": "d78258f775ab90",
    "title": "Weihnachtsmarkt in Düsseldorf",
-   "org": "www.visitduesseldorf.de",
+   "org": "Weihnachten",
    "category": "saisonal",
    "start": "2026-11-19T00:00:00+01:00",
    "end": "2026-12-30T23:59:00+01:00",
@@ -55,7 +55,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -83,7 +83,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -91,36 +91,8 @@
    "daily": true
   },
   {
-   "id": "ccc34fdd51c3fc",
-   "title": "Weihnachtsmarkt",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-25T00:00:00+01:00",
-   "end": "2026-11-25T23:59:00+01:00",
-   "allDay": true,
-   "address": "",
-   "city": "Krefeld",
-   "lat": 51.326021,
-   "lng": 6.569501,
-   "url": "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "Weihnachtsmarkt „Made in Krefeld“ rund um die Dionysiuskirche wurde am 25. November offiziell eröffnet. Oberbürgermeister Frank Meyer betonte, der 2017 neu konzipierte Markt habe sich in den …",
-   "sources": [
-    "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
-   ],
-   "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-24T15:57:07+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
-  {
    "id": "5c7765b486ca51",
-   "title": "Märkte, Kirmes & Shopping",
+   "title": "Glühwein-Clubbing auf dem Weihnachtsmarkt",
    "org": "Krefeld",
    "category": "saisonal",
    "start": "2026-11-26T17:00:00+01:00",
@@ -130,18 +102,19 @@
    "city": "Krefeld",
    "lat": 51.326021,
    "lng": 6.569501,
-   "url": "https://www.krefeld.de/taxonomy/term/1044",
+   "url": "https://www.krefeld.de/gluehwein-clubbing-auf-dem-weihnachtsmarkt",
    "minAge": null,
    "audience": "alle",
    "needsAdult": false,
-   "description": "| Krefeld Märkte, Kirmes & Shopping Vorlesen © Stadtmarketing 26. November 2026, 17:00 Uhr - 21:00 Uhr 03. Dezember 2026, 17:00 Uhr - 21:00 Uhr 10. Dezember 2026, 17:00 Uhr - 21:00 Uhr 17. Dezember 2026, 17:00 Uhr - …",
+   "description": "| Krefeld Glühwein-Clubbing auf dem Weihnachtsmarkt Beim Glühwein-Clubbing auf dem Krefelder Weihnachtsmarkt legen jeden Donnerstag von 17-21 Uhr zwei DJs chillige Clubsounds auf. Vorlesen © Stadtmarketing DJ legt in …",
    "sources": [
+    "https://www.krefeld.de/gluehwein-clubbing-auf-dem-weihnachtsmarkt",
     "https://www.krefeld.de/taxonomy/term/1044",
     "https://www.krefeld.de/weihnachtsmarkt-made-krefeld-zieht-besucher",
     "https://www.krefeld.de/miks-weihnachtsmarkt-made-krefeld"
    ],
    "firstSeen": "2026-11-20T14:04:38+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -169,7 +142,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -481,7 +454,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -537,7 +510,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -566,7 +539,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -594,7 +567,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-25T15:32:24+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-26T14:58:58+01:00",
    "verified": false,
    "free": null,
    "price": "",
