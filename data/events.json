@@ -2,67 +2,10 @@
  "version": 1,
  "feed": "offene-tueren",
  "title": "Tag der offenen Tür",
- "generated": "2026-11-26T14:58:58+01:00",
- "count": 69,
+ "generated": "2026-11-27T14:58:02+01:00",
+ "count": 66,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
-  {
-   "id": "8bd70c8c09d448",
-   "title": "Tag der offenen Tür",
-   "org": "Görres-Gymnasium",
-   "category": "schule",
-   "start": "2026-11-24T00:00:00+01:00",
-   "end": "2026-11-26T23:59:00+01:00",
-   "allDay": true,
-   "address": "Königsallee 57, 40212 Düsseldorf",
-   "city": "Düsseldorf",
-   "lat": 51.22108,
-   "lng": 6.777704,
-   "url": "https://goerres.de/tag-der-offenen-tuer/",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "– Görres-Gymnasium Düsseldorf Schulnachrichten Tag der offenen Tür – jetzt mit Programmübersicht Informationsabend für Eltern von Viertklässlerinnen und Viertklässlern, 13.01.2027 Görres-Varieté am 12. November EF zum …",
-   "sources": [
-    "https://goerres.de/tag-der-offenen-tuer/",
-    "https://goerres.de/tag-der-offenen-tuer-2/"
-   ],
-   "firstSeen": "2026-11-20T14:04:38+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
-  {
-   "id": "186617f3b49d29",
-   "title": "Tag der offenen Tür",
-   "org": "Anna-Essinger-Gemeinschaftsschule",
-   "category": "schule",
-   "start": "2026-11-26T16:00:00+01:00",
-   "end": "2026-11-26T19:00:00+01:00",
-   "allDay": false,
-   "address": "Anna-Essinger-Gemeinschaftsschule, Berlin",
-   "city": "Berlin",
-   "lat": 52.42515,
-   "lng": 13.225358,
-   "url": "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "Tag der offenen Tür: am 26.11.2026, von 16.00 bis 19.00 Uhr · Arndt-Gymnasium-Dahlem",
-   "sources": [
-    "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
-   ],
-   "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "",
-   "daily": false
-  },
   {
    "id": "95d5c72507e1d6",
    "title": "Tag der offenen Tür",
@@ -90,34 +33,6 @@
    "free": null,
    "price": "",
    "openingHours": "",
-   "daily": false
-  },
-  {
-   "id": "8bd3bf1e33df26",
-   "title": "Tag der offenen Tür",
-   "org": "Max-Planck-Gymnasium",
-   "category": "schule",
-   "start": "2026-11-27T10:00:00+01:00",
-   "end": "2026-11-27T13:00:00+01:00",
-   "allDay": false,
-   "address": "Max-Planck-Gymnasium",
-   "city": "",
-   "lat": 51.259427,
-   "lng": 6.760529,
-   "url": "https://max-planck.com/tag-der-offenen-tuer/",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "| Max-Planck-Gymnasium Düsseldorf Skip to content Herzlich Willkommen am Max-Planck-Gymnasium! Am Samstag, dem 14. November 2026, laden wir von 10:00 bis 13:00 Uhr interessierte Eltern und Schüler:innen zum …",
-   "sources": [
-    "https://max-planck.com/tag-der-offenen-tuer/"
-   ],
-   "firstSeen": "2026-11-15T13:00:18+01:00",
-   "lastSeen": "2026-11-20T14:04:38+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "Samstag, dem 14. November 2026, laden wir von 10:00 bis 13:00 Uhr",
    "daily": false
   },
   {
@@ -230,7 +145,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -347,7 +262,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -459,7 +374,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -576,7 +491,7 @@
     "https://tu-dresden.de/studium/vor-dem-studium/termine/termine/studienmesse-studierbar"
    ],
    "firstSeen": "2026-11-13T13:19:29+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -632,7 +547,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -660,7 +575,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -688,7 +603,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -716,7 +631,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -805,7 +720,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -833,7 +748,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -841,9 +756,9 @@
    "daily": false
   },
   {
-   "id": "06ea66688ff136",
+   "id": "6b4e45cfabbf08",
    "title": "Campustag",
-   "org": "Campusführung",
+   "org": "Veranstaltungstipps für Studieninteressierte",
    "category": "hochschule",
    "start": "2027-01-15T00:00:00+01:00",
    "end": "2027-01-15T23:59:00+01:00",
@@ -861,7 +776,7 @@
     "https://studieren.de/studium-veranstaltungen.t-0.s-12.html"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -889,7 +804,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -917,7 +832,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -973,7 +888,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1001,7 +916,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1086,7 +1001,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1114,7 +1029,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1142,7 +1057,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1170,7 +1085,7 @@
     "https://www.uni-giessen.de/de/ueber-uns/veranstaltungen/sonstige/hit"
    ],
    "firstSeen": "2026-11-12T01:50:27+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -1226,7 +1141,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1282,7 +1197,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1395,7 +1310,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1423,7 +1338,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1451,7 +1366,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-22T13:40:03+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1479,7 +1394,7 @@
     "https://www.berlin.de/ba-steglitz-zehlendorf/politik-und-verwaltung/aemter/schul-und-sportamt/schulen/artikel.87864.php"
    ],
    "firstSeen": "2026-11-22T13:40:03+01:00",
-   "lastSeen": "2026-11-25T15:32:24+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1507,7 +1422,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1535,7 +1450,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-13T13:19:29+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1563,7 +1478,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1591,7 +1506,7 @@
     "https://www.heidelberg.de/hd,Lde/HD/Lernen+und+Forschen/termine.html"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1619,7 +1534,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1675,7 +1590,7 @@
     "https://www.aubi-plus.de/messe/azubi-studientage-koblenz-2027-9162/"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -1703,7 +1618,7 @@
     "https://www.bonn.de/medien-global/amt-40/Tag-der-offenen-Tuer-2026-27.pdf"
    ],
    "firstSeen": "2026-11-11T21:50:22+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -1956,7 +1871,7 @@
     "https://studieren.de/offener-campustag.veranstaltungshinweis.t-0.event-195990.html"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-26T14:58:58+01:00",
+   "lastSeen": "2026-11-27T14:58:02+01:00",
    "verified": false,
    "free": null,
    "price": "",
