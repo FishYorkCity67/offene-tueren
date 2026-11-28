@@ -2,8 +2,8 @@
  "version": 1,
  "feed": "freizeit",
  "title": "Freizeit & Events",
- "generated": "2026-11-27T14:58:02+01:00",
- "count": 23,
+ "generated": "2026-11-28T14:11:39+01:00",
+ "count": 24,
  "ageRule": "Fachpublikum ausgeblendet; minAge = Mindestalter laut Quelle (App filtert nach eigenem Alter)",
  "events": [
   {
@@ -55,7 +55,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -63,9 +63,9 @@
    "daily": false
   },
   {
-   "id": "7b0a4ca1b19eed",
+   "id": "491a4f69f1d00e",
    "title": "Düsseldorfer Weihnachtsmarkt",
-   "org": "www.visitduesseldorf.de",
+   "org": "Düsseldorfer Weihnachtsmarkt",
    "category": "saisonal",
    "start": "2026-11-19T11:00:00+01:00",
    "end": "2026-12-30T15:00:00+01:00",
@@ -83,7 +83,7 @@
     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -114,36 +114,7 @@
     "https://www.krefeld.de/miks-weihnachtsmarkt-made-krefeld"
    ],
    "firstSeen": "2026-11-20T14:04:38+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
-   "verified": false,
-   "free": null,
-   "price": "",
-   "openingHours": "Donnerstag von 17-21 Uhr",
-   "daily": false
-  },
-  {
-   "id": "ab3edc06b5b1ad",
-   "title": "Märkte, Kirmes & Shopping",
-   "org": "Krefeld",
-   "category": "saisonal",
-   "start": "2026-11-27T18:30:00+01:00",
-   "end": "2026-11-27T19:30:00+01:00",
-   "allDay": false,
-   "address": "",
-   "city": "Krefeld",
-   "lat": 51.326021,
-   "lng": 6.569501,
-   "url": "https://www.krefeld.de/taxonomy/term/1044",
-   "minAge": null,
-   "audience": "alle",
-   "needsAdult": false,
-   "description": "| Krefeld Märkte, Kirmes & Shopping Vorlesen © Die 3 Liköre 27. November 2026, 18:30 Uhr - 19:30 Uhr 13. Dezember 2026, 18:30 Uhr - 19:30 Uhr Die 3 Liköre auf dem MIKS Weihnachtsmarkt Die Band \"Die 3 Liköre\" sorgt für …",
-   "sources": [
-    "https://www.krefeld.de/taxonomy/term/1044",
-    "https://www.krefeld.de/wichtelwerkstatt-auf-dem-miks-weihnachtsmarkt"
-   ],
-   "firstSeen": "2026-11-27T14:58:02+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -171,7 +142,7 @@
     "https://www.krefeld.de/tradition-40-linner-weihnachtsmarkt"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -265,6 +236,34 @@
    "daily": false
   },
   {
+   "id": "6bfb49b9c58c36",
+   "title": "Märkte, Kirmes & Shopping",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2026-12-13T18:30:00+01:00",
+   "end": "2026-12-13T19:30:00+01:00",
+   "allDay": false,
+   "address": "",
+   "city": "Krefeld",
+   "lat": 51.326021,
+   "lng": 6.569501,
+   "url": "https://www.krefeld.de/taxonomy/term/1044",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": "| Krefeld Märkte, Kirmes & Shopping Vorlesen © Die 3 Liköre 27. November 2026, 18:30 Uhr - 19:30 Uhr 13. Dezember 2026, 18:30 Uhr - 19:30 Uhr Die 3 Liköre auf dem MIKS Weihnachtsmarkt Die Band \"Die 3 Liköre\" sorgt für …",
+   "sources": [
+    "https://www.krefeld.de/taxonomy/term/1044"
+   ],
+   "firstSeen": "2026-11-28T14:11:39+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "Donnerstag von 17-21 Uhr",
+   "daily": false
+  },
+  {
    "id": "72f3999a206ec7",
    "title": "Crefelder Weihnachtsmarkt 2.0",
    "org": "Krefeld",
@@ -286,7 +285,7 @@
     "https://www.krefeld.de/aussteller-und-gastronomen-fuer-weihnachtsmarkt-made-krefeld-gesucht"
    ],
    "firstSeen": "2026-11-22T13:40:03+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -427,7 +426,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-24T15:57:07+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -484,7 +483,7 @@
     "https://www.visitduesseldorf.de/erleben/veranstaltungen/rheinkirmes-duesseldorf"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -512,7 +511,7 @@
     "https://www.krefeld.de/kitschkunstundco"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-24T15:57:07+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": true,
    "price": "",
@@ -540,7 +539,7 @@
     "https://www.krefeld.de/kitsch-kunst-co-am-19-september"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -569,7 +568,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-12T01:42:15+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -597,7 +596,7 @@
     "https://www.krefeld.de/veranstaltungen"
    ],
    "firstSeen": "2026-11-25T15:32:24+01:00",
-   "lastSeen": "2026-11-27T14:58:02+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
@@ -654,6 +653,34 @@
    ],
    "firstSeen": "2026-11-23T15:50:49+01:00",
    "lastSeen": "2026-11-24T15:57:07+01:00",
+   "verified": false,
+   "free": null,
+   "price": "",
+   "openingHours": "",
+   "daily": false
+  },
+  {
+   "id": "a49c506d1a2af5",
+   "title": "30 Hütten eröffnen am 26. November Weihnachtsmarkt \"Made in Krefeld\" zieht Besucher an",
+   "org": "Krefeld",
+   "category": "saisonal",
+   "start": "2027-11-26T00:00:00+01:00",
+   "end": "2027-11-26T23:59:00+01:00",
+   "allDay": true,
+   "address": "",
+   "city": "Krefeld",
+   "lat": 51.326021,
+   "lng": 6.569501,
+   "url": "https://www.krefeld.de/weihnachtsmarkt-made-krefeld-zieht-besucher",
+   "minAge": null,
+   "audience": "alle",
+   "needsAdult": false,
+   "description": ". November Weihnachtsmarkt \"Made in Krefeld\" zieht Besucher an Datum 23.11.2026 - Lesedauer 3 Minuten Vorlesen © Marcel Rotzinger Lichter und Dekoration prägen das Erscheinungsbild des Weihnachtsmarktes. Was im Jahr …",
+   "sources": [
+    "https://www.krefeld.de/weihnachtsmarkt-made-krefeld-zieht-besucher"
+   ],
+   "firstSeen": "2026-11-28T14:11:39+01:00",
+   "lastSeen": "2026-11-28T14:11:39+01:00",
    "verified": false,
    "free": null,
    "price": "",
